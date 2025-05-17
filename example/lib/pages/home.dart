@@ -1,3 +1,4 @@
+import 'package:example/components/neutral_bottom_navigation_bar.dart';
 import 'package:example/components/neutral_button.dart';
 import 'package:example/components/neutral_chip.dart';
 import 'package:example/components/neutral_app_bar.dart';
@@ -5,6 +6,9 @@ import 'package:example/components/neutral_drawer.dart';
 import 'package:example/components/neutral_list_tyle.dart';
 import 'package:example/components/neutral_switch.dart';
 import 'package:example/components/neutral_text_field.dart';
+import 'package:example/components/neutral_dialog.dart';
+import 'package:example/components/neutral_bottom_sheet.dart';
+import 'package:example/components/neutral_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:neutral/neutral.dart';
 
@@ -16,6 +20,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: NeutralAppBar(),
       drawer: CustomDrawer(),
+      bottomNavigationBar: NeutralBottomNavigationBar(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.only(bottom: 200),
         child: Column(
@@ -51,6 +56,12 @@ class Home extends StatelessWidget {
             NeutralListTile(),
             Divider(),
             NeutralTextField(),
+            Divider(),
+            NeutralDialog(),
+            Divider(),
+            NeutralBottomSheet(),
+            Divider(),
+            NeutralSlider(),
           ],
         ),
       ),
