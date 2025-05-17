@@ -106,7 +106,7 @@ neutralDarkTheme() {
       horizontalTitleGap: 20,
       contentPadding: const EdgeInsets.symmetric(
         horizontal: 20,
-        vertical: 5,
+        vertical: 0,
       ),
       titleTextStyle: const TextStyle(
         fontWeight: FontWeight.bold,
@@ -119,8 +119,8 @@ neutralDarkTheme() {
     /*--- DRAWER ---*/
 
     drawerTheme: DrawerThemeData(
-      backgroundColor: neutralColor.shade900,
-      scrimColor: Colors.white.withValues(alpha: 0.2),
+      backgroundColor: Colors.black,
+      scrimColor: neutralColor.shade600.withValues(alpha: 0.7),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(0),
@@ -239,20 +239,20 @@ neutralDarkTheme() {
       helperStyle: TextStyle(color: neutralColor.shade600),
 
       /* padding */
-      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
 
       /* Prefix and suffix */
-      suffixIconColor: neutralColor.shade400,
-      prefixIconColor: neutralColor.shade400,
+      suffixIconColor: neutralColor.shade500,
+      prefixIconColor: neutralColor.shade500,
 
       /* Border */
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: neutralColor.shade400),
+        borderSide: BorderSide(color: neutralColor.shade500),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: neutralColor.shade400),
+        borderSide: BorderSide(color: neutralColor.shade500),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
@@ -270,6 +270,88 @@ neutralDarkTheme() {
         borderRadius: BorderRadius.circular(10),
         borderSide: BorderSide(color: Colors.red.shade200, width: 2),
       ),
+    ),
+
+    /*--- DIALOG ---*/
+
+    dialogTheme: DialogTheme(
+      barrierColor: neutralColor.shade600.withValues(alpha: 0.7),
+      surfaceTintColor: neutralColor.shade900,
+      elevation: 0,
+      titleTextStyle: const TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+        fontSize: 16,
+      ),
+      contentTextStyle: TextStyle(
+        fontWeight: FontWeight.normal,
+        color: neutralColor.shade400,
+        fontSize: 16,
+      ),
+      backgroundColor: Colors.black,
+      insetPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+    ),
+
+    /*--- BOTTOM NAVIGATION BAR ---*/
+
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.black,
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: neutralColor.shade500,
+      showUnselectedLabels: true,
+      showSelectedLabels: true,
+      selectedLabelStyle: const TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+      ),
+      selectedIconTheme: const IconThemeData(
+        color: Colors.white,
+      ),
+      unselectedLabelStyle: TextStyle(
+        color: neutralColor.shade500,
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: neutralColor.shade500,
+      ),
+      elevation: 0,
+    ),
+
+    /*--- BOTTOM SHEET ---*/
+
+    bottomSheetTheme: BottomSheetThemeData(
+      backgroundColor: Colors.black,
+      surfaceTintColor: Colors.black,
+      modalBarrierColor: neutralColor.shade600.withValues(alpha: 0.7),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
+    ),
+
+    /*--- SLIDER ---*/
+
+    sliderTheme: SliderThemeData(
+      valueIndicatorColor: Colors.white,
+      valueIndicatorTextStyle: const TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+        fontSize: 12,
+      ),
+      activeTrackColor: Colors.white,
+      inactiveTrackColor: neutralColor.shade700,
+      thumbColor: Colors.white,
+      overlayColor: Colors.white.withValues(alpha: 0.2),
+      disabledActiveTrackColor: neutralColor.shade700,
+      disabledInactiveTrackColor: neutralColor.shade800,
+      disabledThumbColor: neutralColor.shade600,
+      tickMarkShape: const RoundSliderTickMarkShape(),
+      trackShape: const RectangularSliderTrackShape(),
     ),
   );
 }
