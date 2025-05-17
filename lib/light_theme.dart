@@ -67,7 +67,7 @@ neutralLightTheme() {
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: ButtonStyle(
         side: WidgetStateProperty.all(BorderSide(
-          color: neutralColor.shade400,
+          color: neutralColor.shade500,
           width: 1,
         )),
         overlayColor: WidgetStateProperty.all(
@@ -240,7 +240,7 @@ neutralLightTheme() {
       helperStyle: TextStyle(color: neutralColor.shade500),
 
       /* padding */
-      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
 
       /* Prefix and suffix */
       suffixIconColor: neutralColor.shade500,
@@ -274,6 +274,86 @@ neutralLightTheme() {
         borderSide: BorderSide(color: Colors.red.shade600, width: 2),
       ),
       filled: false,
+    ),
+
+    /*--- DIALOG ---*/
+
+    dialogTheme: DialogTheme(
+      surfaceTintColor: Colors.white,
+      elevation: 0,
+      titleTextStyle: const TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+        fontSize: 16,
+      ),
+      contentTextStyle: TextStyle(
+        fontWeight: FontWeight.normal,
+        color: neutralColor.shade700,
+        fontSize: 16,
+      ),
+      backgroundColor: Colors.white,
+      insetPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+    ),
+
+    /*--- BOTTOM NAVIGATION BAR ---*/
+
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: neutralColor.shade200,
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: Colors.black,
+      unselectedItemColor: neutralColor.shade700,
+      showUnselectedLabels: true,
+      showSelectedLabels: true,
+      selectedLabelStyle: const TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
+      ),
+      selectedIconTheme: const IconThemeData(
+        color: Colors.black,
+      ),
+      unselectedLabelStyle: TextStyle(
+        color: neutralColor.shade500,
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: neutralColor.shade500,
+      ),
+      elevation: 0,
+    ),
+
+    /*--- BOTTOM SHEET ---*/
+
+    bottomSheetTheme: BottomSheetThemeData(
+      backgroundColor: Colors.white,
+      surfaceTintColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(15),
+          topRight: Radius.circular(15),
+        ),
+      ),
+    ),
+
+    /*--- SLIDER ---*/
+
+    sliderTheme: SliderThemeData(
+      valueIndicatorColor: Colors.black,
+      valueIndicatorTextStyle: const TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+        fontSize: 12,
+      ),
+      activeTrackColor: Colors.black,
+      inactiveTrackColor: neutralColor.shade300,
+      thumbColor: Colors.black,
+      overlayColor: neutralColor.shade500.withValues(alpha: 0.2),
+      disabledActiveTrackColor: neutralColor.shade300,
+      disabledInactiveTrackColor: neutralColor.shade200,
+      disabledThumbColor: neutralColor.shade400,
+      tickMarkShape: const RoundSliderTickMarkShape(),
+      trackShape: const RectangularSliderTrackShape(),
     ),
   );
 }
