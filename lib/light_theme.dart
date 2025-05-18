@@ -5,6 +5,8 @@ neutralLightTheme() {
   return ThemeData(
     colorSchemeSeed: Colors.grey,
     scaffoldBackgroundColor: Colors.white,
+    disabledColor: neutralColor.shade400,
+    brightness: Brightness.light,
 
     /*--- APP BAR ---*/
 
@@ -354,6 +356,125 @@ neutralLightTheme() {
       disabledThumbColor: neutralColor.shade400,
       tickMarkShape: const RoundSliderTickMarkShape(),
       trackShape: const RectangularSliderTrackShape(),
+    ),
+
+    /*--- LinearProgressIndicator ---*/
+
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: Colors.black,
+      linearTrackColor: neutralColor.shade300,
+      circularTrackPadding: const EdgeInsets.all(0),
+    ),
+
+    /*--- FloatingActionButton ---*/
+
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: Colors.black,
+      shape: const StadiumBorder(),
+      splashColor: neutralColor.shade700,
+      foregroundColor: Colors.white,
+    ),
+
+    /*--- Checkbox ---*/
+
+    checkboxTheme: CheckboxThemeData(
+      fillColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.black;
+        }
+
+        if (states.contains(WidgetState.disabled)) {
+          return neutralColor.shade300;
+        }
+
+        return Colors.white;
+      }),
+      checkColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.white;
+        }
+
+        return Colors.white;
+      }),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(3),
+        side: BorderSide(
+          color: neutralColor.shade500,
+          width: 1,
+        ),
+      ),
+      visualDensity: VisualDensity.standard,
+      side: BorderSide(
+        color: neutralColor.shade500,
+        width: 1,
+      ),
+    ),
+
+    /*--- RadioButton ---*/
+
+    radioTheme: RadioThemeData(
+      fillColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.disabled)) {
+          return neutralColor.shade400;
+        }
+
+        return Colors.black;
+      }),
+      overlayColor: WidgetStateProperty.all(neutralColor.shade400),
+    ),
+
+    /*--- TextSelection ---*/
+
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: neutralColor.shade900,
+      selectionColor: neutralColor.shade500,
+      selectionHandleColor: neutralColor.shade900,
+    ),
+
+    /*--- TimePicker ---*/
+
+    timePickerTheme: TimePickerThemeData(
+      backgroundColor: Colors.white,
+      elevation: 0,
+      dialHandColor: neutralColor.shade900,
+      hourMinuteColor: neutralColor.shade200,
+      dayPeriodColor: neutralColor.shade200,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: neutralColor.shade500),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: neutralColor.shade500),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Colors.black, width: 2),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            color: neutralColor.shade300,
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Colors.red.shade600, width: 1),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Colors.red.shade600, width: 2),
+        ),
+      ),
+      dayPeriodBorderSide: BorderSide(
+        color: neutralColor.shade400,
+        width: 1,
+      ),
+      dialBackgroundColor: Colors.white,
     ),
   );
 }
