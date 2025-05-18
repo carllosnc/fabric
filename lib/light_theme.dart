@@ -427,7 +427,7 @@ neutralLightTheme() {
 
     textSelectionTheme: TextSelectionThemeData(
       cursorColor: neutralColor.shade900,
-      selectionColor: neutralColor.shade500,
+      selectionColor: neutralColor.shade200,
       selectionHandleColor: neutralColor.shade900,
     ),
 
@@ -475,6 +475,66 @@ neutralLightTheme() {
         width: 1,
       ),
       dialBackgroundColor: Colors.white,
+    ),
+
+    /*--- DatePicker ---*/
+
+    datePickerTheme: DatePickerThemeData(
+      backgroundColor: Colors.white,
+      dayBackgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.black;
+        }
+        return Colors.white;
+      }),
+      dayForegroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.white;
+        }
+        return Colors.black;
+      }),
+      elevation: 0,
+      headerBackgroundColor: Colors.white,
+      headerForegroundColor: Colors.black,
+      headerHeadlineStyle: TextStyle(
+        foreground: Paint()..color = Colors.black,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+      headerHelpStyle: TextStyle(
+        color: Colors.black,
+      ),
+      rangePickerBackgroundColor: Colors.white,
+      rangePickerSurfaceTintColor: Colors.white,
+      rangePickerHeaderHeadlineStyle: TextStyle(
+        foreground: Paint()..color = Colors.black,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+      rangeSelectionBackgroundColor: neutralColor.shade200,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      surfaceTintColor: Colors.white,
+      todayBackgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.black;
+        }
+        return Colors.white;
+      }),
+      todayBorder: BorderSide(
+        width: 1,
+      ),
+      todayForegroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.white;
+        }
+        return Colors.black;
+      }),
+      weekdayStyle: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+      ),
     ),
   );
 }

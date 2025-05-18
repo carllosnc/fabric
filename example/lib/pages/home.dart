@@ -13,6 +13,7 @@ import 'package:example/components/neutral_indicators.dart';
 import 'package:example/components/neutral_check_box.dart';
 import 'package:example/components/neutral_radio_button.dart';
 import 'package:example/components/neutral_time_picker.dart';
+import 'package:example/components/neutral_date_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:neutral/neutral.dart';
 
@@ -26,7 +27,7 @@ class Home extends StatelessWidget {
       drawer: CustomDrawer(),
       bottomNavigationBar: NeutralBottomNavigationBar(),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.only(bottom: 200),
+        padding: const EdgeInsets.only(bottom: 100),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -74,6 +75,8 @@ class Home extends StatelessWidget {
             NeutralRadioButton(),
             Divider(),
             NeutralTimePicker(),
+            Divider(),
+            NeutralDatepicker(),
             Divider(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),

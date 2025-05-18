@@ -477,5 +477,67 @@ neutralDarkTheme() {
       ),
       dialBackgroundColor: Colors.black,
     ),
+
+    /*--- DatePicker ---*/
+
+    datePickerTheme: DatePickerThemeData(
+      backgroundColor: Colors.black,
+      dayBackgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.white;
+        }
+        return Colors.black;
+      }),
+      dayForegroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.black;
+        }
+        return Colors.white;
+      }),
+      elevation: 0,
+      headerBackgroundColor: Colors.black,
+      headerForegroundColor: Colors.white,
+      headerHeadlineStyle: TextStyle(
+        foreground: Paint()..color = Colors.white,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+      headerHelpStyle: TextStyle(
+        color: Colors.white,
+      ),
+      rangePickerBackgroundColor: Colors.black,
+      rangePickerSurfaceTintColor: Colors.black,
+      rangePickerHeaderHeadlineStyle: TextStyle(
+        foreground: Paint()..color = Colors.white,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+      rangeSelectionBackgroundColor: neutralColor.shade800,
+      rangePickerHeaderForegroundColor: neutralColor.shade300,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      surfaceTintColor: Colors.black,
+      todayBackgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.white;
+        }
+        return Colors.black;
+      }),
+      todayBorder: BorderSide(
+        color: neutralColor.shade500,
+        width: 1,
+      ),
+      todayForegroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.black;
+        }
+        return Colors.white;
+      }),
+      weekdayStyle: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
+    ),
   );
 }
