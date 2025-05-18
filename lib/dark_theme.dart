@@ -5,6 +5,8 @@ neutralDarkTheme() {
   return ThemeData(
     colorSchemeSeed: Colors.grey,
     scaffoldBackgroundColor: neutralColor.shade900,
+    disabledColor: neutralColor.shade400,
+    brightness: Brightness.dark,
 
     /*--- APP BAR ---*/
 
@@ -352,6 +354,128 @@ neutralDarkTheme() {
       disabledThumbColor: neutralColor.shade600,
       tickMarkShape: const RoundSliderTickMarkShape(),
       trackShape: const RectangularSliderTrackShape(),
+    ),
+
+    /*--- LinearProgressIndicator ---*/
+
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: Colors.white,
+      linearTrackColor: neutralColor.shade700,
+      circularTrackPadding: const EdgeInsets.all(0),
+    ),
+
+    /*--- FloatingActionButton ---*/
+
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: neutralColor.shade200,
+      shape: const StadiumBorder(),
+      splashColor: neutralColor.shade400,
+      foregroundColor: Colors.black,
+    ),
+
+    /*--- Checkbox ---*/
+
+    checkboxTheme: CheckboxThemeData(
+      fillColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.white;
+        }
+
+        if (states.contains(WidgetState.disabled)) {
+          return neutralColor.shade700;
+        }
+
+        return Colors.transparent;
+      }),
+      checkColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.black;
+        }
+
+        return Colors.white;
+      }),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(3),
+        side: BorderSide(
+          color: neutralColor.shade500,
+          width: 1,
+        ),
+      ),
+      visualDensity: VisualDensity.standard,
+      side: BorderSide(
+        color: neutralColor.shade500,
+        width: 1,
+      ),
+    ),
+
+    /*--- RadioButton ---*/
+
+    radioTheme: RadioThemeData(
+      fillColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.disabled)) {
+          return neutralColor.shade500;
+        }
+        return Colors.white;
+      }),
+      overlayColor: WidgetStateProperty.all(neutralColor.shade400),
+    ),
+
+    /*--- TextSelection ---*/
+
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: Colors.white,
+      selectionColor: neutralColor.shade700,
+      selectionHandleColor: Colors.white,
+    ),
+
+    /*--- TimePicker ---*/
+
+    timePickerTheme: TimePickerThemeData(
+      backgroundColor: Colors.black,
+      elevation: 0,
+      dialHandColor: Colors.white,
+      hourMinuteColor: neutralColor.shade700,
+      dayPeriodColor: neutralColor.shade700,
+      hourMinuteTextColor: Colors.white,
+      dayPeriodTextColor: Colors.white,
+      entryModeIconColor: Colors.white,
+      helpTextStyle: TextStyle(color: Colors.white),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: neutralColor.shade500),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: neutralColor.shade500),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Colors.white, width: 2),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            color: neutralColor.shade700,
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Colors.red.shade200, width: 1),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Colors.red.shade200, width: 2),
+        ),
+      ),
+      dayPeriodBorderSide: BorderSide(
+        color: neutralColor.shade600,
+        width: 1,
+      ),
+      dialBackgroundColor: Colors.black,
     ),
   );
 }
