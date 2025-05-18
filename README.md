@@ -21,7 +21,7 @@ Reference: https://docs.flutter.dev/ui/widgets/material
 - ✅ AppBar
 - ✅ TextSelection
 - ✅ PopupMenu
-- ⬜ DatePicker
+- ✅ DatePicker
 - ⬜ SegmentedButton
 - ⬜ Badge
 - ⬜ SnackBar
