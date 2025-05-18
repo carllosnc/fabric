@@ -16,33 +16,35 @@ class _NeutralSwitchState extends State<NeutralSwitch> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
-      child: Wrap(
-        spacing: 30,
-        children: [
-          Switch(
-            value: _switch1Value,
-            onChanged: null, // First switch remains disabled
-          ),
-          Switch(
-            value: _switch2Value,
-            onChanged: (value) {
-              setState(() {
-                _switch2Value = value;
-              });
-            },
-          ),
-          Switch(
-            value: _switch3Value,
-            onChanged: (value) {
-              setState(() {
-                _switch3Value = value;
-              });
-            },
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        SwitchListTile(
+          title: const Text('Enable Notifications'),
+          subtitle: const Text('Receive alerts and reminders'),
+          value: _switch1Value,
+          onChanged: null, // First switch remains disabled
+        ),
+        SwitchListTile(
+          title: const Text('Dark Mode'),
+          subtitle: const Text('Switch to dark theme'),
+          value: _switch2Value,
+          onChanged: (value) {
+            setState(() {
+              _switch2Value = value;
+            });
+          },
+        ),
+        SwitchListTile(
+          title: const Text('Auto Update'),
+          subtitle: const Text('Keep app updated automatically'),
+          value: _switch3Value,
+          onChanged: (value) {
+            setState(() {
+              _switch3Value = value;
+            });
+          },
+        ),
+      ],
     );
   }
 }
