@@ -9,6 +9,10 @@ import 'package:example/components/neutral_text_field.dart';
 import 'package:example/components/neutral_dialog.dart';
 import 'package:example/components/neutral_bottom_sheet.dart';
 import 'package:example/components/neutral_slider.dart';
+import 'package:example/components/neutral_indicators.dart';
+import 'package:example/components/neutral_check_box.dart';
+import 'package:example/components/neutral_radio_button.dart';
+import 'package:example/components/neutral_time_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:neutral/neutral.dart';
 
@@ -62,6 +66,40 @@ class Home extends StatelessWidget {
             NeutralBottomSheet(),
             Divider(),
             NeutralSlider(),
+            Divider(),
+            NeutralIndicators(),
+            Divider(),
+            NeutralCheckbox(),
+            Divider(),
+            NeutralRadioButton(),
+            Divider(),
+            NeutralTimePicker(),
+            Divider(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                spacing: 10,
+                children: [
+                  FloatingActionButton.large(
+                    onPressed: () {},
+                    child: const Icon(Icons.add),
+                  ),
+                  FloatingActionButton(
+                    onPressed: () {},
+                    child: const Icon(Icons.add),
+                  ),
+                  FloatingActionButton.small(
+                    onPressed: () {},
+                    child: const Icon(Icons.add),
+                  ),
+                  FloatingActionButton.extended(
+                    label: const Text('Add'),
+                    icon: const Icon(Icons.add),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
