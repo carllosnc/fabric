@@ -49,8 +49,8 @@ class _NeutralDatepickerState extends State<NeutralDatepicker> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        spacing: 20,
+      child: Row(
+        spacing: 10,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           FilledButton(

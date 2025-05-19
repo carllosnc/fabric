@@ -356,7 +356,7 @@ neutralDarkTheme() {
       trackShape: const RectangularSliderTrackShape(),
     ),
 
-    /*--- LinearProgressIndicator ---*/
+    /*--- PROGRESS INDICATOR ---*/
 
     progressIndicatorTheme: ProgressIndicatorThemeData(
       color: Colors.white,
@@ -364,7 +364,7 @@ neutralDarkTheme() {
       circularTrackPadding: const EdgeInsets.all(0),
     ),
 
-    /*--- FloatingActionButton ---*/
+    /*--- FLOATING ACTION BUTTON ---*/
 
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: neutralColor.shade200,
@@ -373,7 +373,7 @@ neutralDarkTheme() {
       foregroundColor: Colors.black,
     ),
 
-    /*--- Checkbox ---*/
+    /*--- CHECKBOX ---*/
 
     checkboxTheme: CheckboxThemeData(
       fillColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
@@ -408,7 +408,7 @@ neutralDarkTheme() {
       ),
     ),
 
-    /*--- RadioButton ---*/
+    /*--- RADIOBUTTON ---*/
 
     radioTheme: RadioThemeData(
       fillColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
@@ -420,7 +420,7 @@ neutralDarkTheme() {
       overlayColor: WidgetStateProperty.all(neutralColor.shade400),
     ),
 
-    /*--- TextSelection ---*/
+    /*--- TEXT SELECTION ---*/
 
     textSelectionTheme: TextSelectionThemeData(
       cursorColor: Colors.white,
@@ -428,7 +428,7 @@ neutralDarkTheme() {
       selectionHandleColor: Colors.white,
     ),
 
-    /*--- TimePicker ---*/
+    /*--- TIMEPICKER ---*/
 
     timePickerTheme: TimePickerThemeData(
       backgroundColor: Colors.black,
@@ -478,7 +478,7 @@ neutralDarkTheme() {
       dialBackgroundColor: Colors.black,
     ),
 
-    /*--- DatePicker ---*/
+    /*--- DATE PICKER ---*/
 
     datePickerTheme: DatePickerThemeData(
       backgroundColor: Colors.black,
@@ -540,7 +540,7 @@ neutralDarkTheme() {
       ),
     ),
 
-    /*--- SegmentedButton ---*/
+    /*--- SEGMENTEDBUTTON ---*/
 
     segmentedButtonTheme: SegmentedButtonThemeData(
       style: ButtonStyle(
@@ -573,6 +573,31 @@ neutralDarkTheme() {
           return Colors.black;
         }),
       ),
+    ),
+
+    /*--- TAB BAR ---*/
+
+    tabBarTheme: TabBarTheme(
+      dividerColor: neutralColor.shade700,
+      dividerHeight: 3,
+      indicatorColor: Colors.white,
+      indicatorSize: TabBarIndicatorSize.label,
+      indicator: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: Colors.white,
+            width: 3,
+          ),
+        ),
+      ),
+      unselectedLabelColor: neutralColor.shade500,
+      overlayColor: WidgetStateProperty.resolveWith((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
+          return Colors.white;
+        }
+        return neutralColor.shade700;
+      }),
+      labelColor: Colors.white,
     ),
   );
 }

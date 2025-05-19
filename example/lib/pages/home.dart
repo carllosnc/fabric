@@ -3,6 +3,7 @@ import 'package:example/components/neutral_button.dart';
 import 'package:example/components/neutral_chip.dart';
 import 'package:example/components/neutral_app_bar.dart';
 import 'package:example/components/neutral_drawer.dart';
+import 'package:example/components/neutral_float_action_button.dart';
 import 'package:example/components/neutral_list_tyle.dart';
 import 'package:example/components/neutral_switch.dart';
 import 'package:example/components/neutral_text_field.dart';
@@ -28,7 +29,7 @@ class Home extends StatelessWidget {
       drawer: CustomDrawer(),
       bottomNavigationBar: NeutralBottomNavigationBar(),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.only(bottom: 100),
+        padding: const EdgeInsets.only(bottom: 100, top: 5),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -57,6 +58,8 @@ class Home extends StatelessWidget {
             Divider(),
             NeutralSegmentButton(),
             Divider(),
+            NeutralFloatActionButton(),
+            Divider(),
             NeutralSwitch(),
             Divider(),
             NeutralChip(),
@@ -64,10 +67,6 @@ class Home extends StatelessWidget {
             NeutralListTile(),
             Divider(),
             NeutralTextField(),
-            Divider(),
-            NeutralDialog(),
-            Divider(),
-            NeutralBottomSheet(),
             Divider(),
             NeutralSlider(),
             Divider(),
@@ -81,31 +80,9 @@ class Home extends StatelessWidget {
             Divider(),
             NeutralDatepicker(),
             Divider(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                spacing: 10,
-                children: [
-                  FloatingActionButton.large(
-                    onPressed: () {},
-                    child: const Icon(Icons.add),
-                  ),
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: const Icon(Icons.add),
-                  ),
-                  FloatingActionButton.small(
-                    onPressed: () {},
-                    child: const Icon(Icons.add),
-                  ),
-                  FloatingActionButton.extended(
-                    label: const Text('Add'),
-                    icon: const Icon(Icons.add),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-            )
+            NeutralDialog(),
+            Divider(),
+            NeutralBottomSheet(),
           ],
         ),
       ),
