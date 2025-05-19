@@ -22,11 +22,11 @@ Reference: https://docs.flutter.dev/ui/widgets/material
 - ✅ TextSelection
 - ✅ PopupMenu
 - ✅ DatePicker
+- ✅ TabBar
 - ⬜ SegmentedButton
 - ⬜ Badge
 - ⬜ SnackBar
 - ⬜ AlertDialog
-- ⬜ TabBar
 - ⬜ NavigationRail
 - ⬜ NavigationDrawer
 - ⬜ Menu
