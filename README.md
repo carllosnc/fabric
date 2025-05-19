@@ -23,10 +23,10 @@ Reference: https://docs.flutter.dev/ui/widgets/material
 - ✅ PopupMenu
 - ✅ DatePicker
 - ✅ TabBar
-- ⬜ SegmentedButton
+- ✅ AlertDialog
+- ✅ SegmentedButton
 - ⬜ Badge
 - ⬜ SnackBar
-- ⬜ AlertDialog
 - ⬜ NavigationRail
 - ⬜ NavigationDrawer
 - ⬜ Menu
