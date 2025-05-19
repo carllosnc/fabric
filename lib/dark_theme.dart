@@ -634,5 +634,20 @@ neutralDarkTheme() {
         right: 20,
       ),
     ),
+
+    /*--- SNACKBAR ---*/
+
+    snackBarTheme: SnackBarThemeData(
+      backgroundColor: Colors.white,
+      actionTextColor: Colors.black,
+      disabledActionBackgroundColor: Colors.white,
+      disabledActionTextColor: neutralColor.shade500,
+      actionBackgroundColor: neutralColor.shade300,
+      closeIconColor: Colors.black,
+      contentTextStyle: const TextStyle(
+        color: Colors.black,
+      ),
+      elevation: 0,
+    ),
   );
 }
