@@ -25,8 +25,8 @@ Reference: https://docs.flutter.dev/ui/widgets/material
 - ✅ TabBar
 - ✅ AlertDialog
 - ✅ SegmentedButton
-- ⬜ Badge
 - ⬜ SnackBar
+- ⬜ Badge
 - ⬜ NavigationRail
 - ⬜ NavigationDrawer
 - ⬜ Menu
