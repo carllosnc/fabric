@@ -85,7 +85,7 @@ neutralDarkTheme() {
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         overlayColor: WidgetStateProperty.all(
-          neutralColor.shade700,
+          neutralColor.shade600,
         ),
         textStyle: WidgetStateProperty.all(
           const TextStyle(fontWeight: FontWeight.bold),
@@ -537,6 +537,41 @@ neutralDarkTheme() {
       weekdayStyle: TextStyle(
         fontWeight: FontWeight.bold,
         color: Colors.white,
+      ),
+    ),
+
+    /*--- SegmentedButton ---*/
+
+    segmentedButtonTheme: SegmentedButtonThemeData(
+      style: ButtonStyle(
+        overlayColor: WidgetStateProperty.all(neutralColor.shade700),
+        surfaceTintColor: WidgetStateProperty.all(Colors.black),
+        textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.selected)) {
+            return const TextStyle(
+              fontWeight: FontWeight.bold,
+            );
+          }
+          return TextStyle(
+            fontWeight: FontWeight.normal,
+          );
+        }),
+        side: WidgetStateProperty.all(BorderSide(
+          color: neutralColor.shade600,
+          width: 1,
+        )),
+        foregroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.selected)) {
+            return Colors.white;
+          }
+          return neutralColor.shade400;
+        }),
+        backgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.selected)) {
+            return neutralColor.shade800;
+          }
+          return Colors.black;
+        }),
       ),
     ),
   );
