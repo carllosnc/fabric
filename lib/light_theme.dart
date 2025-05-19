@@ -596,5 +596,40 @@ neutralLightTheme() {
       }),
       labelColor: Colors.black,
     ),
+
+    /*--- EXPANSION PANEL ---*/
+
+    expansionTileTheme: ExpansionTileThemeData(
+      expandedAlignment: Alignment.topLeft,
+      expansionAnimationStyle: AnimationStyle(
+        curve: Curves.fastOutSlowIn,
+        duration: const Duration(milliseconds: 200),
+        reverseDuration: const Duration(milliseconds: 200),
+      ),
+      collapsedShape: Border(
+        bottom: BorderSide(
+          color: Colors.white,
+          width: 4,
+        ),
+      ),
+      shape: Border(
+        bottom: BorderSide(
+          color: Colors.white,
+          width: 4,
+        ),
+      ),
+      clipBehavior: Clip.none,
+      collapsedBackgroundColor: Colors.white,
+      collapsedIconColor: Colors.black,
+      iconColor: Colors.black,
+      backgroundColor: neutralColor.shade200,
+      textColor: Colors.black,
+      childrenPadding: const EdgeInsets.only(
+        bottom: 15,
+        top: 0,
+        left: 20,
+        right: 20,
+      ),
+    ),
   );
 }
