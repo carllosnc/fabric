@@ -766,5 +766,20 @@ neutralLightTheme() {
       backgroundColor: Colors.red,
       textColor: Colors.white,
     ),
+
+    /*--- NAVIGATION RAIL ---*/
+
+    navigationRailTheme: NavigationRailThemeData(
+      backgroundColor: Colors.white,
+      elevation: 0,
+      selectedIconTheme: IconThemeData(
+        color: Colors.black,
+      ),
+      unselectedIconTheme: IconThemeData(
+        color: Colors.black,
+      ),
+      indicatorColor: neutralColor.shade300,
+      labelType: NavigationRailLabelType.none,
+    ),
   );
 }

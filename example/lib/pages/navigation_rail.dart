@@ -16,6 +16,7 @@ class _NavigatilRailPageState extends State<NavigatilRailPage> {
       body: Row(
         children: [
           NavigationRail(
+            labelType: NavigationRailLabelType.all, // Show all labels
             leading: IconButton(
               icon: const Icon(Icons.arrow_back),
               onPressed: () {
@@ -31,14 +32,17 @@ class _NavigatilRailPageState extends State<NavigatilRailPage> {
             destinations: const <NavigationRailDestination>[
               NavigationRailDestination(
                 icon: Icon(Icons.home_outlined),
+                selectedIcon: Icon(Icons.home),
                 label: Text('Home'),
               ),
               NavigationRailDestination(
                 icon: Icon(Icons.settings_outlined),
+                selectedIcon: Icon(Icons.settings),
                 label: Text('Settings'),
               ),
               NavigationRailDestination(
                 icon: Icon(Icons.person_outline),
+                selectedIcon: Icon(Icons.person),
                 label: Text('Profile'),
               ),
             ],
