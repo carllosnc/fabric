@@ -47,50 +47,138 @@ neutralDarkTheme() {
       labelSmall: TextStyle(color: neutralColor.shade100),
     ),
 
-    /*--- BUTTONS ---*/
+    /*--- ELEVATED BUTTON ---*/
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
+            return const TextStyle(
+              fontWeight: FontWeight.bold,
+              decoration: TextDecoration.lineThrough,
+              decorationColor: Colors.white,
+            );
+          }
+          return const TextStyle(
+            fontWeight: FontWeight.bold,
+          );
+        }),
+        overlayColor: WidgetStateProperty.all(neutralColor.shade700),
+        foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
+            return neutralColor.shade400;
+          }
+
+          return Colors.white;
+        }),
+        backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
+            return neutralColor.shade600;
+          }
+          return neutralColor.shade700;
+        }),
+      ),
+    ),
+
+    /*--- FILLED BUTTON ---*/
 
     filledButtonTheme: FilledButtonThemeData(
       style: ButtonStyle(
-        textStyle: WidgetStateProperty.all(
-          const TextStyle(
+        textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
+            return const TextStyle(
+              fontWeight: FontWeight.bold,
+              decoration: TextDecoration.lineThrough,
+              decorationColor: Colors.white,
+            );
+          }
+          return const TextStyle(
             fontWeight: FontWeight.bold,
-          ),
-        ),
+          );
+        }),
         overlayColor: WidgetStateProperty.all(neutralColor.shade400),
-        foregroundColor: WidgetStateProperty.all(neutralColor.shade900),
+        foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
+            return neutralColor.shade400;
+          }
+
+          return Colors.black;
+        }),
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
-            return Colors.white.withValues(alpha: 0.5);
+            return neutralColor.shade600;
           }
           return Colors.white;
         }),
       ),
     ),
+
+    /*--- OUTLINED BUTTON ---*/
+
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: ButtonStyle(
-        side: WidgetStateProperty.all(BorderSide(
-          color: neutralColor.shade500,
-          width: 1,
-        )),
+        side: WidgetStateProperty.resolveWith<BorderSide>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
+            return BorderSide(
+              color: neutralColor.shade700,
+              width: 1,
+            );
+          }
+          return BorderSide(
+            color: neutralColor.shade400,
+            width: 1,
+          );
+        }),
         overlayColor: WidgetStateProperty.all(
           neutralColor.shade700,
         ),
-        textStyle: WidgetStateProperty.all(
-          const TextStyle(fontWeight: FontWeight.bold),
-        ),
-        foregroundColor: WidgetStateProperty.all(Colors.white),
-        backgroundColor: WidgetStateProperty.all(neutralColor.shade900),
+        textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
+            return const TextStyle(
+              fontWeight: FontWeight.bold,
+              decoration: TextDecoration.lineThrough,
+              decorationColor: Colors.white,
+            );
+          }
+          return const TextStyle(
+            fontWeight: FontWeight.bold,
+          );
+        }),
+        foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
+            return neutralColor.shade400;
+          }
+          return Colors.white;
+        }),
+        backgroundColor: WidgetStateProperty.all(Colors.transparent),
       ),
     ),
+
+    /*--- TEXT BUTTON ---*/
+
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         overlayColor: WidgetStateProperty.all(
-          neutralColor.shade600,
+          neutralColor.shade700,
         ),
-        textStyle: WidgetStateProperty.all(
-          const TextStyle(fontWeight: FontWeight.bold),
-        ),
-        foregroundColor: WidgetStateProperty.all(Colors.white),
+        textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
+            return const TextStyle(
+              fontWeight: FontWeight.bold,
+              decoration: TextDecoration.lineThrough,
+              decorationColor: Colors.white,
+            );
+          }
+          return const TextStyle(
+            fontWeight: FontWeight.bold,
+          );
+        }),
+        foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
+            return neutralColor.shade400;
+          }
+          return Colors.white;
+        }),
       ),
     ),
 
@@ -330,8 +418,8 @@ neutralDarkTheme() {
       modalBarrierColor: neutralColor.shade600.withValues(alpha: 0.7),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+          topLeft: Radius.circular(0),
+          topRight: Radius.circular(0),
         ),
       ),
     ),
