@@ -737,5 +737,37 @@ neutralDarkTheme() {
       ),
       elevation: 0,
     ),
+
+    /*--- ICON BUTTON ---*/
+
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(
+        overlayColor: WidgetStateProperty.all(neutralColor.shade700),
+        side: WidgetStateProperty.all(
+          BorderSide(
+            color: Colors.transparent,
+            width: 0,
+          ),
+        ),
+        foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
+            return neutralColor.shade400;
+          }
+          return Colors.white;
+        }),
+        backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+          return Colors.transparent;
+        }),
+      ),
+    ),
+
+    /*--- ICON BUTTON ---*/
+
+    badgeTheme: BadgeThemeData(
+      alignment: Alignment.topCenter,
+      offset: const Offset(0, -4),
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
+    ),
   );
 }

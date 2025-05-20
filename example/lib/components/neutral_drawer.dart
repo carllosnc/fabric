@@ -25,6 +25,15 @@ class CustomDrawer extends StatelessWidget {
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: FilledButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/navigation_rail');
+              },
+              child: Text('Navigation Rail'),
+            ),
+          ),
           ListTile(
             leading: Icon(Icons.home_outlined),
             title: Text('Home'),

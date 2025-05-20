@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './pages/home.dart';
 import 'package:neutral/neutral.dart';
+import './pages/navigation_rail.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -12,6 +13,9 @@ class App extends StatelessWidget {
       darkTheme: neutralDarkTheme(),
       debugShowCheckedModeBanner: false,
       home: Home(),
+      routes: {
+        '/navigation_rail': (context) => NavigatilRailPage(),
+      },
     );
   }
 }

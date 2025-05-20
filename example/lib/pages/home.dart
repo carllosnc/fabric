@@ -18,6 +18,7 @@ import 'package:example/components/neutral_date_picker.dart';
 import 'package:example/components/neutral_segment_button.dart';
 import 'package:example/components/neutral_expansion_panel.dart';
 import 'package:example/components/neutral_snackbar.dart';
+import 'package:example/components/neutral_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:neutral/neutral.dart';
 
@@ -59,6 +60,8 @@ class Home extends StatelessWidget {
             NeutralButton(),
             Divider(),
             NeutralSegmentButton(),
+            Divider(),
+            NeutralIconButton(),
             Divider(),
             NeutralFloatActionButton(),
             Divider(),

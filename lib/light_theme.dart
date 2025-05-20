@@ -3,7 +3,7 @@ import './colors.dart';
 
 neutralLightTheme() {
   return ThemeData(
-    colorSchemeSeed: Colors.black,
+    colorSchemeSeed: Colors.grey,
     scaffoldBackgroundColor: Colors.white,
     disabledColor: neutralColor.shade400,
     brightness: Brightness.light,
@@ -733,6 +733,38 @@ neutralLightTheme() {
         color: Colors.white,
       ),
       elevation: 0,
+    ),
+
+    /*--- ICON BUTTON ---*/
+
+    iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(
+        overlayColor: WidgetStateProperty.all(neutralColor.shade300),
+        side: WidgetStateProperty.all(
+          BorderSide(
+            color: Colors.transparent,
+            width: 0,
+          ),
+        ),
+        foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
+            return neutralColor.shade400;
+          }
+          return Colors.black;
+        }),
+        backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+          return Colors.transparent;
+        }),
+      ),
+    ),
+
+    /*--- ICON BUTTON ---*/
+
+    badgeTheme: BadgeThemeData(
+      alignment: Alignment.topCenter,
+      offset: const Offset(0, -4),
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
     ),
   );
 }
