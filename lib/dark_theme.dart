@@ -836,5 +836,44 @@ neutralDarkTheme() {
         borderRadius: BorderRadius.circular(10),
       ),
     ),
+
+    /*--- NAVIGATION BAR ---*/
+
+    navigationBarTheme: NavigationBarThemeData(
+      backgroundColor: Colors.black,
+      indicatorColor: neutralColor.shade700,
+      surfaceTintColor: Colors.black,
+      iconTheme: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.selected)) {
+            return IconThemeData(
+              color: Colors.white,
+            );
+          }
+
+          return IconThemeData(
+            color: neutralColor.shade500,
+          );
+        },
+      ),
+      labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+      labelTextStyle: WidgetStateProperty.resolveWith(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.selected)) {
+            return TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            );
+          }
+          return TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+            color: neutralColor.shade500,
+          );
+        },
+      ),
+      elevation: 0,
+    ),
   );
 }

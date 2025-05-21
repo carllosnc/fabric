@@ -4,31 +4,33 @@
 
 Reference: https://docs.flutter.dev/ui/widgets/material
 
-- ✅ Button(Filled, Outlined, TextButton)
-- ✅ Checkbox
-- ✅ Chip
-- ✅ Dialog
-- ✅ Drawer
-- ✅ ListTile
-- ✅ RadioButton
-- ✅ Slider
-- ✅ Switch
-- ✅ TextField
-- ✅ TimePicker
+- ✅ AlertDialog
+- ✅ AppBar
+- ✅ Badge
 - ✅ BottomNavigationBar
 - ✅ BottomSheet
-- ✅ Indicators(LinearProgressIndicator, CircularProgressIndicator)
-- ✅ AppBar
-- ✅ TextSelection
-- ✅ PopupMenu(MenuItem, Submenu)
+- ✅ Button(Filled, Outlined, TextButton)
+- ✅ Cards
+- ✅ Checkbox
+- ✅ Chip
 - ✅ DatePicker
-- ✅ TabBar
-- ✅ AlertDialog
-- ✅ SegmentedButton
-- ✅ SnackBar
-- ✅ Badge
+- ✅ Dialog
+- ✅ Drawer
+- ✅ Indicators(LinearProgressIndicator, CircularProgressIndicator)
+- ✅ ListTile
+- ✅ NavigationBar
 - ✅ NavigationRail
-- ⬜ Cards
+- ✅ PopupMenu(MenuItem, Submenu)
+- ✅ RadioButton
+- ✅ SegmentedButton
+- ✅ Slider
+- ✅ SnackBar
+- ✅ Switch
+- ✅ TabBar
+- ✅ TextButton
+- ✅ TextField
+- ✅ TextSelection
+- ✅ TimePicker
 
 ---
 
