@@ -55,6 +55,8 @@ To more information about unplublished packages, see: https://dart.dev/tools/pub
 <img src="prints/ex03.png">
 <img src="prints/ex04.png">
 <img src="prints/ex05.png">
+<img src="prints/ex06.png">
+<img src="prints/ex07.png">
 
 ---
 
