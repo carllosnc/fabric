@@ -870,5 +870,12 @@ neutralLightTheme() {
       ),
       elevation: 0,
     ),
+
+    /*--- SEARCH ANCHOR ---*/
+
+    searchViewTheme: SearchViewThemeData(
+      backgroundColor: Colors.white,
+      surfaceTintColor: Colors.white,
+    ),
   );
 }

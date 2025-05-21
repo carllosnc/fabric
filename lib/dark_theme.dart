@@ -875,5 +875,12 @@ neutralDarkTheme() {
       ),
       elevation: 0,
     ),
+
+    /*--- SEARCH ANCHOR ---*/
+
+    searchViewTheme: SearchViewThemeData(
+      backgroundColor: Colors.black,
+      surfaceTintColor: Colors.black,
+    ),
   );
 }

@@ -33,6 +33,7 @@ Reference: https://docs.flutter.dev/ui/widgets/material
 - ✅ TextField
 - ✅ TextSelection
 - ✅ TimePicker
+- ✅ SearchAnchor
 
 ## Install
 
