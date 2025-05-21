@@ -63,7 +63,7 @@ neutralDarkTheme() {
             fontWeight: FontWeight.bold,
           );
         }),
-        overlayColor: WidgetStateProperty.all(neutralColor.shade700),
+        overlayColor: WidgetStateProperty.all(neutralColor.shade500),
         foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
             return neutralColor.shade400;
