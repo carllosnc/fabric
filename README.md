@@ -34,6 +34,19 @@ Reference: https://docs.flutter.dev/ui/widgets/material
 - ✅ TextSelection
 - ✅ TimePicker
 
+## Install
+
+This is a unpublished package, so you need to add it to your `pubspec.yaml` file.
+
+```yml
+dependencies:
+  localize:
+    git:
+      url: https://github.com/carllosnc/neutral.git
+```
+
+To more information about unplublished packages, see: https://dart.dev/tools/pub/package-layout#unpublished-pac
+
 ## Examples
 
 <img src="prints/ex01.png">
