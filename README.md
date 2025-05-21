@@ -40,7 +40,7 @@ This is a unpublished package, so you need to add it to your `pubspec.yaml` file
 
 ```yml
 dependencies:
-  localize:
+  neutral:
     git:
       url: https://github.com/carllosnc/neutral.git
 ```
