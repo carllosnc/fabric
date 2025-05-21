@@ -20,15 +20,15 @@ Reference: https://docs.flutter.dev/ui/widgets/material
 - ✅ Indicators(LinearProgressIndicator, CircularProgressIndicator)
 - ✅ AppBar
 - ✅ TextSelection
-- ✅ PopupMenu
+- ✅ PopupMenu(MenuItem, Submenu)
 - ✅ DatePicker
 - ✅ TabBar
 - ✅ AlertDialog
 - ✅ SegmentedButton
 - ✅ SnackBar
 - ✅ Badge
-- ⬜ NavigationRail
-- ⬜ Menu
+- ✅ NavigationRail
+- ⬜ Cards
 
 ---
 
