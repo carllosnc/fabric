@@ -814,5 +814,22 @@ neutralLightTheme() {
         )),
       ),
     ),
+
+    /*--- CARD ---*/
+
+    cardTheme: CardTheme(
+      surfaceTintColor: neutralColor.shade100,
+      clipBehavior: Clip.none,
+      color: neutralColor.shade100,
+      elevation: 0,
+      margin: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(
+        side: BorderSide(
+          color: neutralColor.shade300,
+          width: 1,
+        ),
+        borderRadius: BorderRadius.circular(10),
+      ),
+    ),
   );
 }

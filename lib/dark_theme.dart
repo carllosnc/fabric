@@ -799,24 +799,42 @@ neutralDarkTheme() {
     /*--- MENU ---*/
 
     menuTheme: MenuThemeData(
-        style: MenuStyle(
-      alignment: AlignmentDirectional.topEnd,
-      surfaceTintColor: WidgetStateProperty.all(Colors.black),
-      side: WidgetStateProperty.resolveWith<BorderSide>((Set<WidgetState> states) {
-        return BorderSide(
-          color: neutralColor.shade900,
-          width: 2,
-        );
-      }),
-      elevation: WidgetStateProperty.resolveWith<double>((Set<WidgetState> states) {
-        return 0;
-      }),
-      backgroundColor: WidgetStateProperty.all(neutralColor.shade700),
-      shape: WidgetStateProperty.all(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+      style: MenuStyle(
+        alignment: AlignmentDirectional.topEnd,
+        surfaceTintColor: WidgetStateProperty.all(Colors.black),
+        side: WidgetStateProperty.resolveWith<BorderSide>((Set<WidgetState> states) {
+          return BorderSide(
+            color: neutralColor.shade900,
+            width: 2,
+          );
+        }),
+        elevation: WidgetStateProperty.resolveWith<double>((Set<WidgetState> states) {
+          return 0;
+        }),
+        backgroundColor: WidgetStateProperty.all(neutralColor.shade700),
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
       ),
-    )),
+    ),
+
+    /*--- CARD ---*/
+
+    cardTheme: CardTheme(
+      surfaceTintColor: Colors.black,
+      clipBehavior: Clip.none,
+      color: Colors.black,
+      elevation: 0,
+      margin: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(
+        side: BorderSide(
+          color: neutralColor.shade700,
+          width: 1,
+        ),
+        borderRadius: BorderRadius.circular(10),
+      ),
+    ),
   );
 }
