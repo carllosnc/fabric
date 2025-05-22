@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'colors.dart';
 
-neutralDarkTheme() {
+neutralDarkTheme({
+  String? fontFamily,
+}) {
   return ThemeData(
     colorSchemeSeed: Colors.grey,
     scaffoldBackgroundColor: neutralColor.shade900,
     disabledColor: neutralColor.shade400,
     brightness: Brightness.dark,
+    fontFamily: fontFamily,
 
     /*--- APP BAR ---*/
 
