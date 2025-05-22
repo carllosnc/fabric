@@ -61,6 +61,25 @@ MaterialApp(
 ...
 ```
 
+- `neutralLightTheme()` - Apply light theme
+- `neutralDarkTheme()` - Apply dark theme
+- `neutralColor` - Neutral color palette
+
+## Color Palette
+
+| Index | Hex Color | Example Usage |
+|-------|-----------|---------------|
+| 50 | `0xFFFAFAFA` | `neutralColors.shade50` |
+| 100 | `0xFFF5F5F5` | `neutralColors.shade100` |
+| 200 | `0xFFE5E5E5` | `neutralColors.shade200` |
+| 300 | `0xFFD4D4D4` | `neutralColors.shade300` |
+| 400 | `0xFFA3A3A3` | `neutralColors.shade400` |
+| 500 | `0xFF737373` | `neutralColors.shade500` |
+| 600 | `0xFF525252` | `neutralColors.shade600` |
+| 700 | `0xFF404040` | `neutralColors.shade700` |
+| 800 | `0xFF262626` | `neutralColors.shade800` |
+| 900 | `0xFF171717` | `neutralColors.shade900` |
+
 ## Examples
 
 <img src="prints/ex01.png">
