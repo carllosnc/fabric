@@ -48,6 +48,19 @@ dependencies:
 
 To more information about unplublished packages, see: https://dart.dev/tools/pub/package-layout#unpublished-pac
 
+
+## Usage
+
+```dart
+import 'package:neutral/neutral.dart';
+...
+MaterialApp(
+  theme: neutralLightTheme(),
+  darkTheme: neutralDarkTheme(),
+);
+...
+```
+
 ## Examples
 
 <img src="prints/ex01.png">
