@@ -18,8 +18,8 @@ neutralDarkTheme({
         color: Colors.white,
         size: 24,
       ),
-      titleTextStyle: const TextStyle(
-        fontStyle: FontStyle.normal,
+      titleTextStyle: TextStyle(
+        fontFamily: fontFamily,
         color: Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.bold,
@@ -56,13 +56,15 @@ neutralDarkTheme({
       style: ButtonStyle(
         textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
-            return const TextStyle(
+            return TextStyle(
+              fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.lineThrough,
               decorationColor: Colors.white,
             );
           }
-          return const TextStyle(
+          return TextStyle(
+            fontFamily: fontFamily,
             fontWeight: FontWeight.bold,
           );
         }),
@@ -89,13 +91,15 @@ neutralDarkTheme({
       style: ButtonStyle(
         textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
-            return const TextStyle(
+            return TextStyle(
+              fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.lineThrough,
               decorationColor: Colors.white,
             );
           }
-          return const TextStyle(
+          return TextStyle(
+            fontFamily: fontFamily,
             fontWeight: FontWeight.bold,
           );
         }),
@@ -137,13 +141,15 @@ neutralDarkTheme({
         ),
         textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
-            return const TextStyle(
+            return TextStyle(
+              fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.lineThrough,
               decorationColor: Colors.white,
             );
           }
-          return const TextStyle(
+          return TextStyle(
+            fontFamily: fontFamily,
             fontWeight: FontWeight.bold,
           );
         }),
@@ -166,13 +172,15 @@ neutralDarkTheme({
         ),
         textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
-            return const TextStyle(
+            return TextStyle(
+              fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.lineThrough,
               decorationColor: Colors.white,
             );
           }
-          return const TextStyle(
+          return TextStyle(
+            fontFamily: fontFamily,
             fontWeight: FontWeight.bold,
           );
         }),

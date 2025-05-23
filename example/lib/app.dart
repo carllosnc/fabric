@@ -9,8 +9,12 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: neutralLightTheme(),
-      darkTheme: neutralDarkTheme(),
+      theme: neutralLightTheme(
+        fontFamily: "BricolageGrotesque",
+      ),
+      darkTheme: neutralDarkTheme(
+        fontFamily: "BricolageGrotesque",
+      ),
       debugShowCheckedModeBanner: false,
       home: Home(),
       routes: {
