@@ -24,16 +24,17 @@ Reference: https://docs.flutter.dev/ui/widgets/material
 - ✅ NavigationRail
 - ✅ PopupMenu(MenuItem, Submenu)
 - ✅ RadioButton
+- ✅ SearchAnchor
 - ✅ SegmentedButton
 - ✅ Slider
 - ✅ SnackBar
 - ✅ Switch
 - ✅ TabBar
+- ✅ Text
 - ✅ TextButton
 - ✅ TextField
 - ✅ TextSelection
 - ✅ TimePicker
-- ✅ SearchAnchor
 
 ## Install
 
