@@ -22,6 +22,7 @@ import 'package:example/components/neutral_menu_bar.dart';
 import 'package:example/components/neutral_cards.dart';
 import 'package:example/components/neutral_navigation_bar.dart';
 import 'package:example/components/neutral_search_anchor.dart';
+import 'package:example/components/neutral_text.dart';
 import 'package:flutter/material.dart';
 import 'package:neutral/neutral.dart';
 
@@ -83,6 +84,8 @@ class Home extends StatelessWidget {
             NeutralIndicators(),
             Divider(),
             NeutralCheckbox(),
+            Divider(),
+            NeutralText(),
             Divider(),
             NeutralRadioButton(),
             Divider(),
