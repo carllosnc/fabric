@@ -33,21 +33,21 @@ neutralDarkTheme({
     /*--- TEXT ---*/
 
     textTheme: TextTheme(
-      displayLarge: TextStyle(color: neutralColor.shade100),
-      displayMedium: TextStyle(color: neutralColor.shade100),
-      displaySmall: TextStyle(color: neutralColor.shade100),
-      headlineLarge: TextStyle(color: neutralColor.shade100),
-      headlineMedium: TextStyle(color: neutralColor.shade100),
-      headlineSmall: TextStyle(color: neutralColor.shade100),
-      titleLarge: TextStyle(color: neutralColor.shade100),
-      titleMedium: TextStyle(color: neutralColor.shade100),
-      titleSmall: TextStyle(color: neutralColor.shade100),
-      bodyLarge: TextStyle(color: neutralColor.shade100),
-      bodyMedium: TextStyle(color: neutralColor.shade100),
-      labelLarge: TextStyle(color: neutralColor.shade100),
-      bodySmall: TextStyle(color: neutralColor.shade100),
-      labelMedium: TextStyle(color: neutralColor.shade100),
-      labelSmall: TextStyle(color: neutralColor.shade100),
+      displayLarge: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      displayMedium: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      displaySmall: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      headlineLarge: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      headlineMedium: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      headlineSmall: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      titleLarge: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      titleMedium: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      titleSmall: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      bodyLarge: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      bodyMedium: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      labelLarge: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      bodySmall: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      labelMedium: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
+      labelSmall: TextStyle(color: neutralColor.shade100, fontFamily: fontFamily),
     ),
 
     /*--- ELEVATED BUTTON ---*/
@@ -209,7 +209,8 @@ neutralDarkTheme({
         horizontal: 20,
         vertical: 0,
       ),
-      titleTextStyle: const TextStyle(
+      titleTextStyle: TextStyle(
+        fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
         fontSize: 16,
       ),
@@ -252,13 +253,9 @@ neutralDarkTheme({
       ),
       elevation: 0,
       secondarySelectedColor: Colors.grey.shade800,
-      secondaryLabelStyle: const TextStyle(
-        fontSize: 13,
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-      ),
       selectedColor: Colors.grey.shade800,
-      labelStyle: const TextStyle(
+      labelStyle: TextStyle(
+        fontFamily: fontFamily,
         fontSize: 13,
         color: Colors.white,
       ),
@@ -267,7 +264,10 @@ neutralDarkTheme({
     /*--- TOOLTIP ---*/
 
     tooltipTheme: TooltipThemeData(
-      textStyle: TextStyle(color: neutralColor.shade900),
+      textStyle: TextStyle(
+        fontFamily: fontFamily,
+        color: Colors.black,
+      ),
       decoration: BoxDecoration(
         color: Colors.grey.shade300,
         borderRadius: BorderRadius.circular(6),
@@ -280,13 +280,15 @@ neutralDarkTheme({
       color: Colors.grey.shade800,
       elevation: 0,
       labelTextStyle: WidgetStateProperty.all(
-        const TextStyle(
+        TextStyle(
+          fontFamily: fontFamily,
           fontWeight: FontWeight.bold,
           color: Colors.white,
           fontSize: 14,
         ),
       ),
       textStyle: TextStyle(
+        fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
         color: neutralColor.shade900,
         fontSize: 16,
@@ -334,10 +336,10 @@ neutralDarkTheme({
 
     inputDecorationTheme: InputDecorationTheme(
       /* Label and hint */
-      labelStyle: TextStyle(color: Colors.white),
-      hintStyle: TextStyle(color: neutralColor.shade500),
-      errorStyle: TextStyle(color: Colors.red.shade200),
-      helperStyle: TextStyle(color: neutralColor.shade600),
+      labelStyle: TextStyle(color: Colors.white, fontFamily: fontFamily),
+      hintStyle: TextStyle(color: neutralColor.shade500, fontFamily: fontFamily),
+      errorStyle: TextStyle(color: Colors.red.shade200, fontFamily: fontFamily),
+      helperStyle: TextStyle(color: neutralColor.shade600, fontFamily: fontFamily),
 
       /* padding */
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -379,12 +381,14 @@ neutralDarkTheme({
       barrierColor: neutralColor.shade600.withValues(alpha: 0.7),
       surfaceTintColor: neutralColor.shade900,
       elevation: 0,
-      titleTextStyle: const TextStyle(
+      titleTextStyle: TextStyle(
+        fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
         color: Colors.white,
         fontSize: 16,
       ),
       contentTextStyle: TextStyle(
+        fontFamily: fontFamily,
         fontWeight: FontWeight.normal,
         color: neutralColor.shade400,
         fontSize: 16,
@@ -405,7 +409,8 @@ neutralDarkTheme({
       unselectedItemColor: neutralColor.shade500,
       showUnselectedLabels: true,
       showSelectedLabels: true,
-      selectedLabelStyle: const TextStyle(
+      selectedLabelStyle: TextStyle(
+        fontFamily: fontFamily,
         color: Colors.white,
         fontWeight: FontWeight.bold,
       ),
@@ -413,6 +418,7 @@ neutralDarkTheme({
         color: Colors.white,
       ),
       unselectedLabelStyle: TextStyle(
+        fontFamily: fontFamily,
         color: neutralColor.shade500,
       ),
       unselectedIconTheme: IconThemeData(
@@ -439,7 +445,8 @@ neutralDarkTheme({
 
     sliderTheme: SliderThemeData(
       valueIndicatorColor: Colors.white,
-      valueIndicatorTextStyle: const TextStyle(
+      valueIndicatorTextStyle: TextStyle(
+        fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
         color: Colors.black,
         fontSize: 12,
@@ -597,16 +604,19 @@ neutralDarkTheme({
       headerBackgroundColor: Colors.black,
       headerForegroundColor: Colors.white,
       headerHeadlineStyle: TextStyle(
+        fontFamily: fontFamily,
         foreground: Paint()..color = Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
       headerHelpStyle: TextStyle(
+        fontFamily: fontFamily,
         color: Colors.white,
       ),
       rangePickerBackgroundColor: Colors.black,
       rangePickerSurfaceTintColor: Colors.black,
       rangePickerHeaderHeadlineStyle: TextStyle(
+        fontFamily: fontFamily,
         foreground: Paint()..color = Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.bold,
@@ -634,12 +644,13 @@ neutralDarkTheme({
         return Colors.white;
       }),
       weekdayStyle: TextStyle(
+        fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
         color: Colors.white,
       ),
     ),
 
-    /*--- SEGMENTEDBUTTON ---*/
+    /*--- SEGMENTED BUTTON ---*/
 
     segmentedButtonTheme: SegmentedButtonThemeData(
       style: ButtonStyle(
@@ -647,11 +658,13 @@ neutralDarkTheme({
         surfaceTintColor: WidgetStateProperty.all(Colors.black),
         textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
-            return const TextStyle(
+            return TextStyle(
+              fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
             );
           }
           return TextStyle(
+            fontFamily: fontFamily,
             fontWeight: FontWeight.normal,
           );
         }),
@@ -743,7 +756,8 @@ neutralDarkTheme({
       disabledActionTextColor: neutralColor.shade500,
       actionBackgroundColor: neutralColor.shade300,
       closeIconColor: Colors.black,
-      contentTextStyle: const TextStyle(
+      contentTextStyle: TextStyle(
+        fontFamily: fontFamily,
         color: Colors.black,
       ),
       elevation: 0,
@@ -872,12 +886,14 @@ neutralDarkTheme({
         (Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
             return TextStyle(
+              fontFamily: fontFamily,
               fontSize: 12,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             );
           }
           return TextStyle(
+            fontFamily: fontFamily,
             fontSize: 12,
             fontWeight: FontWeight.bold,
             color: neutralColor.shade500,
