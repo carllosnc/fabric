@@ -377,7 +377,7 @@ neutralDarkTheme({
 
     /*--- DIALOG ---*/
 
-    dialogTheme: DialogTheme(
+    dialogTheme: DialogThemeData(
       barrierColor: neutralColor.shade600.withValues(alpha: 0.7),
       surfaceTintColor: neutralColor.shade900,
       elevation: 0,
@@ -689,7 +689,7 @@ neutralDarkTheme({
 
     /*--- TAB BAR ---*/
 
-    tabBarTheme: TabBarTheme(
+    tabBarTheme: TabBarThemeData(
       dividerColor: neutralColor.shade700,
       dividerHeight: 3,
       indicatorColor: Colors.white,
@@ -847,7 +847,7 @@ neutralDarkTheme({
 
     /*--- CARD ---*/
 
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       surfaceTintColor: Colors.black,
       clipBehavior: Clip.none,
       color: Colors.black,
@@ -908,6 +908,20 @@ neutralDarkTheme({
     searchViewTheme: SearchViewThemeData(
       backgroundColor: Colors.black,
       surfaceTintColor: Colors.black,
+    ),
+
+    /*--- BANNER ---*/
+
+    bannerTheme: MaterialBannerThemeData(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      surfaceTintColor: neutralColor.shade800,
+      dividerColor: neutralColor.shade800,
+      contentTextStyle: TextStyle(
+        fontFamily: fontFamily,
+        color: Colors.white,
+      ),
+      backgroundColor: neutralColor.shade800,
+      elevation: 0,
     ),
   );
 }
