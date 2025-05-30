@@ -1,3 +1,4 @@
+import 'package:example/components/neutral_banner.dart';
 import 'package:example/components/neutral_button.dart';
 import 'package:example/components/neutral_chip.dart';
 import 'package:example/components/neutral_app_bar.dart';
@@ -76,6 +77,8 @@ class Home extends StatelessWidget {
             NeutralListTile(),
             Divider(),
             NeutralExpansionPanel(),
+            Divider(),
+            NeutralBanner(),
             Divider(),
             NeutralTextField(),
             Divider(),
