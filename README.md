@@ -20,6 +20,7 @@ Reference: https://docs.flutter.dev/ui/widgets/material
 - ✅ Drawer
 - ✅ Indicators(LinearProgressIndicator, CircularProgressIndicator)
 - ✅ ListTile
+- ✅ MaterialBanner
 - ✅ NavigationBar
 - ✅ NavigationRail
 - ✅ PopupMenu(MenuItem, Submenu)
