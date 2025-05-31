@@ -5,8 +5,8 @@ neutralLightTheme({
   String? fontFamily,
 }) {
   return ThemeData(
-    colorSchemeSeed: Colors.grey,
-    scaffoldBackgroundColor: Colors.white,
+    colorSchemeSeed: neutralColor,
+    scaffoldBackgroundColor: neutralColor.shade50,
     disabledColor: neutralColor.shade400,
     brightness: Brightness.light,
     fontFamily: fontFamily,
@@ -14,19 +14,19 @@ neutralLightTheme({
     /*--- APP BAR ---*/
 
     appBarTheme: AppBarTheme(
-      iconTheme: const IconThemeData(
-        color: Colors.black,
+      iconTheme: IconThemeData(
+        color: neutralColor.shade950,
         size: 24,
       ),
       titleTextStyle: TextStyle(
         fontFamily: fontFamily,
-        color: Colors.black,
+        color: neutralColor.shade950,
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
-      backgroundColor: Colors.white,
-      foregroundColor: Colors.black,
-      surfaceTintColor: Colors.white,
+      backgroundColor: neutralColor.shade50,
+      foregroundColor: neutralColor.shade950,
+      surfaceTintColor: neutralColor.shade50,
       elevation: 0,
     ),
 
@@ -60,7 +60,7 @@ neutralLightTheme({
               fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.lineThrough,
-              decorationColor: Colors.black,
+              decorationColor: neutralColor.shade950,
             );
           }
           return TextStyle(
@@ -71,10 +71,10 @@ neutralLightTheme({
         overlayColor: WidgetStateProperty.all(neutralColor.shade400),
         foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
-            return Colors.white;
+            return neutralColor.shade50;
           }
 
-          return Colors.black;
+          return neutralColor.shade950;
         }),
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
@@ -95,7 +95,7 @@ neutralLightTheme({
               fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.lineThrough,
-              decorationColor: Colors.black,
+              decorationColor: neutralColor.shade950,
             );
           }
           return TextStyle(
@@ -106,16 +106,16 @@ neutralLightTheme({
         overlayColor: WidgetStateProperty.all(neutralColor.shade600),
         foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
-            return Colors.white;
+            return neutralColor.shade50;
           }
 
-          return Colors.white;
+          return neutralColor.shade50;
         }),
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
             return neutralColor.shade400;
           }
-          return Colors.black;
+          return neutralColor.shade950;
         }),
       ),
     ),
@@ -145,7 +145,7 @@ neutralLightTheme({
               fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.lineThrough,
-              decorationColor: Colors.black,
+              decorationColor: neutralColor.shade950,
             );
           }
           return TextStyle(
@@ -157,9 +157,9 @@ neutralLightTheme({
           if (states.contains(WidgetState.disabled)) {
             return neutralColor.shade500;
           }
-          return Colors.black;
+          return neutralColor.shade950;
         }),
-        backgroundColor: WidgetStateProperty.all(Colors.white),
+        backgroundColor: WidgetStateProperty.all(neutralColor.shade50),
       ),
     ),
 
@@ -176,7 +176,7 @@ neutralLightTheme({
               fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.lineThrough,
-              decorationColor: Colors.black,
+              decorationColor: neutralColor.shade950,
             );
           }
           return TextStyle(
@@ -188,7 +188,7 @@ neutralLightTheme({
           if (states.contains(WidgetState.disabled)) {
             return neutralColor.shade500;
           }
-          return Colors.black;
+          return neutralColor.shade950;
         }),
       ),
     ),
@@ -214,14 +214,14 @@ neutralLightTheme({
         fontWeight: FontWeight.bold,
         fontSize: 16,
       ),
-      textColor: Colors.black,
-      iconColor: Colors.black,
+      textColor: neutralColor.shade950,
+      iconColor: neutralColor.shade950,
     ),
 
     /*--- DRAWER ---*/
 
     drawerTheme: DrawerThemeData(
-      backgroundColor: Colors.white,
+      backgroundColor: neutralColor.shade50,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(0),
@@ -233,24 +233,24 @@ neutralLightTheme({
     /*--- CHIP ---*/
 
     chipTheme: ChipThemeData(
-      checkmarkColor: Colors.black,
+      checkmarkColor: neutralColor.shade950,
       color: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
           return neutralColor.shade200;
         }
 
-        return Colors.white;
+        return neutralColor.shade50;
       }),
-      backgroundColor: Colors.white,
+      backgroundColor: neutralColor.shade50,
       brightness: Brightness.light,
-      deleteIconColor: Colors.black,
+      deleteIconColor: neutralColor.shade950,
       disabledColor: neutralColor.shade200,
       padding: const EdgeInsets.symmetric(
         horizontal: 10,
         vertical: 5,
       ),
-      iconTheme: const IconThemeData(
-        color: Colors.black,
+      iconTheme: IconThemeData(
+        color: neutralColor.shade950,
         size: 16,
       ),
       side: BorderSide(
@@ -263,7 +263,7 @@ neutralLightTheme({
       labelStyle: TextStyle(
         fontFamily: fontFamily,
         fontSize: 13,
-        color: Colors.black,
+        color: neutralColor.shade950,
       ),
     ),
 
@@ -272,7 +272,7 @@ neutralLightTheme({
     tooltipTheme: TooltipThemeData(
       textStyle: TextStyle(
         fontFamily: fontFamily,
-        color: Colors.white,
+        color: neutralColor.shade50,
       ),
       decoration: BoxDecoration(
         color: Colors.grey.shade600,
@@ -289,14 +289,14 @@ neutralLightTheme({
         TextStyle(
           fontFamily: fontFamily,
           fontWeight: FontWeight.bold,
-          color: Colors.black,
+          color: neutralColor.shade950,
           fontSize: 14,
         ),
       ),
       textStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
-        color: Colors.white,
+        color: neutralColor.shade50,
         fontSize: 16,
       ),
       menuPadding: const EdgeInsets.all(0),
@@ -313,28 +313,28 @@ neutralLightTheme({
           return neutralColor.shade400;
         }
         if (states.contains(WidgetState.selected)) {
-          return Colors.white;
+          return neutralColor.shade50;
         }
 
-        return Colors.black;
+        return neutralColor.shade950;
       }),
       trackColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
         if (states.contains(WidgetState.disabled)) {
-          return Colors.white;
+          return neutralColor.shade50;
         }
         if (states.contains(WidgetState.selected)) {
-          return Colors.black;
+          return neutralColor.shade950;
         }
-        return Colors.white;
+        return neutralColor.shade50;
       }),
       trackOutlineColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
         if (states.contains(WidgetState.disabled)) {
           return neutralColor.shade400;
         }
         if (states.contains(WidgetState.selected)) {
-          return Colors.black;
+          return neutralColor.shade950;
         }
-        return Colors.black;
+        return neutralColor.shade950;
       }),
     ),
 
@@ -365,7 +365,7 @@ neutralLightTheme({
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: Colors.black, width: 2),
+        borderSide: BorderSide(color: neutralColor.shade950, width: 2),
       ),
       disabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
@@ -387,12 +387,12 @@ neutralLightTheme({
     /*--- DIALOG ---*/
 
     dialogTheme: DialogThemeData(
-      surfaceTintColor: Colors.white,
+      surfaceTintColor: neutralColor.shade50,
       elevation: 0,
       titleTextStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
-        color: Colors.black,
+        color: neutralColor.shade950,
         fontSize: 16,
       ),
       contentTextStyle: TextStyle(
@@ -401,7 +401,7 @@ neutralLightTheme({
         color: neutralColor.shade700,
         fontSize: 16,
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: neutralColor.shade50,
       insetPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
@@ -413,17 +413,17 @@ neutralLightTheme({
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: neutralColor.shade200,
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: Colors.black,
+      selectedItemColor: neutralColor.shade950,
       unselectedItemColor: neutralColor.shade700,
       showUnselectedLabels: true,
       showSelectedLabels: true,
       selectedLabelStyle: TextStyle(
         fontFamily: fontFamily,
-        color: Colors.black,
+        color: neutralColor.shade950,
         fontWeight: FontWeight.bold,
       ),
-      selectedIconTheme: const IconThemeData(
-        color: Colors.black,
+      selectedIconTheme: IconThemeData(
+        color: neutralColor.shade950,
       ),
       unselectedLabelStyle: TextStyle(
         fontFamily: fontFamily,
@@ -438,8 +438,8 @@ neutralLightTheme({
     /*--- BOTTOM SHEET ---*/
 
     bottomSheetTheme: BottomSheetThemeData(
-      backgroundColor: Colors.white,
-      surfaceTintColor: Colors.white,
+      backgroundColor: neutralColor.shade50,
+      surfaceTintColor: neutralColor.shade50,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(0),
@@ -451,16 +451,16 @@ neutralLightTheme({
     /*--- SLIDER ---*/
 
     sliderTheme: SliderThemeData(
-      valueIndicatorColor: Colors.black,
+      valueIndicatorColor: neutralColor.shade950,
       valueIndicatorTextStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
-        color: Colors.white,
+        color: neutralColor.shade50,
         fontSize: 12,
       ),
-      activeTrackColor: Colors.black,
+      activeTrackColor: neutralColor.shade950,
       inactiveTrackColor: neutralColor.shade300,
-      thumbColor: Colors.black,
+      thumbColor: neutralColor.shade950,
       overlayColor: neutralColor.shade500.withValues(alpha: 0.2),
       disabledActiveTrackColor: neutralColor.shade300,
       disabledInactiveTrackColor: neutralColor.shade200,
@@ -472,7 +472,7 @@ neutralLightTheme({
     /*--- PROGRESS INDICATOR ---*/
 
     progressIndicatorTheme: ProgressIndicatorThemeData(
-      color: Colors.black,
+      color: neutralColor.shade950,
       linearTrackColor: neutralColor.shade300,
       circularTrackPadding: const EdgeInsets.all(0),
     ),
@@ -480,10 +480,10 @@ neutralLightTheme({
     /*--- FLOATING ACTION BUTTON ---*/
 
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: Colors.black,
+      backgroundColor: neutralColor.shade950,
       shape: const StadiumBorder(),
       splashColor: neutralColor.shade700,
-      foregroundColor: Colors.white,
+      foregroundColor: neutralColor.shade50,
     ),
 
     /*--- CHECKBOX ---*/
@@ -491,21 +491,21 @@ neutralLightTheme({
     checkboxTheme: CheckboxThemeData(
       fillColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return Colors.black;
+          return neutralColor.shade950;
         }
 
         if (states.contains(WidgetState.disabled)) {
           return neutralColor.shade300;
         }
 
-        return Colors.white;
+        return neutralColor.shade50;
       }),
       checkColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return Colors.white;
+          return neutralColor.shade50;
         }
 
-        return Colors.white;
+        return neutralColor.shade50;
       }),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(3),
@@ -529,7 +529,7 @@ neutralLightTheme({
           return neutralColor.shade400;
         }
 
-        return Colors.black;
+        return neutralColor.shade950;
       }),
       overlayColor: WidgetStateProperty.all(neutralColor.shade400),
     ),
@@ -545,7 +545,7 @@ neutralLightTheme({
     /*--- TIMEPICKER ---*/
 
     timePickerTheme: TimePickerThemeData(
-      backgroundColor: Colors.white,
+      backgroundColor: neutralColor.shade50,
       elevation: 0,
       dialHandColor: neutralColor.shade900,
       hourMinuteColor: neutralColor.shade200,
@@ -564,7 +564,7 @@ neutralLightTheme({
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Colors.black, width: 2),
+          borderSide: BorderSide(color: neutralColor.shade950, width: 2),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -585,43 +585,43 @@ neutralLightTheme({
         color: neutralColor.shade400,
         width: 1,
       ),
-      dialBackgroundColor: Colors.white,
+      dialBackgroundColor: neutralColor.shade50,
     ),
 
     /*--- DATEPICKER ---*/
 
     datePickerTheme: DatePickerThemeData(
-      backgroundColor: Colors.white,
+      backgroundColor: neutralColor.shade50,
       dayBackgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return Colors.black;
+          return neutralColor.shade950;
         }
-        return Colors.white;
+        return neutralColor.shade50;
       }),
       dayForegroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return Colors.white;
+          return neutralColor.shade50;
         }
-        return Colors.black;
+        return neutralColor.shade950;
       }),
       elevation: 0,
-      headerBackgroundColor: Colors.white,
-      headerForegroundColor: Colors.black,
+      headerBackgroundColor: neutralColor.shade50,
+      headerForegroundColor: neutralColor.shade950,
       headerHeadlineStyle: TextStyle(
         fontFamily: fontFamily,
-        foreground: Paint()..color = Colors.black,
+        foreground: Paint()..color = neutralColor.shade950,
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
       headerHelpStyle: TextStyle(
         fontFamily: fontFamily,
-        color: Colors.black,
+        color: neutralColor.shade950,
       ),
-      rangePickerBackgroundColor: Colors.white,
-      rangePickerSurfaceTintColor: Colors.white,
+      rangePickerBackgroundColor: neutralColor.shade50,
+      rangePickerSurfaceTintColor: neutralColor.shade50,
       rangePickerHeaderHeadlineStyle: TextStyle(
         fontFamily: fontFamily,
-        foreground: Paint()..color = Colors.black,
+        foreground: Paint()..color = neutralColor.shade950,
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
@@ -629,26 +629,26 @@ neutralLightTheme({
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      surfaceTintColor: Colors.white,
+      surfaceTintColor: neutralColor.shade50,
       todayBackgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return Colors.black;
+          return neutralColor.shade950;
         }
-        return Colors.white;
+        return neutralColor.shade50;
       }),
       todayBorder: BorderSide(
         width: 1,
       ),
       todayForegroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return Colors.white;
+          return neutralColor.shade50;
         }
-        return Colors.black;
+        return neutralColor.shade950;
       }),
       weekdayStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
-        color: Colors.black,
+        color: neutralColor.shade950,
       ),
     ),
 
@@ -657,7 +657,7 @@ neutralLightTheme({
     segmentedButtonTheme: SegmentedButtonThemeData(
       style: ButtonStyle(
         overlayColor: WidgetStateProperty.all(neutralColor.shade300),
-        surfaceTintColor: WidgetStateProperty.all(Colors.white),
+        surfaceTintColor: WidgetStateProperty.all(neutralColor.shade50),
         textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
             return TextStyle(
@@ -676,15 +676,15 @@ neutralLightTheme({
         )),
         foregroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
-            return Colors.black;
+            return neutralColor.shade950;
           }
-          return Colors.black;
+          return neutralColor.shade950;
         }),
         backgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
             return neutralColor.shade200;
           }
-          return Colors.white;
+          return neutralColor.shade50;
         }),
       ),
     ),
@@ -694,12 +694,12 @@ neutralLightTheme({
     tabBarTheme: TabBarThemeData(
       dividerColor: neutralColor.shade300,
       dividerHeight: 3,
-      indicatorColor: Colors.black,
+      indicatorColor: neutralColor.shade950,
       indicatorSize: TabBarIndicatorSize.label,
       indicator: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: Colors.black,
+            color: neutralColor.shade950,
             width: 3,
           ),
         ),
@@ -707,11 +707,11 @@ neutralLightTheme({
       unselectedLabelColor: neutralColor.shade500,
       overlayColor: WidgetStateColor.resolveWith((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return Colors.black;
+          return neutralColor.shade950;
         }
         return neutralColor.shade200;
       }),
-      labelColor: Colors.black,
+      labelColor: neutralColor.shade950,
     ),
 
     /*--- EXPANSION PANEL ---*/
@@ -725,22 +725,22 @@ neutralLightTheme({
       ),
       collapsedShape: Border(
         bottom: BorderSide(
-          color: Colors.white,
+          color: neutralColor.shade50,
           width: 4,
         ),
       ),
       shape: Border(
         bottom: BorderSide(
-          color: Colors.white,
+          color: neutralColor.shade50,
           width: 4,
         ),
       ),
       clipBehavior: Clip.none,
-      collapsedBackgroundColor: Colors.white,
-      collapsedIconColor: Colors.black,
-      iconColor: Colors.black,
+      collapsedBackgroundColor: neutralColor.shade50,
+      collapsedIconColor: neutralColor.shade950,
+      iconColor: neutralColor.shade950,
       backgroundColor: neutralColor.shade200,
-      textColor: Colors.black,
+      textColor: neutralColor.shade950,
       childrenPadding: const EdgeInsets.only(
         bottom: 15,
         top: 0,
@@ -753,14 +753,14 @@ neutralLightTheme({
 
     snackBarTheme: SnackBarThemeData(
       backgroundColor: neutralColor.shade800,
-      actionTextColor: Colors.white,
+      actionTextColor: neutralColor.shade50,
       disabledActionBackgroundColor: neutralColor.shade800,
       disabledActionTextColor: neutralColor.shade400,
       actionBackgroundColor: neutralColor.shade700,
-      closeIconColor: Colors.white,
+      closeIconColor: neutralColor.shade50,
       contentTextStyle: TextStyle(
         fontFamily: fontFamily,
-        color: Colors.white,
+        color: neutralColor.shade50,
       ),
       elevation: 0,
     ),
@@ -780,7 +780,7 @@ neutralLightTheme({
           if (states.contains(WidgetState.disabled)) {
             return neutralColor.shade400;
           }
-          return Colors.black;
+          return neutralColor.shade950;
         }),
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           return Colors.transparent;
@@ -794,19 +794,19 @@ neutralLightTheme({
       alignment: Alignment.topCenter,
       offset: const Offset(0, -4),
       backgroundColor: Colors.red,
-      textColor: Colors.white,
+      textColor: neutralColor.shade50,
     ),
 
     /*--- NAVIGATION RAIL ---*/
 
     navigationRailTheme: NavigationRailThemeData(
-      backgroundColor: Colors.white,
+      backgroundColor: neutralColor.shade50,
       elevation: 0,
       selectedIconTheme: IconThemeData(
-        color: Colors.black,
+        color: neutralColor.shade950,
       ),
       unselectedIconTheme: IconThemeData(
-        color: Colors.black,
+        color: neutralColor.shade950,
       ),
       indicatorColor: neutralColor.shade300,
       labelType: NavigationRailLabelType.none,
@@ -819,7 +819,7 @@ neutralLightTheme({
         elevation: WidgetStateProperty.resolveWith<double>((Set<WidgetState> states) {
           return 0;
         }),
-        backgroundColor: WidgetStateProperty.all(Colors.white),
+        backgroundColor: WidgetStateProperty.all(neutralColor.shade50),
       ),
     ),
 
@@ -831,7 +831,7 @@ neutralLightTheme({
         surfaceTintColor: WidgetStateProperty.all(neutralColor.shade200),
         side: WidgetStateProperty.resolveWith<BorderSide>((Set<WidgetState> states) {
           return BorderSide(
-            color: Colors.white,
+            color: neutralColor.shade50,
             width: 2,
           );
         }),
@@ -866,13 +866,13 @@ neutralLightTheme({
 
     navigationBarTheme: NavigationBarThemeData(
       backgroundColor: neutralColor.shade200,
-      indicatorColor: Colors.white,
+      indicatorColor: neutralColor.shade50,
       surfaceTintColor: neutralColor.shade200,
       iconTheme: WidgetStateProperty.resolveWith(
         (Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
             return IconThemeData(
-              color: Colors.black,
+              color: neutralColor.shade950,
             );
           }
 
@@ -889,7 +889,7 @@ neutralLightTheme({
               fontFamily: fontFamily,
               fontSize: 12,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: neutralColor.shade950,
             );
           }
           return TextStyle(
@@ -906,8 +906,8 @@ neutralLightTheme({
     /*--- SEARCH ANCHOR ---*/
 
     searchViewTheme: SearchViewThemeData(
-      backgroundColor: Colors.white,
-      surfaceTintColor: Colors.white,
+      backgroundColor: neutralColor.shade50,
+      surfaceTintColor: neutralColor.shade50,
     ),
 
     /*--- BANNER ---*/
@@ -918,7 +918,7 @@ neutralLightTheme({
       dividerColor: neutralColor.shade200,
       contentTextStyle: TextStyle(
         fontFamily: fontFamily,
-        color: Colors.black,
+        color: neutralColor.shade950,
       ),
       backgroundColor: neutralColor.shade200,
       elevation: 0,
@@ -927,15 +927,15 @@ neutralLightTheme({
     /*--- DATA TABLE ---*/
 
     dataTableTheme: DataTableThemeData(
-      dataRowColor: WidgetStateProperty.all(Colors.white),
+      dataRowColor: WidgetStateProperty.all(neutralColor.shade50),
       headingTextStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
-        color: Colors.black,
+        color: neutralColor.shade950,
       ),
       dataTextStyle: TextStyle(
         fontFamily: fontFamily,
-        color: Colors.black,
+        color: neutralColor.shade950,
       ),
       dividerThickness: 1,
       columnSpacing: 20,
