@@ -25,6 +25,7 @@ Reference: https://docs.flutter.dev/ui/widgets/material
 - ✅ NavigationRail
 - ✅ PopupMenu(MenuItem, Submenu)
 - ✅ RadioButton
+- ✅ Scaffold
 - ✅ SearchAnchor
 - ✅ SegmentedButton
 - ✅ Slider
