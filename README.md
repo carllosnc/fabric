@@ -86,7 +86,7 @@ MaterialApp(
 | 900 | `0xFF171717` | `neutralColor.shade900` |
 
 
-### Known Issues
+## Known Issues
 
 - [Stepper widget has hardcoded colors](https://github.com/flutter/flutter/issues/102558)
 
