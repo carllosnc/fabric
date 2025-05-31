@@ -59,6 +59,7 @@ class Home extends StatelessWidget {
                   Expanded(child: Container(width: 30, height: 130, color: neutralColor.shade700)),
                   Expanded(child: Container(width: 30, height: 130, color: neutralColor.shade800)),
                   Expanded(child: Container(width: 30, height: 130, color: neutralColor.shade900)),
+                  Expanded(child: Container(width: 30, height: 130, color: neutralColor.shade950)),
                 ],
               ),
             ),
