@@ -5,7 +5,7 @@ neutralDarkTheme({
   String? fontFamily,
 }) {
   return ThemeData(
-    colorSchemeSeed: Colors.grey,
+    colorSchemeSeed: neutralColor,
     scaffoldBackgroundColor: neutralColor.shade900,
     disabledColor: neutralColor.shade400,
     brightness: Brightness.dark,
@@ -14,19 +14,19 @@ neutralDarkTheme({
     /*--- APP BAR ---*/
 
     appBarTheme: AppBarTheme(
-      iconTheme: const IconThemeData(
-        color: Colors.white,
+      iconTheme: IconThemeData(
+        color: neutralColor.shade50,
         size: 24,
       ),
       titleTextStyle: TextStyle(
         fontFamily: fontFamily,
-        color: Colors.white,
+        color: neutralColor.shade50,
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
       backgroundColor: neutralColor.shade900,
       surfaceTintColor: neutralColor.shade900,
-      foregroundColor: Colors.white,
+      foregroundColor: neutralColor.shade50,
       elevation: 0,
     ),
 
@@ -60,7 +60,7 @@ neutralDarkTheme({
               fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.lineThrough,
-              decorationColor: Colors.white,
+              decorationColor: neutralColor.shade50,
             );
           }
           return TextStyle(
@@ -74,7 +74,7 @@ neutralDarkTheme({
             return neutralColor.shade400;
           }
 
-          return Colors.white;
+          return neutralColor.shade50;
         }),
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
@@ -95,7 +95,7 @@ neutralDarkTheme({
               fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.lineThrough,
-              decorationColor: Colors.white,
+              decorationColor: neutralColor.shade50,
             );
           }
           return TextStyle(
@@ -115,7 +115,7 @@ neutralDarkTheme({
           if (states.contains(WidgetState.disabled)) {
             return neutralColor.shade600;
           }
-          return Colors.white;
+          return neutralColor.shade50;
         }),
       ),
     ),
@@ -145,7 +145,7 @@ neutralDarkTheme({
               fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.lineThrough,
-              decorationColor: Colors.white,
+              decorationColor: neutralColor.shade50,
             );
           }
           return TextStyle(
@@ -157,7 +157,7 @@ neutralDarkTheme({
           if (states.contains(WidgetState.disabled)) {
             return neutralColor.shade400;
           }
-          return Colors.white;
+          return neutralColor.shade50;
         }),
         backgroundColor: WidgetStateProperty.all(Colors.transparent),
       ),
@@ -176,7 +176,7 @@ neutralDarkTheme({
               fontFamily: fontFamily,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.lineThrough,
-              decorationColor: Colors.white,
+              decorationColor: neutralColor.shade50,
             );
           }
           return TextStyle(
@@ -188,7 +188,7 @@ neutralDarkTheme({
           if (states.contains(WidgetState.disabled)) {
             return neutralColor.shade400;
           }
-          return Colors.white;
+          return neutralColor.shade50;
         }),
       ),
     ),
@@ -214,8 +214,8 @@ neutralDarkTheme({
         fontWeight: FontWeight.bold,
         fontSize: 16,
       ),
-      textColor: Colors.white,
-      iconColor: Colors.white,
+      textColor: neutralColor.shade50,
+      iconColor: neutralColor.shade50,
     ),
 
     /*--- DRAWER ---*/
@@ -234,17 +234,17 @@ neutralDarkTheme({
     /*--- CHIP ---*/
 
     chipTheme: ChipThemeData(
-      checkmarkColor: Colors.white,
+      checkmarkColor: neutralColor.shade50,
       backgroundColor: neutralColor.shade900,
       brightness: Brightness.dark,
-      deleteIconColor: Colors.white,
+      deleteIconColor: neutralColor.shade50,
       disabledColor: neutralColor.shade600,
       padding: const EdgeInsets.symmetric(
         horizontal: 10,
         vertical: 5,
       ),
-      iconTheme: const IconThemeData(
-        color: Colors.white,
+      iconTheme: IconThemeData(
+        color: neutralColor.shade50,
         size: 16,
       ),
       side: BorderSide(
@@ -257,7 +257,7 @@ neutralDarkTheme({
       labelStyle: TextStyle(
         fontFamily: fontFamily,
         fontSize: 13,
-        color: Colors.white,
+        color: neutralColor.shade50,
       ),
     ),
 
@@ -283,7 +283,7 @@ neutralDarkTheme({
         TextStyle(
           fontFamily: fontFamily,
           fontWeight: FontWeight.bold,
-          color: Colors.white,
+          color: neutralColor.shade50,
           fontSize: 14,
         ),
       ),
@@ -310,14 +310,14 @@ neutralDarkTheme({
           return neutralColor.shade900;
         }
 
-        return Colors.white;
+        return neutralColor.shade50;
       }),
       trackColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
         if (states.contains(WidgetState.disabled)) {
           return neutralColor.shade900;
         }
         if (states.contains(WidgetState.selected)) {
-          return Colors.white;
+          return neutralColor.shade50;
         }
         return neutralColor.shade900;
       }),
@@ -326,9 +326,9 @@ neutralDarkTheme({
           return neutralColor.shade500;
         }
         if (states.contains(WidgetState.selected)) {
-          return Colors.white;
+          return neutralColor.shade50;
         }
-        return Colors.white;
+        return neutralColor.shade50;
       }),
     ),
 
@@ -336,7 +336,7 @@ neutralDarkTheme({
 
     inputDecorationTheme: InputDecorationTheme(
       /* Label and hint */
-      labelStyle: TextStyle(color: Colors.white, fontFamily: fontFamily),
+      labelStyle: TextStyle(color: neutralColor.shade50, fontFamily: fontFamily),
       hintStyle: TextStyle(color: neutralColor.shade500, fontFamily: fontFamily),
       errorStyle: TextStyle(color: Colors.red.shade200, fontFamily: fontFamily),
       helperStyle: TextStyle(color: neutralColor.shade600, fontFamily: fontFamily),
@@ -359,7 +359,7 @@ neutralDarkTheme({
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: Colors.white, width: 2),
+        borderSide: BorderSide(color: neutralColor.shade50, width: 2),
       ),
       disabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
@@ -384,7 +384,7 @@ neutralDarkTheme({
       titleTextStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
-        color: Colors.white,
+        color: neutralColor.shade50,
         fontSize: 16,
       ),
       contentTextStyle: TextStyle(
@@ -405,17 +405,17 @@ neutralDarkTheme({
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.black,
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: Colors.white,
+      selectedItemColor: neutralColor.shade50,
       unselectedItemColor: neutralColor.shade500,
       showUnselectedLabels: true,
       showSelectedLabels: true,
       selectedLabelStyle: TextStyle(
         fontFamily: fontFamily,
-        color: Colors.white,
+        color: neutralColor.shade50,
         fontWeight: FontWeight.bold,
       ),
-      selectedIconTheme: const IconThemeData(
-        color: Colors.white,
+      selectedIconTheme: IconThemeData(
+        color: neutralColor.shade50,
       ),
       unselectedLabelStyle: TextStyle(
         fontFamily: fontFamily,
@@ -444,17 +444,17 @@ neutralDarkTheme({
     /*--- SLIDER ---*/
 
     sliderTheme: SliderThemeData(
-      valueIndicatorColor: Colors.white,
+      valueIndicatorColor: neutralColor.shade50,
       valueIndicatorTextStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
         color: Colors.black,
         fontSize: 12,
       ),
-      activeTrackColor: Colors.white,
+      activeTrackColor: neutralColor.shade50,
       inactiveTrackColor: neutralColor.shade700,
-      thumbColor: Colors.white,
-      overlayColor: Colors.white.withValues(alpha: 0.2),
+      thumbColor: neutralColor.shade50,
+      overlayColor: neutralColor.shade50.withValues(alpha: 0.2),
       disabledActiveTrackColor: neutralColor.shade700,
       disabledInactiveTrackColor: neutralColor.shade800,
       disabledThumbColor: neutralColor.shade600,
@@ -465,7 +465,7 @@ neutralDarkTheme({
     /*--- PROGRESS INDICATOR ---*/
 
     progressIndicatorTheme: ProgressIndicatorThemeData(
-      color: Colors.white,
+      color: neutralColor.shade50,
       linearTrackColor: neutralColor.shade700,
       circularTrackPadding: const EdgeInsets.all(0),
     ),
@@ -484,7 +484,7 @@ neutralDarkTheme({
     checkboxTheme: CheckboxThemeData(
       fillColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return Colors.white;
+          return neutralColor.shade50;
         }
 
         if (states.contains(WidgetState.disabled)) {
@@ -498,7 +498,7 @@ neutralDarkTheme({
           return Colors.black;
         }
 
-        return Colors.white;
+        return neutralColor.shade50;
       }),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(3),
@@ -521,7 +521,7 @@ neutralDarkTheme({
         if (states.contains(WidgetState.disabled)) {
           return neutralColor.shade500;
         }
-        return Colors.white;
+        return neutralColor.shade50;
       }),
       overlayColor: WidgetStateProperty.all(neutralColor.shade400),
     ),
@@ -529,9 +529,9 @@ neutralDarkTheme({
     /*--- TEXT SELECTION ---*/
 
     textSelectionTheme: TextSelectionThemeData(
-      cursorColor: Colors.white,
+      cursorColor: neutralColor.shade50,
       selectionColor: neutralColor.shade700,
-      selectionHandleColor: Colors.white,
+      selectionHandleColor: neutralColor.shade50,
     ),
 
     /*--- TIMEPICKER ---*/
@@ -539,13 +539,13 @@ neutralDarkTheme({
     timePickerTheme: TimePickerThemeData(
       backgroundColor: Colors.black,
       elevation: 0,
-      dialHandColor: Colors.white,
+      dialHandColor: neutralColor.shade50,
       hourMinuteColor: neutralColor.shade700,
       dayPeriodColor: neutralColor.shade700,
-      hourMinuteTextColor: Colors.white,
-      dayPeriodTextColor: Colors.white,
-      entryModeIconColor: Colors.white,
-      helpTextStyle: TextStyle(color: Colors.white),
+      hourMinuteTextColor: neutralColor.shade50,
+      dayPeriodTextColor: neutralColor.shade50,
+      entryModeIconColor: neutralColor.shade50,
+      helpTextStyle: TextStyle(color: neutralColor.shade50),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -560,7 +560,7 @@ neutralDarkTheme({
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Colors.white, width: 2),
+          borderSide: BorderSide(color: neutralColor.shade50, width: 2),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
@@ -590,7 +590,7 @@ neutralDarkTheme({
       backgroundColor: Colors.black,
       dayBackgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return Colors.white;
+          return neutralColor.shade50;
         }
         return Colors.black;
       }),
@@ -598,26 +598,26 @@ neutralDarkTheme({
         if (states.contains(WidgetState.selected)) {
           return Colors.black;
         }
-        return Colors.white;
+        return neutralColor.shade50;
       }),
       elevation: 0,
       headerBackgroundColor: Colors.black,
-      headerForegroundColor: Colors.white,
+      headerForegroundColor: neutralColor.shade50,
       headerHeadlineStyle: TextStyle(
         fontFamily: fontFamily,
-        foreground: Paint()..color = Colors.white,
+        foreground: Paint()..color = neutralColor.shade50,
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
       headerHelpStyle: TextStyle(
         fontFamily: fontFamily,
-        color: Colors.white,
+        color: neutralColor.shade50,
       ),
       rangePickerBackgroundColor: Colors.black,
       rangePickerSurfaceTintColor: Colors.black,
       rangePickerHeaderHeadlineStyle: TextStyle(
         fontFamily: fontFamily,
-        foreground: Paint()..color = Colors.white,
+        foreground: Paint()..color = neutralColor.shade50,
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
@@ -629,7 +629,7 @@ neutralDarkTheme({
       surfaceTintColor: Colors.black,
       todayBackgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return Colors.white;
+          return neutralColor.shade50;
         }
         return Colors.black;
       }),
@@ -641,12 +641,12 @@ neutralDarkTheme({
         if (states.contains(WidgetState.selected)) {
           return Colors.black;
         }
-        return Colors.white;
+        return neutralColor.shade50;
       }),
       weekdayStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
-        color: Colors.white,
+        color: neutralColor.shade50,
       ),
     ),
 
@@ -674,7 +674,7 @@ neutralDarkTheme({
         )),
         foregroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
-            return Colors.white;
+            return neutralColor.shade50;
           }
           return neutralColor.shade400;
         }),
@@ -692,12 +692,12 @@ neutralDarkTheme({
     tabBarTheme: TabBarThemeData(
       dividerColor: neutralColor.shade700,
       dividerHeight: 3,
-      indicatorColor: Colors.white,
+      indicatorColor: neutralColor.shade50,
       indicatorSize: TabBarIndicatorSize.label,
       indicator: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: Colors.white,
+            color: neutralColor.shade50,
             width: 3,
           ),
         ),
@@ -705,11 +705,11 @@ neutralDarkTheme({
       unselectedLabelColor: neutralColor.shade500,
       overlayColor: WidgetStateProperty.resolveWith((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return Colors.white;
+          return neutralColor.shade50;
         }
         return neutralColor.shade700;
       }),
-      labelColor: Colors.white,
+      labelColor: neutralColor.shade50,
     ),
 
     /*--- EXPANSION PANEL ---*/
@@ -735,10 +735,10 @@ neutralDarkTheme({
       ),
       clipBehavior: Clip.none,
       collapsedBackgroundColor: neutralColor.shade900,
-      collapsedIconColor: Colors.white,
-      iconColor: Colors.white,
+      collapsedIconColor: neutralColor.shade50,
+      iconColor: neutralColor.shade50,
       backgroundColor: neutralColor.shade800,
-      textColor: Colors.white,
+      textColor: neutralColor.shade50,
       childrenPadding: const EdgeInsets.only(
         bottom: 15,
         top: 0,
@@ -750,9 +750,9 @@ neutralDarkTheme({
     /*--- SNACKBAR ---*/
 
     snackBarTheme: SnackBarThemeData(
-      backgroundColor: Colors.white,
+      backgroundColor: neutralColor.shade50,
       actionTextColor: Colors.black,
-      disabledActionBackgroundColor: Colors.white,
+      disabledActionBackgroundColor: neutralColor.shade50,
       disabledActionTextColor: neutralColor.shade500,
       actionBackgroundColor: neutralColor.shade300,
       closeIconColor: Colors.black,
@@ -778,7 +778,7 @@ neutralDarkTheme({
           if (states.contains(WidgetState.disabled)) {
             return neutralColor.shade400;
           }
-          return Colors.white;
+          return neutralColor.shade50;
         }),
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           return Colors.transparent;
@@ -792,7 +792,7 @@ neutralDarkTheme({
       alignment: Alignment.topCenter,
       offset: const Offset(0, -4),
       backgroundColor: Colors.red,
-      textColor: Colors.white,
+      textColor: neutralColor.shade50,
     ),
 
     /*--- NAVIGATION RAIL ---*/
@@ -800,8 +800,8 @@ neutralDarkTheme({
     navigationRailTheme: NavigationRailThemeData(
       backgroundColor: neutralColor.shade900,
       elevation: 0,
-      selectedIconTheme: const IconThemeData(
-        color: Colors.white,
+      selectedIconTheme: IconThemeData(
+        color: neutralColor.shade50,
       ),
       unselectedIconTheme: IconThemeData(
         color: neutralColor.shade500,
@@ -872,7 +872,7 @@ neutralDarkTheme({
         (Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
             return IconThemeData(
-              color: Colors.white,
+              color: neutralColor.shade50,
             );
           }
 
@@ -889,7 +889,7 @@ neutralDarkTheme({
               fontFamily: fontFamily,
               fontSize: 12,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: neutralColor.shade50,
             );
           }
           return TextStyle(
@@ -918,7 +918,7 @@ neutralDarkTheme({
       dividerColor: neutralColor.shade800,
       contentTextStyle: TextStyle(
         fontFamily: fontFamily,
-        color: Colors.white,
+        color: neutralColor.shade50,
       ),
       backgroundColor: neutralColor.shade800,
       elevation: 0,
@@ -931,11 +931,11 @@ neutralDarkTheme({
       headingTextStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
-        color: Colors.white,
+        color: neutralColor.shade50,
       ),
       dataTextStyle: TextStyle(
         fontFamily: fontFamily,
-        color: Colors.white,
+        color: neutralColor.shade50,
       ),
       dividerThickness: 1,
       columnSpacing: 20,
