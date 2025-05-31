@@ -38,6 +38,7 @@ Reference: https://docs.flutter.dev/ui/widgets/material
 - ✅ TextField
 - ✅ TextSelection
 - ✅ TimePicker
+- ❌ Stepper (Currently not working, the widget does not use theme data to style itself)
 
 ## Install
 
@@ -83,6 +84,11 @@ MaterialApp(
 | 700 | `0xFF404040` | `neutralColor.shade700` |
 | 800 | `0xFF262626` | `neutralColor.shade800` |
 | 900 | `0xFF171717` | `neutralColor.shade900` |
+
+
+### Known Issues
+
+- [Stepper widget has hardcoded colors](https://github.com/flutter/flutter/issues/102558)
 
 ## Examples
 
