@@ -16,6 +16,7 @@ Reference: https://docs.flutter.dev/ui/widgets/material
 - ✅ Checkbox
 - ✅ Chip
 - ✅ DatePicker
+- ✅ DataTable
 - ✅ Dialog
 - ✅ Drawer
 - ✅ Indicators(LinearProgressIndicator, CircularProgressIndicator)

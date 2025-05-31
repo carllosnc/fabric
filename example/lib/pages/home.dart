@@ -2,6 +2,7 @@ import 'package:example/components/neutral_banner.dart';
 import 'package:example/components/neutral_button.dart';
 import 'package:example/components/neutral_chip.dart';
 import 'package:example/components/neutral_app_bar.dart';
+import 'package:example/components/neutral_datatable.dart';
 import 'package:example/components/neutral_drawer.dart';
 import 'package:example/components/neutral_float_action_button.dart';
 import 'package:example/components/neutral_list_tyle.dart';
@@ -71,6 +72,8 @@ class Home extends StatelessWidget {
             NeutralFloatActionButton(),
             Divider(),
             NeutralSwitch(),
+            Divider(),
+            NeutralDatatable(),
             Divider(),
             NeutralChip(),
             Divider(),

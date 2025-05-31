@@ -923,5 +923,22 @@ neutralDarkTheme({
       backgroundColor: neutralColor.shade800,
       elevation: 0,
     ),
+
+    /*--- DATA TABLE ---*/
+
+    dataTableTheme: DataTableThemeData(
+      dataRowColor: WidgetStateProperty.all(neutralColor.shade900),
+      headingTextStyle: TextStyle(
+        fontFamily: fontFamily,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
+      dataTextStyle: TextStyle(
+        fontFamily: fontFamily,
+        color: Colors.white,
+      ),
+      dividerThickness: 1,
+      columnSpacing: 20,
+    ),
   );
 }
