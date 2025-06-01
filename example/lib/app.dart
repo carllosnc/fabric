@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './pages/home.dart';
-import 'package:neutral/neutral.dart';
 import './pages/navigation_rail.dart';
+import 'package:neutral/neutral.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -10,9 +10,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: neutralLightTheme(
+        mainColor: stone,
         fontFamily: "BricolageGrotesque",
       ),
       darkTheme: neutralDarkTheme(
+        mainColor: stone,
         fontFamily: "BricolageGrotesque",
       ),
       debugShowCheckedModeBanner: false,
