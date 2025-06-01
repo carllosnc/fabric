@@ -1,22 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:neutral/custom_color.dart';
 
-class CustomColor extends ColorSwatch<int> {
-  const CustomColor(super.primary, super.swatch);
-
-  Color get shade50 => this[50]!;
-  Color get shade100 => this[100]!;
-  Color get shade200 => this[200]!;
-  Color get shade300 => this[300]!;
-  Color get shade400 => this[400]!;
-  Color get shade500 => this[500]!;
-  Color get shade600 => this[600]!;
-  Color get shade700 => this[700]!;
-  Color get shade800 => this[800]!;
-  Color get shade900 => this[900]!;
-  Color get shade950 => this[950]!;
-}
-
-CustomColor neutralColor = CustomColor(
+CustomColor neutral = CustomColor(
   0xFF171717,
   <int, Color>{
     50: Color(0xFFFAFAFA),
@@ -30,5 +15,39 @@ CustomColor neutralColor = CustomColor(
     800: Color(0xFF262626),
     900: Color(0xFF171717),
     950: Color(0xFF0A0A0A),
+  },
+);
+
+CustomColor slate = CustomColor(
+  0xFF64748B,
+  <int, Color>{
+    50: Color(0xFFF8FAFC),
+    100: Color(0xFFF1F5F9),
+    200: Color(0xFFE2E8F0),
+    300: Color(0xFFCBD5E1),
+    400: Color(0xFF94A3B8),
+    500: Color(0xFF64748B),
+    600: Color(0xFF475569),
+    700: Color(0xFF334155),
+    800: Color(0xFF1E293B),
+    900: Color(0xFF0F172A),
+    950: Color(0xFF020617),
+  },
+);
+
+CustomColor stone = CustomColor(
+  0xFF78716C,
+  <int, Color>{
+    50: Color(0xFFFAFAF9),
+    100: Color(0xFFF5F5F4),
+    200: Color(0xFFE7E5E4),
+    300: Color(0xFFD6D3D1),
+    400: Color(0xFFA8A29E),
+    500: Color(0xFF78716C),
+    600: Color(0xFF57534E),
+    700: Color(0xFF44403C),
+    800: Color(0xFF292524),
+    900: Color(0xFF1C1917),
+    950: Color(0xFF0C0A09),
   },
 );
