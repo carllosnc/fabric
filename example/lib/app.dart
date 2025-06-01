@@ -10,11 +10,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: neutralLightTheme(
-        mainColor: stone,
+        mainColor: neutral,
         fontFamily: "BricolageGrotesque",
       ),
       darkTheme: neutralDarkTheme(
-        mainColor: stone,
+        mainColor: neutral,
         fontFamily: "BricolageGrotesque",
       ),
       debugShowCheckedModeBanner: false,
