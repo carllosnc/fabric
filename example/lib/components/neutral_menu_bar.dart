@@ -13,7 +13,7 @@ class NeutralMenuBar extends StatelessWidget {
             menuChildren: <Widget>[
               MenuItemButton(
                 onPressed: () {},
-                leadingIcon: const Icon(Icons.create_new_folder),
+                leadingIcon: const Icon(Icons.create_new_folder_outlined),
                 child: const Text('New'),
               ),
               MenuItemButton(
@@ -23,7 +23,7 @@ class NeutralMenuBar extends StatelessWidget {
               ),
               MenuItemButton(
                 onPressed: () {},
-                leadingIcon: const Icon(Icons.save),
+                leadingIcon: const Icon(Icons.save_alt_outlined),
                 child: const Text('Save'),
               ),
             ],
