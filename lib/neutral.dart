@@ -1,5 +1,5 @@
 library;
 
-export 'light_theme.dart';
-export 'dark_theme.dart';
 export 'colors.dart';
+export 'fabric_color.dart';
+export 'fabric_config.dart';
