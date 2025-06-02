@@ -1,26 +1,25 @@
-import 'package:neutral/dark_theme.dart';
-import 'package:neutral/light_theme.dart';
+import 'fabric_dark_theme.dart';
+import 'fabric_light_theme.dart';
+import 'fabric_colors.dart';
+import 'fabric_swatch.dart';
 
-import 'colors.dart';
-import 'fabric_color.dart';
-
-class _Fabric {
-  String fontFamily = "BricolageGrotesque";
-  FabricColor mainColor = fabricGrey;
+class _FabricConfig {
+  String? fontFamily;
+  FabricSwatch color = fabricGrey;
 
   getLightTheme() {
-    return neutralLightTheme(
-      mainColor: mainColor,
+    return fabricLightTheme(
+      mainColor: color,
       fontFamily: fontFamily,
     );
   }
 
   getDarkTheme() {
-    return neutralDarkTheme(
-      mainColor: mainColor,
+    return fabricDarkTheme(
+      mainColor: color,
       fontFamily: fontFamily,
     );
   }
 }
 
-var fabric = _Fabric();
+var fabricConfig = _FabricConfig();
