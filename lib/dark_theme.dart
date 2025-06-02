@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:neutral/custom_color.dart';
+import 'package:neutral/fabric_color.dart';
 
 neutralDarkTheme({
-  required CustomColor mainColor,
+  required FabricColor mainColor,
   String? fontFamily,
 }) {
   return ThemeData(
@@ -545,8 +545,8 @@ neutralDarkTheme({
       backgroundColor: mainColor.shade950,
       elevation: 0,
       dialHandColor: mainColor.shade50,
-      hourMinuteColor: mainColor.shade700,
-      dayPeriodColor: mainColor.shade700,
+      hourMinuteColor: mainColor.shade800,
+      dayPeriodColor: mainColor.shade800,
       hourMinuteTextColor: mainColor.shade50,
       dayPeriodTextColor: mainColor.shade50,
       entryModeIconColor: mainColor.shade50,
@@ -593,6 +593,11 @@ neutralDarkTheme({
 
     datePickerTheme: DatePickerThemeData(
       backgroundColor: mainColor.shade950,
+      rangePickerHeaderHelpStyle: TextStyle(
+        fontFamily: fontFamily,
+        foreground: Paint()..color = mainColor.shade950,
+        fontWeight: FontWeight.bold,
+      ),
       dayBackgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
           return mainColor.shade50;
@@ -759,7 +764,7 @@ neutralDarkTheme({
       actionTextColor: mainColor.shade950,
       disabledActionBackgroundColor: mainColor.shade50,
       disabledActionTextColor: mainColor.shade500,
-      actionBackgroundColor: mainColor.shade300,
+      actionBackgroundColor: mainColor.shade100,
       closeIconColor: mainColor.shade950,
       contentTextStyle: TextStyle(
         fontFamily: fontFamily,
