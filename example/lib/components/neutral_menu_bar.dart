@@ -13,17 +13,26 @@ class NeutralMenuBar extends StatelessWidget {
             menuChildren: <Widget>[
               MenuItemButton(
                 onPressed: () {},
-                leadingIcon: const Icon(Icons.create_new_folder_outlined),
+                leadingIcon: const Icon(
+                  Icons.create_new_folder_outlined,
+                  size: 18,
+                ),
                 child: const Text('New'),
               ),
               MenuItemButton(
                 onPressed: () {},
-                leadingIcon: const Icon(Icons.folder_open),
+                leadingIcon: const Icon(
+                  Icons.folder_open,
+                  size: 18,
+                ),
                 child: const Text('Open'),
               ),
               MenuItemButton(
                 onPressed: () {},
-                leadingIcon: const Icon(Icons.save_alt_outlined),
+                leadingIcon: const Icon(
+                  Icons.save_alt_outlined,
+                  size: 18,
+                ),
                 child: const Text('Save'),
               ),
             ],
@@ -35,26 +44,41 @@ class NeutralMenuBar extends StatelessWidget {
                 menuChildren: <Widget>[
                   MenuItemButton(
                     onPressed: () {},
-                    leadingIcon: const Icon(Icons.cut),
+                    leadingIcon: const Icon(
+                      Icons.cut,
+                      size: 18,
+                    ),
                     child: const Text('Cut Selection'),
                   ),
                   MenuItemButton(
                     onPressed: () {},
-                    leadingIcon: const Icon(Icons.cut_outlined),
+                    leadingIcon: const Icon(
+                      Icons.cut_outlined,
+                      size: 18,
+                    ),
                     child: const Text('Cut All'),
                   ),
                 ],
-                leadingIcon: const Icon(Icons.cut),
+                leadingIcon: const Icon(
+                  Icons.cut,
+                  size: 18,
+                ),
                 child: const Text('Cut'),
               ),
               MenuItemButton(
                 onPressed: () {},
-                leadingIcon: const Icon(Icons.copy),
+                leadingIcon: const Icon(
+                  Icons.copy,
+                  size: 18,
+                ),
                 child: const Text('Copy'),
               ),
               MenuItemButton(
                 onPressed: () {},
-                leadingIcon: const Icon(Icons.paste),
+                leadingIcon: const Icon(
+                  Icons.paste,
+                  size: 18,
+                ),
                 child: const Text('Paste'),
               ),
             ],
