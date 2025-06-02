@@ -128,7 +128,7 @@ key, such as 50, 100, 200, etc., and corresponds to a specific `Color`.
 
 | Resource Name                     | Description                                      |
 |-----------------------------------|--------------------------------------------------|
-| `Flutter Material Widgets](https://docs.flutter.dev/ui/widgets/material) | Official documentation for Material widgets in Flutter. |
+| [Flutter Material Widgets](https://docs.flutter.dev/ui/widgets/material) | Official documentation for Material widgets in Flutter. |
 | [Color Shades Generator](https://colorkit.co/color-shades-generator/030d00/) | Tool to generate color shades for design purposes.       |
 
 ## Known Issues
