@@ -1,8 +1,6 @@
-# Neutral
+# Fabric
 
-> Neutral color palette for Flutter theme
-
-Reference: https://docs.flutter.dev/ui/widgets/material
+> Fabric is configurationso based on Material 3 design system for Flutter.
 
 ## Widgets
 
@@ -46,9 +44,9 @@ This is a unpublished package, so you need to add it to your `pubspec.yaml` file
 
 ```yml
 dependencies:
-  neutral:
+  fabric:
     git:
-      url: https://github.com/carllosnc/neutral.git
+      url: https://github.com/carllosnc/fabric.git
 ```
 
 To more information about unplublished packages, see: https://dart.dev/tools/pub/package-layout#unpublished-pac
@@ -57,34 +55,81 @@ To more information about unplublished packages, see: https://dart.dev/tools/pub
 ## Usage
 
 ```dart
-import 'package:neutral/neutral.dart';
-...
-MaterialApp(
-  theme: neutralLightTheme(),
-  darkTheme: neutralDarkTheme(),
+import 'package:fabric/fabric.dart';
+
+return MaterialApp(
+  theme: fabricConfig.getLightTheme(),
+  darkTheme: fabricConfig.getDarkTheme(),
 );
-...
 ```
 
-- `neutralLightTheme()` - Apply light theme
-- `neutralDarkTheme()` - Apply dark theme
-- `neutralColor` - Neutral color palette
+## `fabricConfig`
+
+Is the main object that contains all features of the library.
+
+| Feature                     | Description                     |
+|-----------------------------|---------------------------------|
+| `fabricConfig.fabricLightTheme()` | Apply light theme         |
+| `fabricConfig.fabricDarkTheme()`  | Apply dark theme          |
+| `fabricConfig.fabricColor`        | Fabric's color palette    |
+| `fabricConfig.fontFamily`         | Font family               |
+
+**How to change the main color and font family?**
+
+```dart
+import 'package:fabric/fabric.dart';
+
+void main() {
+  fabricConfig.color = fabricRed;
+  fabricConfig.fontFamily = "BricolageGrotesque";
+
+  runApp(const App());
+}
+```
+
+> [!WARNING]
+> For now, Fabric does not support google_fonts package.
 
 ## Color Palette
 
-| Index | Hex Color | Example Usage |
-|-------|-----------|---------------|
-| 50 | `0xFFFAFAFA` | `neutralColor.shade50` |
-| 100 | `0xFFF5F5F5` | `neutralColor.shade100` |
-| 200 | `0xFFE5E5E5` | `neutralColor.shade200` |
-| 300 | `0xFFD4D4D4` | `neutralColor.shade300` |
-| 400 | `0xFFA3A3A3` | `neutralColor.shade400` |
-| 500 | `0xFF737373` | `neutralColor.shade500` |
-| 600 | `0xFF525252` | `neutralColor.shade600` |
-| 700 | `0xFF404040` | `neutralColor.shade700` |
-| 800 | `0xFF262626` | `neutralColor.shade800` |
-| 900 | `0xFF171717` | `neutralColor.shade900` |
+Fabric provides these following colors:
 
+- `fabricGrey` - Tons of greys
+- `fabricBlue` - Tons of blues
+- `fabricRed` - Tons of reds
+- `fabricGreen` - Tons of greens
+
+**How to create your own color palette?**
+
+```dart
+FabricSwatch fabricGrey = FabricSwatch(
+  0xFF0A0A0A,
+  <int, Color>{
+    50: Color(0xFFE5E5E5),
+    100: Color(0xFFCCCCCC),
+    200: Color(0xFFB3B3B3),
+    300: Color(0xFF9B9B9B),
+    400: Color(0xFF838383),
+    500: Color(0xFF6D6D6D),
+    600: Color(0xFF575757),
+    700: Color(0xFF424242),
+    800: Color(0xFF2E2E2E),
+    900: Color(0xFF1B1B1B),
+    950: Color(0xFF0A0A0A),
+  },
+);
+```
+
+The `FabricSwatch` class extends `ColorSwatch` to provide a convenient way
+to access predefined shades of a color. Each shade is represented by an integer
+key, such as 50, 100, 200, etc., and corresponds to a specific `Color`.
+
+## Resources
+
+| Resource Name                     | Description                                      |
+|-----------------------------------|--------------------------------------------------|
+| `Flutter Material Widgets](https://docs.flutter.dev/ui/widgets/material) | Official documentation for Material widgets in Flutter. |
+| [Color Shades Generator](https://colorkit.co/color-shades-generator/030d00/) | Tool to generate color shades for design purposes.       |
 
 ## Known Issues
 
