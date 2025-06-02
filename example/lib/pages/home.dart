@@ -1,32 +1,32 @@
-import 'package:example/components/neutral_banner.dart';
-import 'package:example/components/neutral_button.dart';
-import 'package:example/components/neutral_chip.dart';
-import 'package:example/components/neutral_app_bar.dart';
-import 'package:example/components/neutral_datatable.dart';
-import 'package:example/components/neutral_drawer.dart';
-import 'package:example/components/neutral_float_action_button.dart';
-import 'package:example/components/neutral_list_tyle.dart';
-import 'package:example/components/neutral_switch.dart';
-import 'package:example/components/neutral_text_field.dart';
-import 'package:example/components/neutral_dialog.dart';
-import 'package:example/components/neutral_bottom_sheet.dart';
-import 'package:example/components/neutral_slider.dart';
-import 'package:example/components/neutral_indicators.dart';
-import 'package:example/components/neutral_check_box.dart';
-import 'package:example/components/neutral_radio_button.dart';
-import 'package:example/components/neutral_time_picker.dart';
-import 'package:example/components/neutral_date_picker.dart';
-import 'package:example/components/neutral_segment_button.dart';
-import 'package:example/components/neutral_expansion_panel.dart';
-import 'package:example/components/neutral_snackbar.dart';
-import 'package:example/components/neutral_icon_button.dart';
-import 'package:example/components/neutral_menu_bar.dart';
-import 'package:example/components/neutral_cards.dart';
-import 'package:example/components/neutral_navigation_bar.dart';
-import 'package:example/components/neutral_search_anchor.dart';
-import 'package:example/components/neutral_text.dart';
+import 'package:example/components/fabric_banner.dart';
+import 'package:example/components/fabric_button.dart';
+import 'package:example/components/fabric_chip.dart';
+import 'package:example/components/fabric_app_bar.dart';
+import 'package:example/components/fabric_datatable.dart';
+import 'package:example/components/fabric_drawer.dart';
+import 'package:example/components/fabric_float_action_button.dart';
+import 'package:example/components/fabric_list_tyle.dart';
+import 'package:example/components/fabric_switch.dart';
+import 'package:example/components/fabric_text_field.dart';
+import 'package:example/components/fabric_dialog.dart';
+import 'package:example/components/fabric_bottom_sheet.dart';
+import 'package:example/components/fabric_slider.dart';
+import 'package:example/components/fabric_indicators.dart';
+import 'package:example/components/fabric_check_box.dart';
+import 'package:example/components/fabric_radio_button.dart';
+import 'package:example/components/fabric_time_picker.dart';
+import 'package:example/components/fabric_date_picker.dart';
+import 'package:example/components/fabric_segment_button.dart';
+import 'package:example/components/fabric_expansion_panel.dart';
+import 'package:example/components/fabric_snackbar.dart';
+import 'package:example/components/fabric_icon_button.dart';
+import 'package:example/components/fabric_menu_bar.dart';
+import 'package:example/components/fabric_cards.dart';
+import 'package:example/components/fabric_navigation_bar.dart';
+import 'package:example/components/fabric_search_anchor.dart';
+import 'package:example/components/fabric_text.dart';
 import 'package:flutter/material.dart';
-import 'package:neutral/neutral.dart';
+import 'package:fabric/fabric.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -34,9 +34,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NeutralAppBar(),
+      appBar: FabricAppBar(),
       drawer: CustomDrawer(),
-      bottomNavigationBar: NeutralNavigationBar(),
+      bottomNavigationBar: FabricNavigationBar(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.only(bottom: 100, top: 5),
         child: Column(
@@ -48,68 +48,68 @@ class Home extends StatelessWidget {
               width: double.infinity,
               child: Row(
                 children: [
-                  Expanded(child: Container(width: 30, height: 130, color: fabric.mainColor.shade50)),
-                  Expanded(child: Container(width: 30, height: 130, color: fabric.mainColor.shade100)),
-                  Expanded(child: Container(width: 30, height: 130, color: fabric.mainColor.shade200)),
-                  Expanded(child: Container(width: 30, height: 130, color: fabric.mainColor.shade300)),
-                  Expanded(child: Container(width: 30, height: 130, color: fabric.mainColor.shade400)),
-                  Expanded(child: Container(width: 30, height: 130, color: fabric.mainColor.shade500)),
-                  Expanded(child: Container(width: 30, height: 130, color: fabric.mainColor.shade600)),
-                  Expanded(child: Container(width: 30, height: 130, color: fabric.mainColor.shade700)),
-                  Expanded(child: Container(width: 30, height: 130, color: fabric.mainColor.shade800)),
-                  Expanded(child: Container(width: 30, height: 130, color: fabric.mainColor.shade900)),
-                  Expanded(child: Container(width: 30, height: 130, color: fabric.mainColor.shade950)),
+                  Expanded(child: Container(width: 30, height: 130, color: fabricConfig.color.shade50)),
+                  Expanded(child: Container(width: 30, height: 130, color: fabricConfig.color.shade100)),
+                  Expanded(child: Container(width: 30, height: 130, color: fabricConfig.color.shade200)),
+                  Expanded(child: Container(width: 30, height: 130, color: fabricConfig.color.shade300)),
+                  Expanded(child: Container(width: 30, height: 130, color: fabricConfig.color.shade400)),
+                  Expanded(child: Container(width: 30, height: 130, color: fabricConfig.color.shade500)),
+                  Expanded(child: Container(width: 30, height: 130, color: fabricConfig.color.shade600)),
+                  Expanded(child: Container(width: 30, height: 130, color: fabricConfig.color.shade700)),
+                  Expanded(child: Container(width: 30, height: 130, color: fabricConfig.color.shade800)),
+                  Expanded(child: Container(width: 30, height: 130, color: fabricConfig.color.shade900)),
+                  Expanded(child: Container(width: 30, height: 130, color: fabricConfig.color.shade950)),
                 ],
               ),
             ),
             Divider(),
-            NeutralButton(),
+            FabricButton(),
             Divider(),
-            NeutralSegmentButton(),
+            FabricSegmentButton(),
             Divider(),
-            NeutralIconButton(),
+            FabricIconButton(),
             Divider(),
-            NeutralFloatActionButton(),
+            FabricFloatActionButton(),
             Divider(),
-            NeutralSwitch(),
+            FabricSwitch(),
             Divider(),
-            NeutralDatatable(),
+            FabricDatatable(),
             Divider(),
-            NeutralChip(),
+            FabricChip(),
             Divider(),
-            NeutralListTile(),
+            FabricListTile(),
             Divider(),
-            NeutralExpansionPanel(),
+            FabricExpansionPanel(),
             Divider(),
-            NeutralBanner(),
+            FabricBanner(),
             Divider(),
-            NeutralTextField(),
+            FabricTextField(),
             Divider(),
-            NeutralSlider(),
+            FabricSlider(),
             Divider(),
-            NeutralIndicators(),
+            FabricIndicators(),
             Divider(),
-            NeutralCheckbox(),
+            FabricCheckbox(),
             Divider(),
-            NeutralText(),
+            FabricText(),
             Divider(),
-            NeutralRadioButton(),
+            FabricRadioButton(),
             Divider(),
-            NeutralCards(),
+            FabricCards(),
             Divider(),
-            NeutralMenuBar(),
+            FabricMenuBar(),
             Divider(),
-            NeutralSearchAnchor(),
+            FabricSearchAnchor(),
             Divider(),
-            NeutralTimePicker(),
+            FabricTimePicker(),
             Divider(),
-            NeutralDatepicker(),
+            FabricDatepicker(),
             Divider(),
-            NeutralDialog(),
+            FabricDialog(),
             Divider(),
-            NeutralBottomSheet(),
+            FabricBottomSheet(),
             Divider(),
-            NeutralSnackbar(),
+            FabricSnackbar(),
           ],
         ),
       ),
