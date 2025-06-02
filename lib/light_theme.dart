@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:neutral/custom_color.dart';
+import 'package:neutral/fabric_color.dart';
 
 neutralLightTheme({
-  required CustomColor mainColor,
+  required FabricColor mainColor,
   String? fontFamily,
 }) {
   return ThemeData(
@@ -11,7 +11,7 @@ neutralLightTheme({
     disabledColor: mainColor.shade400,
     brightness: Brightness.light,
     fontFamily: fontFamily,
-    splashColor: mainColor.shade300,
+    splashColor: mainColor.shade100,
 
     /*--- APP BAR ---*/
 
@@ -80,7 +80,7 @@ neutralLightTheme({
         }),
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade400;
+            return mainColor.shade300;
           }
           return mainColor.shade200;
         }),
@@ -115,7 +115,7 @@ neutralLightTheme({
         }),
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade400;
+            return mainColor.shade300;
           }
           return mainColor.shade950;
         }),
@@ -139,7 +139,7 @@ neutralLightTheme({
           );
         }),
         overlayColor: WidgetStateProperty.all(
-          mainColor.shade300,
+          mainColor.shade200,
         ),
         textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
@@ -170,7 +170,7 @@ neutralLightTheme({
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         overlayColor: WidgetStateProperty.all(
-          mainColor.shade300,
+          mainColor.shade200,
         ),
         textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
@@ -200,7 +200,7 @@ neutralLightTheme({
     dividerTheme: DividerThemeData(
       thickness: 1,
       space: 0,
-      color: mainColor.shade300,
+      color: mainColor.shade200,
     ),
 
     /*--- LIST TILE ---*/
@@ -238,7 +238,7 @@ neutralLightTheme({
       checkmarkColor: mainColor.shade950,
       color: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return mainColor.shade200;
+          return mainColor.shade100;
         }
 
         return mainColor.shade50;
@@ -285,7 +285,7 @@ neutralLightTheme({
     /*--- POPUP MENU ---*/
 
     popupMenuTheme: PopupMenuThemeData(
-      color: mainColor.shade300,
+      color: mainColor.shade200,
       elevation: 0,
       surfaceTintColor: mainColor.shade300,
       iconColor: mainColor.shade950,
@@ -464,10 +464,10 @@ neutralLightTheme({
         fontSize: 12,
       ),
       activeTrackColor: mainColor.shade950,
-      inactiveTrackColor: mainColor.shade300,
+      inactiveTrackColor: mainColor.shade200,
       thumbColor: mainColor.shade950,
       overlayColor: mainColor.shade500.withValues(alpha: 0.2),
-      disabledActiveTrackColor: mainColor.shade300,
+      disabledActiveTrackColor: mainColor.shade200,
       disabledInactiveTrackColor: mainColor.shade200,
       disabledThumbColor: mainColor.shade400,
       tickMarkShape: const RoundSliderTickMarkShape(),
@@ -478,7 +478,7 @@ neutralLightTheme({
 
     progressIndicatorTheme: ProgressIndicatorThemeData(
       color: mainColor.shade950,
-      linearTrackColor: mainColor.shade300,
+      linearTrackColor: mainColor.shade200,
       circularTrackPadding: const EdgeInsets.all(0),
     ),
 
@@ -553,8 +553,8 @@ neutralLightTheme({
       backgroundColor: mainColor.shade50,
       elevation: 0,
       dialHandColor: mainColor.shade900,
-      hourMinuteColor: mainColor.shade200,
-      dayPeriodColor: mainColor.shade200,
+      hourMinuteColor: mainColor.shade100,
+      dayPeriodColor: mainColor.shade100,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -597,6 +597,11 @@ neutralLightTheme({
 
     datePickerTheme: DatePickerThemeData(
       backgroundColor: mainColor.shade50,
+      rangePickerHeaderHelpStyle: TextStyle(
+        fontFamily: fontFamily,
+        foreground: Paint()..color = mainColor.shade950,
+        fontWeight: FontWeight.bold,
+      ),
       dayBackgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
           return mainColor.shade950;
@@ -630,7 +635,7 @@ neutralLightTheme({
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
-      rangeSelectionBackgroundColor: mainColor.shade200,
+      rangeSelectionBackgroundColor: mainColor.shade100,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -687,7 +692,7 @@ neutralLightTheme({
         }),
         backgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
-            return mainColor.shade200;
+            return mainColor.shade100;
           }
           return mainColor.shade50;
         }),
@@ -697,7 +702,7 @@ neutralLightTheme({
     /*--- TAB BAR ---*/
 
     tabBarTheme: TabBarThemeData(
-      dividerColor: mainColor.shade300,
+      dividerColor: mainColor.shade200,
       dividerHeight: 3,
       indicatorColor: mainColor.shade950,
       indicatorSize: TabBarIndicatorSize.label,
@@ -744,7 +749,7 @@ neutralLightTheme({
       collapsedBackgroundColor: mainColor.shade50,
       collapsedIconColor: mainColor.shade950,
       iconColor: mainColor.shade950,
-      backgroundColor: mainColor.shade200,
+      backgroundColor: mainColor.shade100,
       textColor: mainColor.shade950,
       childrenPadding: const EdgeInsets.only(
         bottom: 15,
@@ -813,7 +818,7 @@ neutralLightTheme({
       unselectedIconTheme: IconThemeData(
         color: mainColor.shade950,
       ),
-      indicatorColor: mainColor.shade300,
+      indicatorColor: mainColor.shade200,
       labelType: NavigationRailLabelType.none,
     ),
 
@@ -833,7 +838,7 @@ neutralLightTheme({
     menuTheme: MenuThemeData(
       style: MenuStyle(
         alignment: AlignmentDirectional.topEnd,
-        surfaceTintColor: WidgetStateProperty.all(mainColor.shade300),
+        surfaceTintColor: WidgetStateProperty.all(mainColor.shade200),
         side: WidgetStateProperty.resolveWith<BorderSide>((Set<WidgetState> states) {
           return BorderSide(
             color: mainColor.shade50,
@@ -843,7 +848,7 @@ neutralLightTheme({
         elevation: WidgetStateProperty.resolveWith<double>((Set<WidgetState> states) {
           return 0;
         }),
-        backgroundColor: WidgetStateProperty.all(mainColor.shade300),
+        backgroundColor: WidgetStateProperty.all(mainColor.shade200),
         shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -872,7 +877,7 @@ neutralLightTheme({
     /*--- NAVIGATION BAR ---*/
 
     navigationBarTheme: NavigationBarThemeData(
-      backgroundColor: mainColor.shade200,
+      backgroundColor: mainColor.shade100,
       indicatorColor: mainColor.shade50,
       surfaceTintColor: mainColor.shade200,
       overlayColor: WidgetStateProperty.all(mainColor.shade50),
@@ -922,13 +927,13 @@ neutralLightTheme({
 
     bannerTheme: MaterialBannerThemeData(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      surfaceTintColor: mainColor.shade200,
-      dividerColor: mainColor.shade200,
+      surfaceTintColor: mainColor.shade100,
+      dividerColor: mainColor.shade100,
       contentTextStyle: TextStyle(
         fontFamily: fontFamily,
         color: mainColor.shade950,
       ),
-      backgroundColor: mainColor.shade200,
+      backgroundColor: mainColor.shade100,
       elevation: 0,
     ),
 
