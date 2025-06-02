@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './pages/home.dart';
 import './pages/navigation_rail.dart';
-import 'package:neutral/neutral.dart';
+import 'package:fabric/fabric.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -9,8 +9,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: fabric.getLightTheme(),
-      darkTheme: fabric.getDarkTheme(),
+      theme: fabricConfig.getLightTheme(),
+      darkTheme: fabricConfig.getDarkTheme(),
       debugShowCheckedModeBanner: false,
       home: Home(),
       routes: {
