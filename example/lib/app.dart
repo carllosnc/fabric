@@ -9,14 +9,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: neutralLightTheme(
-        mainColor: neutral,
-        fontFamily: "BricolageGrotesque",
-      ),
-      darkTheme: neutralDarkTheme(
-        mainColor: neutral,
-        fontFamily: "BricolageGrotesque",
-      ),
+      theme: fabric.getLightTheme(),
+      darkTheme: fabric.getDarkTheme(),
       debugShowCheckedModeBanner: false,
       home: Home(),
       routes: {
