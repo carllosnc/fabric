@@ -137,13 +137,9 @@ key, such as 50, 100, 200, etc., and corresponds to a specific `Color`.
 
 ## Examples
 
-<img src="prints/ex01.png">
-<img src="prints/ex02.png">
-<img src="prints/ex03.png">
-<img src="prints/ex04.png">
-<img src="prints/ex05.png">
-<img src="prints/ex06.png">
-<img src="prints/ex07.png">
+<img src="prints/fabric_01.jpeg">
+<img src="prints/fabric_02.jpeg">
+<img src="prints/fabric_03.jpeg">
 
 ---
 
