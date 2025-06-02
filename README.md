@@ -90,7 +90,7 @@ void main() {
 > [!WARNING]
 > For now, Fabric does not support google_fonts package.
 
-## Color Palette
+## Fabric Swatch
 
 Fabric provides these following colors:
 
