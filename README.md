@@ -1,6 +1,6 @@
 # Fabric
 
-> Fabric is configurationso based on Material 3 design system for Flutter.
+> Fabric is a custom theme based on Material 3 design system for Flutter.
 
 ## Widgets
 
@@ -50,7 +50,6 @@ dependencies:
 ```
 
 To more information about unplublished packages, see: https://dart.dev/tools/pub/package-layout#unpublished-pac
-
 
 ## Usage
 
