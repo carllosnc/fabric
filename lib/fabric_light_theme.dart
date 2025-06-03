@@ -860,14 +860,14 @@ fabricLightTheme({
     /*--- CARD ---*/
 
     cardTheme: CardThemeData(
-      surfaceTintColor: mainColor.shade100,
+      surfaceTintColor: Colors.white,
       clipBehavior: Clip.none,
-      color: mainColor.shade100,
+      color: Colors.white,
       elevation: 0,
       margin: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
         side: BorderSide(
-          color: mainColor.shade300,
+          color: Colors.white,
           width: 1,
         ),
         borderRadius: BorderRadius.circular(10),
