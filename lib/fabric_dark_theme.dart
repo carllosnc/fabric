@@ -478,7 +478,7 @@ fabricDarkTheme({
     /*--- FLOATING ACTION BUTTON ---*/
 
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: mainColor.shade200,
+      backgroundColor: mainColor.shade50,
       shape: const StadiumBorder(),
       splashColor: mainColor.shade400,
       foregroundColor: mainColor.shade950,
@@ -858,14 +858,14 @@ fabricDarkTheme({
     /*--- CARD ---*/
 
     cardTheme: CardThemeData(
-      surfaceTintColor: mainColor.shade950,
+      surfaceTintColor: mainColor.shade800,
       clipBehavior: Clip.none,
-      color: mainColor.shade950,
+      color: mainColor.shade800,
       elevation: 0,
       margin: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
         side: BorderSide(
-          color: mainColor.shade700,
+          color: mainColor.shade800,
           width: 1,
         ),
         borderRadius: BorderRadius.circular(10),
