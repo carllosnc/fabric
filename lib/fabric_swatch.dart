@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class FabricSwatch extends ColorSwatch<int> {
   const FabricSwatch(super.primary, super.swatch);
 
+  Color get shade00 => Colors.white;
   Color get shade50 => this[50]!;
   Color get shade100 => this[100]!;
   Color get shade200 => this[200]!;
