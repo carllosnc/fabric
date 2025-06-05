@@ -704,6 +704,10 @@ fabricDarkTheme({
       dividerHeight: 3,
       indicatorColor: mainColor.shade50,
       indicatorSize: TabBarIndicatorSize.label,
+      splashBorderRadius: BorderRadius.only(
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ),
       indicator: BoxDecoration(
         border: Border(
           bottom: BorderSide(
