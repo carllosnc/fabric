@@ -240,7 +240,7 @@ fabricDarkTheme({
       backgroundColor: mainColor.shade900,
       brightness: Brightness.dark,
       deleteIconColor: mainColor.shade50,
-      disabledColor: mainColor.shade600,
+      disabledColor: mainColor.shade800,
       padding: const EdgeInsets.symmetric(
         horizontal: 10,
         vertical: 5,

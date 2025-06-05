@@ -7,11 +7,11 @@ fabricLightTheme({
 }) {
   return ThemeData(
     colorSchemeSeed: mainColor,
-    scaffoldBackgroundColor: mainColor.shade50,
+    scaffoldBackgroundColor: mainColor.shade00,
     disabledColor: mainColor.shade400,
     brightness: Brightness.light,
     fontFamily: fontFamily,
-    splashColor: mainColor.shade100,
+    splashColor: mainColor.shade50,
 
     /*--- APP BAR ---*/
 
@@ -26,9 +26,9 @@ fabricLightTheme({
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
-      backgroundColor: mainColor.shade50,
+      backgroundColor: mainColor.shade00,
       foregroundColor: mainColor.shade950,
-      surfaceTintColor: mainColor.shade50,
+      surfaceTintColor: mainColor.shade00,
       elevation: 0,
     ),
 
@@ -70,19 +70,19 @@ fabricLightTheme({
             fontWeight: FontWeight.bold,
           );
         }),
-        overlayColor: WidgetStateProperty.all(mainColor.shade300),
+        overlayColor: WidgetStateProperty.all(mainColor.shade200),
         foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade50;
+            return mainColor.shade400;
           }
 
           return mainColor.shade950;
         }),
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade300;
+            return mainColor.shade50;
           }
-          return mainColor.shade200;
+          return mainColor.shade100;
         }),
       ),
     ),
@@ -107,15 +107,11 @@ fabricLightTheme({
         }),
         overlayColor: WidgetStateProperty.all(mainColor.shade600),
         foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade50;
-          }
-
-          return mainColor.shade50;
+          return mainColor.shade00;
         }),
         backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade300;
+            return mainColor.shade200;
           }
           return mainColor.shade950;
         }),
@@ -129,17 +125,17 @@ fabricLightTheme({
         side: WidgetStateProperty.resolveWith<BorderSide>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
             return BorderSide(
-              color: mainColor.shade300,
+              color: mainColor.shade200,
               width: 1,
             );
           }
           return BorderSide(
-            color: mainColor.shade500,
+            color: mainColor.shade300,
             width: 1,
           );
         }),
         overlayColor: WidgetStateProperty.all(
-          mainColor.shade200,
+          mainColor.shade50,
         ),
         textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
@@ -161,7 +157,7 @@ fabricLightTheme({
           }
           return mainColor.shade950;
         }),
-        backgroundColor: WidgetStateProperty.all(mainColor.shade50),
+        backgroundColor: WidgetStateProperty.all(mainColor.shade00),
       ),
     ),
 
@@ -170,7 +166,7 @@ fabricLightTheme({
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         overlayColor: WidgetStateProperty.all(
-          mainColor.shade200,
+          mainColor.shade50,
         ),
         textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
           if (states.contains(WidgetState.disabled)) {
@@ -200,7 +196,7 @@ fabricLightTheme({
     dividerTheme: DividerThemeData(
       thickness: 1,
       space: 0,
-      color: mainColor.shade200,
+      color: mainColor.shade100,
     ),
 
     /*--- LIST TILE ---*/
@@ -223,7 +219,7 @@ fabricLightTheme({
     /*--- DRAWER ---*/
 
     drawerTheme: DrawerThemeData(
-      backgroundColor: mainColor.shade50,
+      backgroundColor: mainColor.shade00,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(0),
@@ -238,12 +234,12 @@ fabricLightTheme({
       checkmarkColor: mainColor.shade950,
       color: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return mainColor.shade100;
+          return mainColor.shade50;
         }
 
-        return mainColor.shade50;
+        return mainColor.shade00;
       }),
-      backgroundColor: mainColor.shade50,
+      backgroundColor: mainColor.shade00,
       brightness: Brightness.light,
       deleteIconColor: mainColor.shade950,
       disabledColor: mainColor.shade200,
@@ -274,7 +270,7 @@ fabricLightTheme({
     tooltipTheme: TooltipThemeData(
       textStyle: TextStyle(
         fontFamily: fontFamily,
-        color: mainColor.shade50,
+        color: mainColor.shade00,
       ),
       decoration: BoxDecoration(
         color: mainColor.shade600,
@@ -285,9 +281,9 @@ fabricLightTheme({
     /*--- POPUP MENU ---*/
 
     popupMenuTheme: PopupMenuThemeData(
-      color: mainColor.shade200,
+      color: mainColor.shade50,
       elevation: 0,
-      surfaceTintColor: mainColor.shade300,
+      surfaceTintColor: mainColor.shade50,
       iconColor: mainColor.shade950,
       iconSize: 16,
       labelTextStyle: WidgetStateProperty.all(
@@ -301,7 +297,7 @@ fabricLightTheme({
       textStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
-        color: mainColor.shade50,
+        color: mainColor.shade00,
         fontSize: 15,
       ),
       menuPadding: const EdgeInsets.all(0),
@@ -318,9 +314,8 @@ fabricLightTheme({
           return mainColor.shade400;
         }
         if (states.contains(WidgetState.selected)) {
-          return mainColor.shade50;
+          return mainColor.shade00;
         }
-
         return mainColor.shade950;
       }),
       trackColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
@@ -330,7 +325,7 @@ fabricLightTheme({
         if (states.contains(WidgetState.selected)) {
           return mainColor.shade950;
         }
-        return mainColor.shade50;
+        return mainColor.shade00;
       }),
       trackOutlineColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
         if (states.contains(WidgetState.disabled)) {
@@ -392,7 +387,7 @@ fabricLightTheme({
     /*--- DIALOG ---*/
 
     dialogTheme: DialogThemeData(
-      surfaceTintColor: mainColor.shade50,
+      surfaceTintColor: mainColor.shade00,
       elevation: 0,
       titleTextStyle: TextStyle(
         fontFamily: fontFamily,
@@ -406,7 +401,7 @@ fabricLightTheme({
         color: mainColor.shade700,
         fontSize: 16,
       ),
-      backgroundColor: mainColor.shade50,
+      backgroundColor: mainColor.shade00,
       insetPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
@@ -443,8 +438,8 @@ fabricLightTheme({
     /*--- BOTTOM SHEET ---*/
 
     bottomSheetTheme: BottomSheetThemeData(
-      backgroundColor: mainColor.shade50,
-      surfaceTintColor: mainColor.shade50,
+      backgroundColor: mainColor.shade00,
+      surfaceTintColor: mainColor.shade00,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(0),
@@ -460,15 +455,15 @@ fabricLightTheme({
       valueIndicatorTextStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
-        color: mainColor.shade50,
+        color: mainColor.shade00,
         fontSize: 12,
       ),
       activeTrackColor: mainColor.shade950,
-      inactiveTrackColor: mainColor.shade200,
+      inactiveTrackColor: mainColor.shade100,
       thumbColor: mainColor.shade950,
       overlayColor: mainColor.shade500.withValues(alpha: 0.2),
-      disabledActiveTrackColor: mainColor.shade200,
-      disabledInactiveTrackColor: mainColor.shade200,
+      disabledActiveTrackColor: mainColor.shade100,
+      disabledInactiveTrackColor: mainColor.shade100,
       disabledThumbColor: mainColor.shade400,
       tickMarkShape: const RoundSliderTickMarkShape(),
       trackShape: const RectangularSliderTrackShape(),
@@ -478,7 +473,7 @@ fabricLightTheme({
 
     progressIndicatorTheme: ProgressIndicatorThemeData(
       color: mainColor.shade950,
-      linearTrackColor: mainColor.shade200,
+      linearTrackColor: mainColor.shade100,
       circularTrackPadding: const EdgeInsets.all(0),
     ),
 
@@ -488,7 +483,7 @@ fabricLightTheme({
       backgroundColor: mainColor.shade950,
       shape: const StadiumBorder(),
       splashColor: mainColor.shade700,
-      foregroundColor: mainColor.shade50,
+      foregroundColor: mainColor.shade00,
     ),
 
     /*--- CHECKBOX ---*/
@@ -500,10 +495,10 @@ fabricLightTheme({
         }
 
         if (states.contains(WidgetState.disabled)) {
-          return mainColor.shade300;
+          return mainColor.shade100;
         }
 
-        return mainColor.shade50;
+        return mainColor.shade00;
       }),
       checkColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
@@ -542,19 +537,19 @@ fabricLightTheme({
     /*--- TEXT SELECTION ---*/
 
     textSelectionTheme: TextSelectionThemeData(
-      cursorColor: mainColor.shade900,
-      selectionColor: mainColor.shade200,
-      selectionHandleColor: mainColor.shade900,
+      cursorColor: mainColor.shade950,
+      selectionColor: mainColor.shade50,
+      selectionHandleColor: mainColor.shade950,
     ),
 
     /*--- TIMEPICKER ---*/
 
     timePickerTheme: TimePickerThemeData(
-      backgroundColor: mainColor.shade50,
+      backgroundColor: mainColor.shade00,
       elevation: 0,
       dialHandColor: mainColor.shade900,
-      hourMinuteColor: mainColor.shade100,
-      dayPeriodColor: mainColor.shade100,
+      hourMinuteColor: mainColor.shade50,
+      dayPeriodColor: mainColor.shade50,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -574,7 +569,7 @@ fabricLightTheme({
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
-            color: mainColor.shade300,
+            color: mainColor.shade200,
           ),
         ),
         errorBorder: OutlineInputBorder(
@@ -587,16 +582,16 @@ fabricLightTheme({
         ),
       ),
       dayPeriodBorderSide: BorderSide(
-        color: mainColor.shade400,
+        color: mainColor.shade200,
         width: 1,
       ),
-      dialBackgroundColor: mainColor.shade50,
+      dialBackgroundColor: mainColor.shade00,
     ),
 
     /*--- DATEPICKER ---*/
 
     datePickerTheme: DatePickerThemeData(
-      backgroundColor: mainColor.shade50,
+      backgroundColor: mainColor.shade00,
       rangePickerHeaderHelpStyle: TextStyle(
         fontFamily: fontFamily,
         foreground: Paint()..color = mainColor.shade950,
@@ -606,16 +601,16 @@ fabricLightTheme({
         if (states.contains(WidgetState.selected)) {
           return mainColor.shade950;
         }
-        return mainColor.shade50;
+        return mainColor.shade00;
       }),
       dayForegroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
-          return mainColor.shade50;
+          return mainColor.shade00;
         }
         return mainColor.shade950;
       }),
       elevation: 0,
-      headerBackgroundColor: mainColor.shade50,
+      headerBackgroundColor: mainColor.shade00,
       headerForegroundColor: mainColor.shade950,
       headerHeadlineStyle: TextStyle(
         fontFamily: fontFamily,
@@ -627,19 +622,19 @@ fabricLightTheme({
         fontFamily: fontFamily,
         color: mainColor.shade950,
       ),
-      rangePickerBackgroundColor: mainColor.shade50,
-      rangePickerSurfaceTintColor: mainColor.shade50,
+      rangePickerBackgroundColor: mainColor.shade00,
+      rangePickerSurfaceTintColor: mainColor.shade00,
       rangePickerHeaderHeadlineStyle: TextStyle(
         fontFamily: fontFamily,
         foreground: Paint()..color = mainColor.shade950,
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
-      rangeSelectionBackgroundColor: mainColor.shade100,
+      rangeSelectionBackgroundColor: mainColor.shade50,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      surfaceTintColor: mainColor.shade50,
+      surfaceTintColor: mainColor.shade00,
       todayBackgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
           return mainColor.shade950;
@@ -666,7 +661,7 @@ fabricLightTheme({
 
     segmentedButtonTheme: SegmentedButtonThemeData(
       style: ButtonStyle(
-        overlayColor: WidgetStateProperty.all(mainColor.shade300),
+        overlayColor: WidgetStateProperty.all(mainColor.shade100),
         surfaceTintColor: WidgetStateProperty.all(mainColor.shade50),
         textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
@@ -681,7 +676,7 @@ fabricLightTheme({
           );
         }),
         side: WidgetStateProperty.all(BorderSide(
-          color: mainColor.shade400,
+          color: mainColor.shade200,
           width: 1,
         )),
         foregroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
@@ -692,9 +687,9 @@ fabricLightTheme({
         }),
         backgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
-            return mainColor.shade100;
+            return mainColor.shade50;
           }
-          return mainColor.shade50;
+          return mainColor.shade00;
         }),
       ),
     ),
@@ -702,7 +697,7 @@ fabricLightTheme({
     /*--- TAB BAR ---*/
 
     tabBarTheme: TabBarThemeData(
-      dividerColor: mainColor.shade200,
+      dividerColor: mainColor.shade100,
       dividerHeight: 3,
       indicatorColor: mainColor.shade950,
       indicatorSize: TabBarIndicatorSize.label,
@@ -714,12 +709,14 @@ fabricLightTheme({
           ),
         ),
       ),
+      //set splash color
+      splashBorderRadius: BorderRadius.only(
+        topLeft: Radius.circular(20),
+        topRight: Radius.circular(20),
+      ),
       unselectedLabelColor: mainColor.shade500,
       overlayColor: WidgetStateColor.resolveWith((Set<WidgetState> states) {
-        if (states.contains(WidgetState.selected)) {
-          return mainColor.shade950;
-        }
-        return mainColor.shade200;
+        return mainColor.shade50;
       }),
       labelColor: mainColor.shade950,
     ),
@@ -735,21 +732,21 @@ fabricLightTheme({
       ),
       collapsedShape: Border(
         bottom: BorderSide(
-          color: mainColor.shade50,
+          color: mainColor.shade00,
           width: 4,
         ),
       ),
       shape: Border(
         bottom: BorderSide(
-          color: mainColor.shade50,
+          color: mainColor.shade00,
           width: 4,
         ),
       ),
       clipBehavior: Clip.none,
-      collapsedBackgroundColor: mainColor.shade50,
+      collapsedBackgroundColor: mainColor.shade00,
       collapsedIconColor: mainColor.shade950,
       iconColor: mainColor.shade950,
-      backgroundColor: mainColor.shade100,
+      backgroundColor: mainColor.shade50,
       textColor: mainColor.shade950,
       childrenPadding: const EdgeInsets.only(
         bottom: 15,
@@ -763,14 +760,14 @@ fabricLightTheme({
 
     snackBarTheme: SnackBarThemeData(
       backgroundColor: mainColor.shade800,
-      actionTextColor: mainColor.shade50,
+      actionTextColor: mainColor.shade00,
       disabledActionBackgroundColor: mainColor.shade800,
       disabledActionTextColor: mainColor.shade400,
       actionBackgroundColor: mainColor.shade700,
-      closeIconColor: mainColor.shade50,
+      closeIconColor: mainColor.shade00,
       contentTextStyle: TextStyle(
         fontFamily: fontFamily,
-        color: mainColor.shade50,
+        color: mainColor.shade00,
       ),
       elevation: 0,
     ),
@@ -804,13 +801,13 @@ fabricLightTheme({
       alignment: Alignment.topCenter,
       offset: const Offset(0, -4),
       backgroundColor: Colors.red,
-      textColor: mainColor.shade50,
+      textColor: mainColor.shade00,
     ),
 
     /*--- NAVIGATION RAIL ---*/
 
     navigationRailTheme: NavigationRailThemeData(
-      backgroundColor: mainColor.shade50,
+      backgroundColor: mainColor.shade00,
       elevation: 0,
       selectedIconTheme: IconThemeData(
         color: mainColor.shade950,
@@ -818,7 +815,7 @@ fabricLightTheme({
       unselectedIconTheme: IconThemeData(
         color: mainColor.shade950,
       ),
-      indicatorColor: mainColor.shade200,
+      indicatorColor: mainColor.shade100,
       labelType: NavigationRailLabelType.none,
     ),
 
@@ -829,7 +826,7 @@ fabricLightTheme({
         elevation: WidgetStateProperty.resolveWith<double>((Set<WidgetState> states) {
           return 0;
         }),
-        backgroundColor: WidgetStateProperty.all(mainColor.shade50),
+        backgroundColor: WidgetStateProperty.all(mainColor.shade00),
       ),
     ),
 
@@ -841,14 +838,14 @@ fabricLightTheme({
         surfaceTintColor: WidgetStateProperty.all(mainColor.shade200),
         side: WidgetStateProperty.resolveWith<BorderSide>((Set<WidgetState> states) {
           return BorderSide(
-            color: mainColor.shade50,
+            color: mainColor.shade00,
             width: 2,
           );
         }),
         elevation: WidgetStateProperty.resolveWith<double>((Set<WidgetState> states) {
           return 0;
         }),
-        backgroundColor: WidgetStateProperty.all(mainColor.shade200),
+        backgroundColor: WidgetStateProperty.all(mainColor.shade50),
         shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -860,14 +857,14 @@ fabricLightTheme({
     /*--- CARD ---*/
 
     cardTheme: CardThemeData(
-      surfaceTintColor: Colors.white,
+      surfaceTintColor: mainColor.shade50,
       clipBehavior: Clip.none,
-      color: Colors.white,
+      color: mainColor.shade50,
       elevation: 0,
       margin: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
         side: BorderSide(
-          color: Colors.white,
+          color: mainColor.shade50,
           width: 1,
         ),
         borderRadius: BorderRadius.circular(10),
@@ -877,10 +874,10 @@ fabricLightTheme({
     /*--- NAVIGATION BAR ---*/
 
     navigationBarTheme: NavigationBarThemeData(
-      backgroundColor: mainColor.shade100,
-      indicatorColor: mainColor.shade50,
-      surfaceTintColor: mainColor.shade200,
-      overlayColor: WidgetStateProperty.all(mainColor.shade50),
+      backgroundColor: mainColor.shade50,
+      indicatorColor: mainColor.shade00,
+      surfaceTintColor: mainColor.shade50,
+      overlayColor: WidgetStateProperty.all(mainColor.shade00),
       iconTheme: WidgetStateProperty.resolveWith(
         (Set<WidgetState> states) {
           if (states.contains(WidgetState.selected)) {
@@ -919,28 +916,28 @@ fabricLightTheme({
     /*--- SEARCH ANCHOR ---*/
 
     searchViewTheme: SearchViewThemeData(
-      backgroundColor: mainColor.shade50,
-      surfaceTintColor: mainColor.shade50,
+      backgroundColor: mainColor.shade00,
+      surfaceTintColor: mainColor.shade00,
     ),
 
     /*--- BANNER ---*/
 
     bannerTheme: MaterialBannerThemeData(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      surfaceTintColor: mainColor.shade100,
-      dividerColor: mainColor.shade100,
+      surfaceTintColor: mainColor.shade50,
+      dividerColor: mainColor.shade50,
       contentTextStyle: TextStyle(
         fontFamily: fontFamily,
         color: mainColor.shade950,
       ),
-      backgroundColor: mainColor.shade100,
+      backgroundColor: mainColor.shade50,
       elevation: 0,
     ),
 
     /*--- DATA TABLE ---*/
 
     dataTableTheme: DataTableThemeData(
-      dataRowColor: WidgetStateProperty.all(mainColor.shade50),
+      dataRowColor: WidgetStateProperty.all(mainColor.shade00),
       headingTextStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
