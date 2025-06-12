@@ -6,10 +6,55 @@ fabricDarkTheme({
   String? fontFamily,
 }) {
   return ThemeData(
-    colorSchemeSeed: mainColor,
+    colorScheme: ColorScheme(
+      brightness: Brightness.dark,
+
+      //primary
+      primary: mainColor.shade100,
+      onPrimary: mainColor.shade900,
+      primaryContainer: mainColor.shade700,
+      onPrimaryContainer: mainColor.shade200,
+
+      //secondary
+      secondary: mainColor.shade500,
+      onSecondary: mainColor.shade100,
+      secondaryContainer: mainColor.shade600,
+      onSecondaryContainer: mainColor.shade200,
+
+      //tertiary
+      tertiary: mainColor.shade400,
+      onTertiary: mainColor.shade900,
+      tertiaryContainer: mainColor.shade700,
+      onTertiaryContainer: mainColor.shade200,
+
+      //error
+      error: Color(0xFFFFB4AB),
+      onError: Color(0xFF690005),
+      errorContainer: Color(0xFF93000A),
+      onErrorContainer: Color(0xFFFFDAD6),
+
+      //surface
+      surface: mainColor.shade800,
+      onSurface: mainColor.shade100,
+      surfaceContainerHighest: mainColor.shade800,
+      onSurfaceVariant: mainColor.shade300,
+      surfaceTint: mainColor.shade400,
+
+      //outline
+      outline: mainColor.shade700,
+      outlineVariant: mainColor.shade800,
+
+      //inverse
+      inverseSurface: mainColor.shade200,
+      onInverseSurface: mainColor.shade800,
+      inversePrimary: mainColor.shade700,
+
+      //shadow
+      shadow: mainColor.shade950,
+      scrim: mainColor.shade950,
+    ),
     scaffoldBackgroundColor: mainColor.shade900,
     disabledColor: mainColor.shade400,
-    brightness: Brightness.dark,
     fontFamily: fontFamily,
     splashColor: mainColor.shade700,
 
@@ -52,155 +97,11 @@ fabricDarkTheme({
       labelSmall: TextStyle(color: mainColor.shade50, fontFamily: fontFamily, fontSize: 11, fontWeight: FontWeight.bold),
     ),
 
-    /*--- ELEVATED BUTTON ---*/
-
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-        textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return TextStyle(
-              fontFamily: fontFamily,
-              fontWeight: FontWeight.bold,
-              decoration: TextDecoration.lineThrough,
-              decorationColor: mainColor.shade50,
-            );
-          }
-          return TextStyle(
-            fontFamily: fontFamily,
-            fontWeight: FontWeight.bold,
-          );
-        }),
-        overlayColor: WidgetStateProperty.all(mainColor.shade500),
-        foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade400;
-          }
-
-          return mainColor.shade50;
-        }),
-        backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade600;
-          }
-          return mainColor.shade700;
-        }),
-      ),
-    ),
-
-    /*--- FILLED BUTTON ---*/
-
-    filledButtonTheme: FilledButtonThemeData(
-      style: ButtonStyle(
-        textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return TextStyle(
-              fontFamily: fontFamily,
-              fontWeight: FontWeight.bold,
-              decoration: TextDecoration.lineThrough,
-              decorationColor: mainColor.shade50,
-            );
-          }
-          return TextStyle(
-            fontFamily: fontFamily,
-            fontWeight: FontWeight.bold,
-          );
-        }),
-        overlayColor: WidgetStateProperty.all(mainColor.shade400),
-        foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade400;
-          }
-
-          return mainColor.shade950;
-        }),
-        backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade600;
-          }
-          return mainColor.shade50;
-        }),
-      ),
-    ),
-
-    /*--- OUTLINED BUTTON ---*/
-
-    outlinedButtonTheme: OutlinedButtonThemeData(
-      style: ButtonStyle(
-        side: WidgetStateProperty.resolveWith<BorderSide>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return BorderSide(
-              color: mainColor.shade700,
-              width: 1,
-            );
-          }
-          return BorderSide(
-            color: mainColor.shade400,
-            width: 1,
-          );
-        }),
-        overlayColor: WidgetStateProperty.all(
-          mainColor.shade700,
-        ),
-        textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return TextStyle(
-              fontFamily: fontFamily,
-              fontWeight: FontWeight.bold,
-              decoration: TextDecoration.lineThrough,
-              decorationColor: mainColor.shade50,
-            );
-          }
-          return TextStyle(
-            fontFamily: fontFamily,
-            fontWeight: FontWeight.bold,
-          );
-        }),
-        foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade400;
-          }
-          return mainColor.shade50;
-        }),
-        backgroundColor: WidgetStateProperty.all(Colors.transparent),
-      ),
-    ),
-
-    /*--- TEXT BUTTON ---*/
-
-    textButtonTheme: TextButtonThemeData(
-      style: ButtonStyle(
-        overlayColor: WidgetStateProperty.all(
-          mainColor.shade700,
-        ),
-        textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return TextStyle(
-              fontFamily: fontFamily,
-              fontWeight: FontWeight.bold,
-              decoration: TextDecoration.lineThrough,
-              decorationColor: mainColor.shade50,
-            );
-          }
-          return TextStyle(
-            fontFamily: fontFamily,
-            fontWeight: FontWeight.bold,
-          );
-        }),
-        foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade400;
-          }
-          return mainColor.shade50;
-        }),
-      ),
-    ),
-
     /*--- DIVIDER ---*/
 
     dividerTheme: DividerThemeData(
       thickness: 1,
       space: 0,
-      color: mainColor.shade700,
     ),
 
     /*--- LIST TILE ---*/
