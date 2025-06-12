@@ -11,14 +11,14 @@ fabricLightTheme({
 
       //primary
       primary: mainColor.shade950,
-      onPrimary: mainColor.shade50,
+      onPrimary: mainColor.shade00,
       primaryContainer: mainColor.shade200,
       onPrimaryContainer: mainColor.shade800,
 
       //secondary
       secondary: mainColor.shade500,
       onSecondary: mainColor.shade50,
-      secondaryContainer: mainColor.shade100,
+      secondaryContainer: mainColor.shade50,
       onSecondaryContainer: mainColor.shade700,
 
       //tertiary
@@ -562,55 +562,17 @@ fabricLightTheme({
       ),
     ),
 
-    /*--- SEGMENTED BUTTON ---*/
-
-    segmentedButtonTheme: SegmentedButtonThemeData(
-      style: ButtonStyle(
-        overlayColor: WidgetStateProperty.all(mainColor.shade100),
-        surfaceTintColor: WidgetStateProperty.all(mainColor.shade50),
-        textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.selected)) {
-            return TextStyle(
-              fontFamily: fontFamily,
-              fontWeight: FontWeight.bold,
-            );
-          }
-          return TextStyle(
-            fontFamily: fontFamily,
-            fontWeight: FontWeight.normal,
-          );
-        }),
-        side: WidgetStateProperty.all(BorderSide(
-          color: mainColor.shade200,
-          width: 1,
-        )),
-        foregroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.selected)) {
-            return mainColor.shade950;
-          }
-          return mainColor.shade950;
-        }),
-        backgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.selected)) {
-            return mainColor.shade50;
-          }
-          return mainColor.shade00;
-        }),
-      ),
-    ),
-
     /*--- TAB BAR ---*/
 
     tabBarTheme: TabBarThemeData(
-      dividerColor: mainColor.shade100,
-      dividerHeight: 3,
+      dividerHeight: 1,
       indicatorColor: mainColor.shade950,
       indicatorSize: TabBarIndicatorSize.label,
       indicator: BoxDecoration(
         border: Border(
           bottom: BorderSide(
             color: mainColor.shade950,
-            width: 3,
+            width: 1,
           ),
         ),
       ),
@@ -619,11 +581,6 @@ fabricLightTheme({
         topLeft: Radius.circular(20),
         topRight: Radius.circular(20),
       ),
-      unselectedLabelColor: mainColor.shade500,
-      overlayColor: WidgetStateColor.resolveWith((Set<WidgetState> states) {
-        return mainColor.shade50;
-      }),
-      labelColor: mainColor.shade950,
     ),
 
     /*--- EXPANSION PANEL ---*/
@@ -677,30 +634,7 @@ fabricLightTheme({
       elevation: 0,
     ),
 
-    /*--- ICON BUTTON ---*/
-
-    iconButtonTheme: IconButtonThemeData(
-      style: ButtonStyle(
-        overlayColor: WidgetStateProperty.all(mainColor.shade300),
-        side: WidgetStateProperty.all(
-          BorderSide(
-            color: Colors.transparent,
-            width: 0,
-          ),
-        ),
-        foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade400;
-          }
-          return mainColor.shade950;
-        }),
-        backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
-          return Colors.transparent;
-        }),
-      ),
-    ),
-
-    /*--- ICON BUTTON ---*/
+    /*--- BADGE ---*/
 
     badgeTheme: BadgeThemeData(
       alignment: Alignment.topCenter,

@@ -18,7 +18,7 @@ fabricDarkTheme({
       //secondary
       secondary: mainColor.shade500,
       onSecondary: mainColor.shade100,
-      secondaryContainer: mainColor.shade600,
+      secondaryContainer: mainColor.shade800,
       onSecondaryContainer: mainColor.shade200,
 
       //tertiary
@@ -53,10 +53,10 @@ fabricDarkTheme({
       shadow: mainColor.shade950,
       scrim: mainColor.shade950,
     ),
-    scaffoldBackgroundColor: mainColor.shade900,
+    scaffoldBackgroundColor: mainColor.shade950,
     disabledColor: mainColor.shade400,
     fontFamily: fontFamily,
-    splashColor: mainColor.shade700,
+    splashColor: mainColor.shade900,
 
     /*--- APP BAR ---*/
 
@@ -71,8 +71,8 @@ fabricDarkTheme({
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
-      backgroundColor: mainColor.shade900,
-      surfaceTintColor: mainColor.shade900,
+      backgroundColor: mainColor.shade950,
+      surfaceTintColor: mainColor.shade950,
       foregroundColor: mainColor.shade50,
       elevation: 0,
     ),
@@ -561,49 +561,11 @@ fabricDarkTheme({
       ),
     ),
 
-    /*--- SEGMENTED BUTTON ---*/
-
-    segmentedButtonTheme: SegmentedButtonThemeData(
-      style: ButtonStyle(
-        overlayColor: WidgetStateProperty.all(mainColor.shade700),
-        surfaceTintColor: WidgetStateProperty.all(mainColor.shade950),
-        textStyle: WidgetStateProperty.resolveWith<TextStyle>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.selected)) {
-            return TextStyle(
-              fontFamily: fontFamily,
-              fontWeight: FontWeight.bold,
-            );
-          }
-          return TextStyle(
-            fontFamily: fontFamily,
-            fontWeight: FontWeight.normal,
-          );
-        }),
-        side: WidgetStateProperty.all(BorderSide(
-          color: mainColor.shade600,
-          width: 1,
-        )),
-        foregroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.selected)) {
-            return mainColor.shade50;
-          }
-          return mainColor.shade400;
-        }),
-        backgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.selected)) {
-            return mainColor.shade800;
-          }
-          return mainColor.shade950;
-        }),
-      ),
-    ),
-
     /*--- TAB BAR ---*/
 
     tabBarTheme: TabBarThemeData(
-      dividerColor: mainColor.shade700,
-      dividerHeight: 3,
-      indicatorColor: mainColor.shade50,
+      dividerHeight: 1,
+      indicatorColor: mainColor.shade00,
       indicatorSize: TabBarIndicatorSize.label,
       splashBorderRadius: BorderRadius.only(
         topLeft: Radius.circular(20),
@@ -613,18 +575,10 @@ fabricDarkTheme({
         border: Border(
           bottom: BorderSide(
             color: mainColor.shade50,
-            width: 3,
+            width: 1,
           ),
         ),
       ),
-      unselectedLabelColor: mainColor.shade500,
-      overlayColor: WidgetStateProperty.resolveWith((Set<WidgetState> states) {
-        if (states.contains(WidgetState.selected)) {
-          return mainColor.shade50;
-        }
-        return mainColor.shade700;
-      }),
-      labelColor: mainColor.shade50,
     ),
 
     /*--- EXPANSION PANEL ---*/
@@ -678,30 +632,7 @@ fabricDarkTheme({
       elevation: 0,
     ),
 
-    /*--- ICON BUTTON ---*/
-
-    iconButtonTheme: IconButtonThemeData(
-      style: ButtonStyle(
-        overlayColor: WidgetStateProperty.all(mainColor.shade700),
-        side: WidgetStateProperty.all(
-          BorderSide(
-            color: Colors.transparent,
-            width: 0,
-          ),
-        ),
-        foregroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
-          if (states.contains(WidgetState.disabled)) {
-            return mainColor.shade400;
-          }
-          return mainColor.shade50;
-        }),
-        backgroundColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
-          return Colors.transparent;
-        }),
-      ),
-    ),
-
-    /*--- ICON BUTTON ---*/
+    /*--- BADGE ---*/
 
     badgeTheme: BadgeThemeData(
       alignment: Alignment.topCenter,
