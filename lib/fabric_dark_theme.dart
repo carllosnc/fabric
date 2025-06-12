@@ -356,7 +356,7 @@ fabricDarkTheme({
       thumbColor: mainColor.shade50,
       overlayColor: mainColor.shade50.withValues(alpha: 0.2),
       disabledActiveTrackColor: mainColor.shade700,
-      disabledInactiveTrackColor: mainColor.shade900,
+      disabledInactiveTrackColor: mainColor.shade700,
       disabledThumbColor: mainColor.shade600,
       tickMarkShape: const RoundSliderTickMarkShape(),
       trackShape: const RectangularSliderTrackShape(),
