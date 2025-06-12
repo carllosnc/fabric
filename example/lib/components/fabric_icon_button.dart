@@ -13,7 +13,7 @@ class FabricIconButton extends StatelessWidget {
         children: [
           Badge(
             label: const Text('badge'),
-            child: IconButton.filled(
+            child: IconButton(
               icon: const Icon(
                 Icons.star_border_outlined,
                 size: 24.0,
@@ -23,7 +23,7 @@ class FabricIconButton extends StatelessWidget {
           ),
           Badge(
             label: const Text('99+'),
-            child: IconButton.filled(
+            child: IconButton(
               icon: const Icon(
                 Icons.star_border_outlined,
                 size: 24.0,
@@ -31,16 +31,27 @@ class FabricIconButton extends StatelessWidget {
               onPressed: () {},
             ),
           ),
-          Badge(
-            label: const Text('2'),
-            child: IconButton.filled(
-              icon: const Icon(
-                Icons.star_border_outlined,
-                size: 24.0,
-              ),
-              onPressed: () {},
+          IconButton.outlined(
+            icon: const Icon(
+              Icons.star_border_outlined,
+              size: 24.0,
             ),
+            onPressed: () {},
           ),
+          IconButton.filled(
+            icon: const Icon(
+              Icons.star_border_outlined,
+              size: 24.0,
+            ),
+            onPressed: () {},
+          ),
+          IconButton.filledTonal(
+            icon: const Icon(
+              Icons.star_border_outlined,
+              size: 24.0,
+            ),
+            onPressed: () {},
+          )
         ],
       ),
     );

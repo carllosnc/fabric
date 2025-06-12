@@ -27,6 +27,7 @@ class FabricButton extends StatelessWidget {
               FilledButton(onPressed: () {}, child: Text('Filled')),
               FilledButton.icon(onPressed: () {}, icon: Icon(Icons.favorite_border_outlined), label: Text('Filled with Icon')),
               FilledButton(onPressed: null, child: Text('Filled Disabled')),
+              FilledButton.tonal(onPressed: () {}, child: Text('Filled Tonal')),
             ],
           ),
           Wrap(
