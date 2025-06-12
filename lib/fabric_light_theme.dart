@@ -41,8 +41,8 @@ fabricLightTheme({
       surfaceTint: mainColor.shade700,
 
       //outline
-      outline: mainColor.shade400,
-      outlineVariant: mainColor.shade300,
+      outline: mainColor.shade300,
+      outlineVariant: mainColor.shade100,
 
       //inverse
       inverseSurface: mainColor.shade800,
@@ -102,7 +102,6 @@ fabricLightTheme({
     dividerTheme: DividerThemeData(
       thickness: 1,
       space: 0,
-      color: mainColor.shade100,
     ),
 
     /*--- LIST TILE ---*/
