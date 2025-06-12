@@ -186,9 +186,9 @@ fabricLightTheme({
     /*--- POPUP MENU ---*/
 
     popupMenuTheme: PopupMenuThemeData(
-      color: mainColor.shade50,
+      // color: mainColor.shade50,
       elevation: 0,
-      surfaceTintColor: mainColor.shade50,
+      // surfaceTintColor: mainColor.shade50,
       iconColor: mainColor.shade950,
       iconSize: 16,
       labelTextStyle: WidgetStateProperty.all(
@@ -372,14 +372,6 @@ fabricLightTheme({
       disabledThumbColor: mainColor.shade400,
       tickMarkShape: const RoundSliderTickMarkShape(),
       trackShape: const RectangularSliderTrackShape(),
-    ),
-
-    /*--- PROGRESS INDICATOR ---*/
-
-    progressIndicatorTheme: ProgressIndicatorThemeData(
-      color: mainColor.shade950,
-      linearTrackColor: mainColor.shade100,
-      circularTrackPadding: const EdgeInsets.all(0),
     ),
 
     /*--- FLOATING ACTION BUTTON ---*/
@@ -654,7 +646,7 @@ fabricLightTheme({
       unselectedIconTheme: IconThemeData(
         color: mainColor.shade950,
       ),
-      indicatorColor: mainColor.shade100,
+      indicatorColor: mainColor.shade50,
       labelType: NavigationRailLabelType.none,
     ),
 
@@ -674,7 +666,6 @@ fabricLightTheme({
     menuTheme: MenuThemeData(
       style: MenuStyle(
         alignment: AlignmentDirectional.topEnd,
-        surfaceTintColor: WidgetStateProperty.all(mainColor.shade200),
         side: WidgetStateProperty.resolveWith<BorderSide>((Set<WidgetState> states) {
           return BorderSide(
             color: mainColor.shade00,
@@ -684,7 +675,6 @@ fabricLightTheme({
         elevation: WidgetStateProperty.resolveWith<double>((Set<WidgetState> states) {
           return 0;
         }),
-        backgroundColor: WidgetStateProperty.all(mainColor.shade50),
         shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
