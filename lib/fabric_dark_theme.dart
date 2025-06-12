@@ -10,22 +10,22 @@ fabricDarkTheme({
       brightness: Brightness.dark,
 
       //primary
-      primary: mainColor.shade100,
+      primary: mainColor.shade00,
       onPrimary: mainColor.shade900,
       primaryContainer: mainColor.shade700,
-      onPrimaryContainer: mainColor.shade200,
+      onPrimaryContainer: mainColor.shade50,
 
       //secondary
       secondary: mainColor.shade500,
       onSecondary: mainColor.shade100,
-      secondaryContainer: mainColor.shade800,
-      onSecondaryContainer: mainColor.shade200,
+      secondaryContainer: mainColor.shade700,
+      onSecondaryContainer: mainColor.shade50,
 
       //tertiary
       tertiary: mainColor.shade400,
       onTertiary: mainColor.shade900,
       tertiaryContainer: mainColor.shade700,
-      onTertiaryContainer: mainColor.shade200,
+      onTertiaryContainer: mainColor.shade50,
 
       //error
       error: Color(0xFFFFB4AB),
@@ -34,15 +34,15 @@ fabricDarkTheme({
       onErrorContainer: Color(0xFFFFDAD6),
 
       //surface
-      surface: mainColor.shade800,
-      onSurface: mainColor.shade100,
+      surface: mainColor.shade700,
+      onSurface: mainColor.shade50,
       surfaceContainerHighest: mainColor.shade800,
       onSurfaceVariant: mainColor.shade300,
       surfaceTint: mainColor.shade400,
 
       //outline
-      outline: mainColor.shade700,
-      outlineVariant: mainColor.shade800,
+      outline: mainColor.shade500,
+      outlineVariant: mainColor.shade700,
 
       //inverse
       inverseSurface: mainColor.shade200,
@@ -53,10 +53,10 @@ fabricDarkTheme({
       shadow: mainColor.shade950,
       scrim: mainColor.shade950,
     ),
-    scaffoldBackgroundColor: mainColor.shade950,
+    scaffoldBackgroundColor: mainColor.shade900,
     disabledColor: mainColor.shade400,
     fontFamily: fontFamily,
-    splashColor: mainColor.shade900,
+    splashColor: mainColor.shade800,
 
     /*--- APP BAR ---*/
 
@@ -71,8 +71,8 @@ fabricDarkTheme({
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
-      backgroundColor: mainColor.shade950,
-      surfaceTintColor: mainColor.shade950,
+      backgroundColor: mainColor.shade900,
+      surfaceTintColor: mainColor.shade900,
       foregroundColor: mainColor.shade50,
       elevation: 0,
     ),
@@ -136,7 +136,7 @@ fabricDarkTheme({
 
     chipTheme: ChipThemeData(
       checkmarkColor: mainColor.shade50,
-      backgroundColor: mainColor.shade950,
+      backgroundColor: mainColor.shade900,
       brightness: Brightness.dark,
       deleteIconColor: mainColor.shade50,
       disabledColor: mainColor.shade900,
@@ -153,8 +153,8 @@ fabricDarkTheme({
         width: 1,
       ),
       elevation: 0,
-      secondarySelectedColor: mainColor.shade900,
-      selectedColor: mainColor.shade900,
+      secondarySelectedColor: mainColor.shade800,
+      selectedColor: mainColor.shade700,
       labelStyle: TextStyle(
         fontFamily: fontFamily,
         fontSize: 13,
@@ -352,10 +352,10 @@ fabricDarkTheme({
         fontSize: 12,
       ),
       activeTrackColor: mainColor.shade50,
-      inactiveTrackColor: mainColor.shade800,
+      inactiveTrackColor: mainColor.shade700,
       thumbColor: mainColor.shade50,
       overlayColor: mainColor.shade50.withValues(alpha: 0.2),
-      disabledActiveTrackColor: mainColor.shade800,
+      disabledActiveTrackColor: mainColor.shade700,
       disabledInactiveTrackColor: mainColor.shade900,
       disabledThumbColor: mainColor.shade600,
       tickMarkShape: const RoundSliderTickMarkShape(),
@@ -550,7 +550,7 @@ fabricDarkTheme({
     /*--- TAB BAR ---*/
 
     tabBarTheme: TabBarThemeData(
-      dividerHeight: 1,
+      dividerHeight: 3,
       indicatorColor: mainColor.shade00,
       indicatorSize: TabBarIndicatorSize.label,
       splashBorderRadius: BorderRadius.only(
@@ -561,7 +561,7 @@ fabricDarkTheme({
         border: Border(
           bottom: BorderSide(
             color: mainColor.shade50,
-            width: 1,
+            width: 3,
           ),
         ),
       ),
@@ -578,21 +578,21 @@ fabricDarkTheme({
       ),
       collapsedShape: Border(
         bottom: BorderSide(
-          color: mainColor.shade950,
+          color: mainColor.shade900,
           width: 4,
         ),
       ),
       shape: Border(
         bottom: BorderSide(
-          color: mainColor.shade950,
+          color: mainColor.shade900,
           width: 4,
         ),
       ),
       clipBehavior: Clip.none,
-      collapsedBackgroundColor: mainColor.shade950,
+      collapsedBackgroundColor: mainColor.shade900,
       collapsedIconColor: mainColor.shade50,
       iconColor: mainColor.shade50,
-      backgroundColor: mainColor.shade900,
+      backgroundColor: mainColor.shade800,
       textColor: mainColor.shade50,
       childrenPadding: const EdgeInsets.only(
         bottom: 15,
@@ -630,7 +630,7 @@ fabricDarkTheme({
     /*--- NAVIGATION RAIL ---*/
 
     navigationRailTheme: NavigationRailThemeData(
-      backgroundColor: mainColor.shade950,
+      backgroundColor: mainColor.shade900,
       elevation: 0,
       selectedLabelTextStyle: TextStyle(
         fontFamily: fontFamily,
@@ -655,7 +655,7 @@ fabricDarkTheme({
         elevation: WidgetStateProperty.resolveWith<double>((Set<WidgetState> states) {
           return 0;
         }),
-        backgroundColor: WidgetStateProperty.all(mainColor.shade950),
+        backgroundColor: WidgetStateProperty.all(mainColor.shade900),
       ),
     ),
 
@@ -666,7 +666,7 @@ fabricDarkTheme({
         alignment: AlignmentDirectional.topEnd,
         side: WidgetStateProperty.resolveWith<BorderSide>((Set<WidgetState> states) {
           return BorderSide(
-            color: mainColor.shade950,
+            color: mainColor.shade900,
             width: 2,
           );
         }),
@@ -685,14 +685,14 @@ fabricDarkTheme({
     /*--- CARD ---*/
 
     cardTheme: CardThemeData(
-      surfaceTintColor: mainColor.shade900,
+      surfaceTintColor: mainColor.shade800,
       clipBehavior: Clip.none,
-      color: mainColor.shade900,
+      color: mainColor.shade800,
       elevation: 0,
       margin: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
         side: BorderSide(
-          color: mainColor.shade900,
+          color: mainColor.shade800,
           width: 1,
         ),
         borderRadius: BorderRadius.circular(10),
@@ -702,7 +702,7 @@ fabricDarkTheme({
     /*--- NAVIGATION BAR ---*/
 
     navigationBarTheme: NavigationBarThemeData(
-      backgroundColor: mainColor.shade900,
+      backgroundColor: mainColor.shade950,
       indicatorColor: mainColor.shade700,
       surfaceTintColor: mainColor.shade950,
       overlayColor: WidgetStateProperty.all(mainColor.shade600),
@@ -752,13 +752,13 @@ fabricDarkTheme({
 
     bannerTheme: MaterialBannerThemeData(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      surfaceTintColor: mainColor.shade900,
-      dividerColor: mainColor.shade900,
+      surfaceTintColor: mainColor.shade800,
+      dividerColor: mainColor.shade800,
       contentTextStyle: TextStyle(
         fontFamily: fontFamily,
         color: mainColor.shade50,
       ),
-      backgroundColor: mainColor.shade900,
+      backgroundColor: mainColor.shade800,
       elevation: 0,
     ),
 

@@ -557,14 +557,14 @@ fabricLightTheme({
     /*--- TAB BAR ---*/
 
     tabBarTheme: TabBarThemeData(
-      dividerHeight: 1,
+      dividerHeight: 3,
       indicatorColor: mainColor.shade950,
       indicatorSize: TabBarIndicatorSize.label,
       indicator: BoxDecoration(
         border: Border(
           bottom: BorderSide(
             color: mainColor.shade950,
-            width: 1,
+            width: 3,
           ),
         ),
       ),
