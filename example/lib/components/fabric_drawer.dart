@@ -20,7 +20,7 @@ class CustomDrawer extends StatelessWidget {
                   style: TextStyle(fontSize: 30),
                 ),
                 Text(
-                  'Everything you need',
+                  'Drawer example',
                 ),
               ],
             ),
