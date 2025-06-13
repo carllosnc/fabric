@@ -58,6 +58,17 @@ fabricLightTheme({
     fontFamily: fontFamily,
     splashColor: mainColor.shade50,
 
+    /*--- Page Transitions ---*/
+
+    pageTransitionsTheme: const PageTransitionsTheme(
+      builders: {
+        TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+        TargetPlatform.windows: CupertinoPageTransitionsBuilder(),
+        TargetPlatform.fuchsia: CupertinoPageTransitionsBuilder(),
+      },
+    ),
+
     /*--- APP BAR ---*/
 
     appBarTheme: AppBarTheme(
@@ -316,7 +327,8 @@ fabricLightTheme({
     /*--- BOTTOM NAVIGATION BAR ---*/
 
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: mainColor.shade200,
+      backgroundColor: mainColor.shade50,
+      enableFeedback: true,
       type: BottomNavigationBarType.fixed,
       selectedItemColor: mainColor.shade950,
       unselectedItemColor: mainColor.shade700,
@@ -536,7 +548,7 @@ fabricLightTheme({
         if (states.contains(WidgetState.selected)) {
           return mainColor.shade950;
         }
-        return mainColor.shade50;
+        return mainColor.shade00;
       }),
       todayBorder: BorderSide(
         width: 1,

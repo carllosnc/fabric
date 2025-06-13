@@ -58,6 +58,17 @@ fabricDarkTheme({
     fontFamily: fontFamily,
     splashColor: mainColor.shade800,
 
+    /*--- Page Transitions ---*/
+
+    pageTransitionsTheme: const PageTransitionsTheme(
+      builders: {
+        TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+        TargetPlatform.windows: CupertinoPageTransitionsBuilder(),
+        TargetPlatform.fuchsia: CupertinoPageTransitionsBuilder(),
+      },
+    ),
+
     /*--- APP BAR ---*/
 
     appBarTheme: AppBarTheme(
