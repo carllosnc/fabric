@@ -146,6 +146,15 @@ key, such as 50, 100, 200, etc., and corresponds to a specific `Color`.
 <img src="prints/fabric_08.jpeg">
 <img src="prints/fabric_09.jpeg">
 
+## Fonts
+
+- [Schibsted Grotesk](https://fonts.google.com/specimen/Schibsted+Grotesk?query=gro)
+- [Bricolage Grotesque](https://fonts.google.com/specimen/Bricolage+Grotesque?query=gro)
+- [Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk?query=gro)
+- [Roboto](https://fonts.google.com/specimen/Roboto?query=inter)
+- [Inter](https://fonts.google.com/specimen/Inter?query=inter)
+- [Geist](https://fonts.google.com/specimen/Geist?query=geist)
+
 ---
 
 Carlos Costa @ 2025
