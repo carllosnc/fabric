@@ -140,6 +140,11 @@ key, such as 50, 100, 200, etc., and corresponds to a specific `Color`.
 <img src="prints/fabric_02.jpeg">
 <img src="prints/fabric_03.jpeg">
 <img src="prints/fabric_04.jpeg">
+<img src="prints/fabric_05.jpeg">
+<img src="prints/fabric_06.jpeg">
+<img src="prints/fabric_07.jpeg">
+<img src="prints/fabric_08.jpeg">
+<img src="prints/fabric_09.jpeg">
 
 ---
 
