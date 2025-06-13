@@ -1,4 +1,5 @@
 import 'package:example/components/fabric_banner.dart';
+import 'package:example/components/fabric_bottom_navigation_bar.dart';
 import 'package:example/components/fabric_button.dart';
 import 'package:example/components/fabric_chip.dart';
 import 'package:example/components/fabric_app_bar.dart';
@@ -84,6 +85,8 @@ class Home extends StatelessWidget {
             FabricBanner(),
             Divider(),
             FabricTextField(),
+            Divider(),
+            FabricBottomNavigationBar(),
             Divider(),
             FabricSlider(),
             Divider(),
