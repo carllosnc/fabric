@@ -493,7 +493,7 @@ fabricDarkTheme({
       backgroundColor: mainColor.shade950,
       rangePickerHeaderHelpStyle: TextStyle(
         fontFamily: fontFamily,
-        foreground: Paint()..color = mainColor.shade950,
+        foreground: Paint()..color = mainColor.shade00,
         fontWeight: FontWeight.bold,
       ),
       dayBackgroundColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
