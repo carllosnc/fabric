@@ -26,6 +26,7 @@ import 'package:example/components/fabric_cards.dart';
 import 'package:example/components/fabric_navigation_bar.dart';
 import 'package:example/components/fabric_search_anchor.dart';
 import 'package:example/components/fabric_text.dart';
+import 'package:example/components/fabric_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:fabric/fabric.dart';
 
@@ -83,6 +84,8 @@ class Home extends StatelessWidget {
             FabricExpansionPanel(),
             Divider(),
             FabricBanner(),
+            Divider(),
+            FabricStepper(),
             Divider(),
             FabricTextField(),
             Divider(),
