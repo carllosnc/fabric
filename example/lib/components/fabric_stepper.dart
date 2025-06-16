@@ -1,5 +1,3 @@
-//example using stepper
-import 'package:fabric/fabric.dart';
 import 'package:flutter/material.dart';
 
 class FabricStepper extends StatefulWidget {
@@ -14,8 +12,7 @@ class _FabricStepperState extends State<FabricStepper> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: fabricConfig.color.shade100,
+    return SizedBox(
       height: 200,
       child: Stepper(
         elevation: 0,
