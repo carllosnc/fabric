@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'fabric_swatch.dart';
 
-fabricLightTheme({
+ThemeData fabricLightTheme({
   required FabricSwatch mainColor,
   String? fontFamily,
 }) {
@@ -80,7 +80,7 @@ fabricLightTheme({
         fontFamily: fontFamily,
         color: mainColor.shade950,
         fontSize: 20,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.normal,
       ),
       backgroundColor: mainColor.shade00,
       foregroundColor: mainColor.shade950,
