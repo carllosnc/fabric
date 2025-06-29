@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'fabric_swatch.dart';
 
-//4 tints steps, https://colorkit.co/color-shades-generator/0a0a0a/
+//2 tints steps, https://colorkit.co/color-shades-generator/0a0a0a/
 FabricSwatch fabricGrey = FabricSwatch(
-  0xFF0A0A0A,
+  0xFF050505,
   <int, Color>{
-    50: Color(0xFFE5E5E5),
-    100: Color(0xFFCCCCCC),
-    200: Color(0xFFB3B3B3),
-    300: Color(0xFF9B9B9B),
-    400: Color(0xFF838383),
-    500: Color(0xFF6D6D6D),
-    600: Color(0xFF575757),
-    700: Color(0xFF424242),
-    800: Color(0xFF2E2E2E),
-    900: Color(0xFF1B1B1B),
-    950: Color(0xFF0A0A0A),
+    50: Color(0xFFE4E4E4),
+    100: Color(0xFFCACACA),
+    200: Color(0xFFB0B0B0),
+    300: Color(0xFF989898),
+    400: Color(0xFF7F7F7F),
+    500: Color(0xFF686868),
+    600: Color(0xFF515151),
+    700: Color(0xFF3C3C3C),
+    800: Color(0xFF282828),
+    900: Color(0xFF151515),
+    950: Color(0xFF050505),
   },
 );
 
