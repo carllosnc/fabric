@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import 'fabric_dark_theme.dart';
 import 'fabric_light_theme.dart';
 import 'fabric_colors.dart';
@@ -7,14 +9,14 @@ class _FabricConfig {
   String? fontFamily;
   FabricSwatch color = fabricGrey;
 
-  getLightTheme() {
+  ThemeData getLightTheme() {
     return fabricLightTheme(
       mainColor: color,
       fontFamily: fontFamily,
     );
   }
 
-  getDarkTheme() {
+  ThemeData getDarkTheme() {
     return fabricDarkTheme(
       mainColor: color,
       fontFamily: fontFamily,
