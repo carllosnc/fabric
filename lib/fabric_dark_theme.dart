@@ -246,44 +246,17 @@ ThemeData fabricDarkTheme({
     /*--- TEXT FIELD ---*/
 
     inputDecorationTheme: InputDecorationTheme(
+      filled: false,
+
       /* Label and hint */
       labelStyle: TextStyle(color: mainColor.shade50, fontFamily: fontFamily),
       hintStyle: TextStyle(color: mainColor.shade500, fontFamily: fontFamily),
       errorStyle: TextStyle(color: Colors.red.shade200, fontFamily: fontFamily),
       helperStyle: TextStyle(color: mainColor.shade600, fontFamily: fontFamily),
 
-      /* padding */
-      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-
       /* Prefix and suffix */
       suffixIconColor: mainColor.shade500,
       prefixIconColor: mainColor.shade500,
-
-      /* Border */
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: mainColor.shade500),
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: mainColor.shade500),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: mainColor.shade50, width: 2),
-      ),
-      disabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: mainColor.shade700),
-      ),
-      errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: Colors.red.shade200, width: 1),
-      ),
-      focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: Colors.red.shade200, width: 2),
-      ),
     ),
 
     /*--- DIALOG ---*/
