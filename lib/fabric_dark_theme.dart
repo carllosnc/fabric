@@ -58,7 +58,7 @@ ThemeData fabricDarkTheme({
     fontFamily: fontFamily,
     splashColor: mainColor.shade800,
 
-    /*--- Page Transitions ---*/
+    /*--- PAGE TRANSITIONS ---*/
 
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
@@ -344,6 +344,18 @@ ThemeData fabricDarkTheme({
       disabledThumbColor: mainColor.shade600,
       tickMarkShape: const RoundSliderTickMarkShape(),
       trackShape: const RectangularSliderTrackShape(),
+      trackHeight: 2,
+      rangeTrackShape: RectangularRangeSliderTrackShape(),
+      rangeValueIndicatorShape: const PaddleRangeSliderValueIndicatorShape(),
+      trackGap: 0,
+      minThumbSeparation: 0,
+      overlayShape: SliderComponentShape.noOverlay,
+      padding: EdgeInsets.only(
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      ),
     ),
 
     /*--- FLOATING ACTION BUTTON ---*/
@@ -760,6 +772,14 @@ ThemeData fabricDarkTheme({
       ),
       dividerThickness: 1,
       columnSpacing: 20,
+    ),
+
+    /*--- PROGRESS INDICATOR ---*/
+
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      strokeWidth: 2,
+      circularTrackPadding: EdgeInsets.zero,
+      linearMinHeight: 2,
     ),
   );
 }
