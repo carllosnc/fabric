@@ -17,11 +17,11 @@ class _FabricSliderState extends State<FabricSlider> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 30,
+        horizontal: 0,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        spacing: 15,
+        spacing: 0,
         children: [
           Slider(
             value: _basicValue,
