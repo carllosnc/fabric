@@ -189,7 +189,10 @@ ThemeData fabricDarkTheme({
     /*--- POPUP MENU ---*/
 
     popupMenuTheme: PopupMenuThemeData(
+      color: mainColor.shade700,
       elevation: 0,
+      surfaceTintColor: mainColor.shade700,
+      iconColor: mainColor.shade50,
       iconSize: 16,
       labelTextStyle: WidgetStateProperty.all(
         TextStyle(
@@ -655,8 +658,9 @@ ThemeData fabricDarkTheme({
         alignment: AlignmentDirectional.topEnd,
         side: WidgetStateProperty.resolveWith<BorderSide>((Set<WidgetState> states) {
           return BorderSide(
+            strokeAlign: BorderSide.strokeAlignCenter,
             color: mainColor.shade900,
-            width: 2,
+            width: 1,
           );
         }),
         elevation: WidgetStateProperty.resolveWith<double>((Set<WidgetState> states) {

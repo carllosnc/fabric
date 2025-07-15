@@ -197,9 +197,9 @@ ThemeData fabricLightTheme({
     /*--- POPUP MENU ---*/
 
     popupMenuTheme: PopupMenuThemeData(
-      // color: mainColor.shade50,
+      color: mainColor.shade50,
       elevation: 0,
-      // surfaceTintColor: mainColor.shade50,
+      surfaceTintColor: mainColor.shade50,
       iconColor: mainColor.shade950,
       iconSize: 16,
       labelTextStyle: WidgetStateProperty.all(
@@ -655,8 +655,9 @@ ThemeData fabricLightTheme({
         alignment: AlignmentDirectional.topEnd,
         side: WidgetStateProperty.resolveWith<BorderSide>((Set<WidgetState> states) {
           return BorderSide(
-            color: mainColor.shade00,
-            width: 2,
+            strokeAlign: BorderSide.strokeAlignCenter,
+            color: mainColor.shade100,
+            width: 1,
           );
         }),
         elevation: WidgetStateProperty.resolveWith<double>((Set<WidgetState> states) {
