@@ -349,13 +349,6 @@ ThemeData fabricDarkTheme({
       rangeValueIndicatorShape: const PaddleRangeSliderValueIndicatorShape(),
       trackGap: 0,
       minThumbSeparation: 0,
-      overlayShape: SliderComponentShape.noOverlay,
-      padding: EdgeInsets.only(
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 0,
-      ),
     ),
 
     /*--- FLOATING ACTION BUTTON ---*/
