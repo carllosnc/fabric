@@ -14,31 +14,30 @@ class _FabricRadioButtonState extends State<FabricRadioButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        RadioListTile(
-          title: const Text('Option 1'),
-          subtitle: const Text('This is a subtitle'),
-          value: 1,
-          groupValue: _selectedOption,
-          onChanged: null,
-        ),
-        RadioListTile(
-          title: const Text('Option 2'),
-          subtitle: const Text('This is a subtitle'),
-          value: 2,
-          groupValue: _selectedOption,
-          onChanged: (value) => setState(() => _selectedOption = value!),
-        ),
-        RadioListTile(
-          title: const Text('Option 3'),
-          subtitle: const Text('This is a subtitle'),
-          value: 3,
-          groupValue: _selectedOption,
-          onChanged: (value) => setState(() => _selectedOption = value!),
-        ),
-      ],
+    return RadioGroup<int>(
+      groupValue: _selectedOption,
+      onChanged: (value) => setState(() => _selectedOption = value!),
+      child: const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          RadioListTile<int>(
+            title: Text('Option 1'),
+            subtitle: Text('This is a subtitle'),
+            value: 1,
+            enabled: false,
+          ),
+          RadioListTile<int>(
+            title: Text('Option 2'),
+            subtitle: Text('This is a subtitle'),
+            value: 2,
+          ),
+          RadioListTile<int>(
+            title: Text('Option 3'),
+            subtitle: Text('This is a subtitle'),
+            value: 3,
+          ),
+        ],
+      ),
     );
   }
 }
