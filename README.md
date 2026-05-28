@@ -10,6 +10,7 @@
 - ✅ BottomNavigationBar
 - ✅ BottomSheet
 - ✅ Button(Filled, Outlined, TextButton)
+- ✅ DropdownMenu
 - ✅ Cards
 - ✅ Checkbox
 - ✅ Chip
@@ -17,7 +18,7 @@
 - ✅ DataTable
 - ✅ Dialog
 - ✅ Drawer
-- ✅ Indicators(LinearProgressIndicator, CircularProgressIndicator)
+- ✅ Indicators (LinearProgressIndicator, CircularProgressIndicator)
 - ✅ ListTile
 - ✅ MaterialBanner
 - ✅ NavigationBar
@@ -27,6 +28,8 @@
 - ✅ Scaffold
 - ✅ SearchAnchor
 - ✅ SegmentedButton
+- ✅ FilledButton
+- ✅ OutlinedButton
 - ✅ Slider
 - ✅ SnackBar
 - ✅ Switch
