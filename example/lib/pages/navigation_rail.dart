@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class NavigatilRailPage extends StatefulWidget {
-  const NavigatilRailPage({super.key});
+class NavigationRailPage extends StatefulWidget {
+  const NavigationRailPage({super.key});
 
   @override
-  State<NavigatilRailPage> createState() => _NavigatilRailPageState();
+  State<NavigationRailPage> createState() => _NavigationRailPageState();
 }
 
-class _NavigatilRailPageState extends State<NavigatilRailPage> {
+class _NavigationRailPageState extends State<NavigationRailPage> {
   int _selectedIndex = 0;
 
   @override

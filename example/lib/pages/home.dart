@@ -6,7 +6,7 @@ import 'package:example/components/fabric_app_bar.dart';
 import 'package:example/components/fabric_datatable.dart';
 import 'package:example/components/fabric_drawer.dart';
 import 'package:example/components/fabric_float_action_button.dart';
-import 'package:example/components/fabric_list_tyle.dart';
+import 'package:example/components/fabric_list_tile.dart';
 import 'package:example/components/fabric_switch.dart';
 import 'package:example/components/fabric_text_field.dart';
 import 'package:example/components/fabric_dialog.dart';

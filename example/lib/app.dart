@@ -14,7 +14,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Home(),
       routes: {
-        '/navigation_rail': (context) => NavigatilRailPage(),
+        '/navigation_rail': (context) => const NavigationRailPage(),
       },
     );
   }
