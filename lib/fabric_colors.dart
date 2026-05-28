@@ -72,3 +72,75 @@ FabricSwatch fabricGreen = FabricSwatch(
     950: Color(0xFF030D00),
   },
 );
+
+//4 tints steps, https://colorkit.co/color-shades-generator/0d000d/
+FabricSwatch fabricPurple = FabricSwatch(
+  0xFF0D000D,
+  <int, Color>{
+    50: Color(0xFFE6E4E7),
+    100: Color(0xFFCECACF),
+    200: Color(0xFFB6B0B7),
+    300: Color(0xFF9F97A0),
+    400: Color(0xFF887E89),
+    500: Color(0xFF736874),
+    600: Color(0xFF5E515F),
+    700: Color(0xFF4A3B4B),
+    800: Color(0xFF372638),
+    900: Color(0xFF251226),
+    950: Color(0xFF0D000D),
+  },
+);
+
+//4 tints steps, https://colorkit.co/color-shades-generator/000d0d/
+FabricSwatch fabricTeal = FabricSwatch(
+  0xFF000D0D,
+  <int, Color>{
+    50: Color(0xFFE3E6E6),
+    100: Color(0xFFC8CFCF),
+    200: Color(0xFFADB7B7),
+    300: Color(0xFF94A0A0),
+    400: Color(0xFF7A8989),
+    500: Color(0xFF637373),
+    600: Color(0xFF4C5E5E),
+    700: Color(0xFF384949),
+    800: Color(0xFF243535),
+    900: Color(0xFF102222),
+    950: Color(0xFF000D0D),
+  },
+);
+
+//4 tints steps, https://colorkit.co/color-shades-generator/0d0800/
+FabricSwatch fabricOrange = FabricSwatch(
+  0xFF0D0800,
+  <int, Color>{
+    50: Color(0xFFE7E6E4),
+    100: Color(0xFFCFCECA),
+    200: Color(0xFFB7B6B0),
+    300: Color(0xFFA09F97),
+    400: Color(0xFF89887E),
+    500: Color(0xFF747368),
+    600: Color(0xFF5F5E51),
+    700: Color(0xFF4B4A3B),
+    800: Color(0xFF383726),
+    900: Color(0xFF262512),
+    950: Color(0xFF0D0800),
+  },
+);
+
+//4 tints steps, https://colorkit.co/color-shades-generator/0d0005/
+FabricSwatch fabricPink = FabricSwatch(
+  0xFF0D0005,
+  <int, Color>{
+    50: Color(0xFFE7E4E4),
+    100: Color(0xFFCFCACA),
+    200: Color(0xFFB7B0B0),
+    300: Color(0xFFA09797),
+    400: Color(0xFF897E7E),
+    500: Color(0xFF746868),
+    600: Color(0xFF5F5151),
+    700: Color(0xFF4B3B3B),
+    800: Color(0xFF382626),
+    900: Color(0xFF261212),
+    950: Color(0xFF0D0005),
+  },
+);
