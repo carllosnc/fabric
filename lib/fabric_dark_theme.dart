@@ -60,7 +60,6 @@ ThemeData fabricDarkTheme({
     splashColor: mainColor.shade800,
 
     /*--- PAGE TRANSITIONS ---*/
-
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
         TargetPlatform.android: CupertinoPageTransitionsBuilder(),
@@ -71,7 +70,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- APP BAR ---*/
-
     appBarTheme: AppBarTheme(
       iconTheme: IconThemeData(
         color: mainColor.shade50,
@@ -90,7 +88,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- TEXT ---*/
-
     textTheme: TextTheme(
       displayLarge: TextStyle(color: mainColor.shade50, fontFamily: fontFamily, fontSize: 40, fontWeight: FontWeight.bold),
       displayMedium: TextStyle(color: mainColor.shade50, fontFamily: fontFamily, fontSize: 38, fontWeight: FontWeight.bold),
@@ -110,14 +107,12 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- DIVIDER ---*/
-
     dividerTheme: DividerThemeData(
       thickness: 1,
       space: 0,
     ),
 
     /*--- LIST TILE ---*/
-
     listTileTheme: ListTileThemeData(
       horizontalTitleGap: 20,
       contentPadding: const EdgeInsets.symmetric(
@@ -129,10 +124,11 @@ ThemeData fabricDarkTheme({
         fontWeight: FontWeight.bold,
         fontSize: 16,
       ),
+      textColor: mainColor.shade50,
+      iconColor: mainColor.shade50,
     ),
 
     /*--- DRAWER ---*/
-
     drawerTheme: DrawerThemeData(
       backgroundColor: mainColor.shade950,
       scrimColor: mainColor.shade600.withValues(alpha: 0.7),
@@ -145,7 +141,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- CHIP ---*/
-
     chipTheme: ChipThemeData(
       checkmarkColor: mainColor.shade50,
       backgroundColor: mainColor.shade900,
@@ -175,7 +170,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- TOOLTIP ---*/
-
     tooltipTheme: TooltipThemeData(
       textStyle: TextStyle(
         fontFamily: fontFamily,
@@ -188,7 +182,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- POPUP MENU ---*/
-
     popupMenuTheme: PopupMenuThemeData(
       color: mainColor.shade700,
       elevation: 0,
@@ -216,7 +209,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- SWITCH ---*/
-
     switchTheme: SwitchThemeData(
       thumbColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
         if (states.contains(WidgetState.disabled)) {
@@ -248,7 +240,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- TEXT FIELD ---*/
-
     inputDecorationTheme: InputDecorationTheme(
       filled: false,
 
@@ -263,8 +254,34 @@ ThemeData fabricDarkTheme({
       prefixIconColor: mainColor.shade500,
     ),
 
-    /*--- DIALOG ---*/
+    /*--- DROPDOWN MENU ---*/
+    dropdownMenuTheme: DropdownMenuThemeData(
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: mainColor.shade500),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: mainColor.shade500),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: mainColor.shade50, width: 2),
+        ),
+      ),
+      menuStyle: MenuStyle(
+        backgroundColor: WidgetStateProperty.all(mainColor.shade700),
+        elevation: WidgetStateProperty.all(0),
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      ),
+    ),
 
+    /*--- DIALOG ---*/
     dialogTheme: DialogThemeData(
       barrierColor: mainColor.shade600.withValues(alpha: 0.7),
       surfaceTintColor: mainColor.shade900,
@@ -289,7 +306,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- BOTTOM NAVIGATION BAR ---*/
-
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: mainColor.shade950,
       type: BottomNavigationBarType.fixed,
@@ -316,7 +332,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- BOTTOM SHEET ---*/
-
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: mainColor.shade950,
       surfaceTintColor: mainColor.shade950,
@@ -330,7 +345,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- SLIDER ---*/
-
     sliderTheme: SliderThemeData(
       valueIndicatorColor: mainColor.shade50,
       valueIndicatorTextStyle: TextStyle(
@@ -356,7 +370,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- FLOATING ACTION BUTTON ---*/
-
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: mainColor.shade50,
       shape: const StadiumBorder(),
@@ -364,8 +377,43 @@ ThemeData fabricDarkTheme({
       foregroundColor: mainColor.shade950,
     ),
 
-    /*--- CHECKBOX ---*/
+    /*--- SEGMENTED BUTTON ---*/
+    segmentedButtonTheme: SegmentedButtonThemeData(
+      style: SegmentedButton.styleFrom(
+        backgroundColor: mainColor.shade800,
+        foregroundColor: mainColor.shade50,
+        selectedBackgroundColor: mainColor.shade50,
+        selectedForegroundColor: mainColor.shade950,
+        disabledBackgroundColor: mainColor.shade900,
+        disabledForegroundColor: mainColor.shade500,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+    ),
 
+    /*--- FILLED BUTTON ---*/
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        backgroundColor: mainColor.shade50,
+        foregroundColor: mainColor.shade950,
+        disabledBackgroundColor: mainColor.shade700,
+        disabledForegroundColor: mainColor.shade500,
+        shape: const StadiumBorder(),
+      ),
+    ),
+
+    /*--- OUTLINED BUTTON ---*/
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        foregroundColor: mainColor.shade50,
+        disabledForegroundColor: mainColor.shade500,
+        side: BorderSide(color: mainColor.shade500),
+        shape: const StadiumBorder(),
+      ),
+    ),
+
+    /*--- CHECKBOX ---*/
     checkboxTheme: CheckboxThemeData(
       fillColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.selected)) {
@@ -400,7 +448,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- RADIOBUTTON ---*/
-
     radioTheme: RadioThemeData(
       fillColor: WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
         if (states.contains(WidgetState.disabled)) {
@@ -412,7 +459,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- TEXT SELECTION ---*/
-
     textSelectionTheme: TextSelectionThemeData(
       cursorColor: mainColor.shade50,
       selectionColor: mainColor.shade700,
@@ -420,7 +466,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- TIMEPICKER ---*/
-
     timePickerTheme: TimePickerThemeData(
       backgroundColor: mainColor.shade950,
       elevation: 0,
@@ -470,7 +515,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- DATE PICKER ---*/
-
     datePickerTheme: DatePickerThemeData(
       backgroundColor: mainColor.shade950,
       rangePickerHeaderHelpStyle: TextStyle(
@@ -541,7 +585,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- TAB BAR ---*/
-
     tabBarTheme: TabBarThemeData(
       dividerHeight: 3,
       indicatorColor: mainColor.shade00,
@@ -561,7 +604,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- EXPANSION PANEL ---*/
-
     expansionTileTheme: ExpansionTileThemeData(
       expandedAlignment: Alignment.topLeft,
       expansionAnimationStyle: AnimationStyle(
@@ -596,7 +638,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- SNACKBAR ---*/
-
     snackBarTheme: SnackBarThemeData(
       backgroundColor: mainColor.shade50,
       actionTextColor: mainColor.shade950,
@@ -612,16 +653,14 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- BADGE ---*/
-
     badgeTheme: BadgeThemeData(
       alignment: Alignment.topCenter,
       offset: const Offset(0, -4),
-      backgroundColor: Colors.red,
-      textColor: mainColor.shade50,
+      backgroundColor: Color(0xFFFFB4AB),
+      textColor: mainColor.shade950,
     ),
 
     /*--- NAVIGATION RAIL ---*/
-
     navigationRailTheme: NavigationRailThemeData(
       backgroundColor: mainColor.shade900,
       elevation: 0,
@@ -642,7 +681,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- MENU BAR ---*/
-
     menuBarTheme: MenuBarThemeData(
       style: MenuStyle(
         elevation: WidgetStateProperty.resolveWith<double>((Set<WidgetState> states) {
@@ -653,7 +691,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- MENU ---*/
-
     menuTheme: MenuThemeData(
       style: MenuStyle(
         alignment: AlignmentDirectional.topEnd,
@@ -677,7 +714,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- CARD ---*/
-
     cardTheme: CardThemeData(
       surfaceTintColor: mainColor.shade800,
       clipBehavior: Clip.none,
@@ -694,7 +730,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- NAVIGATION BAR ---*/
-
     navigationBarTheme: NavigationBarThemeData(
       backgroundColor: mainColor.shade950,
       indicatorColor: mainColor.shade700,
@@ -736,14 +771,12 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- SEARCH ANCHOR ---*/
-
     searchViewTheme: SearchViewThemeData(
       backgroundColor: mainColor.shade950,
       surfaceTintColor: mainColor.shade950,
     ),
 
     /*--- BANNER ---*/
-
     bannerTheme: MaterialBannerThemeData(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       surfaceTintColor: mainColor.shade800,
@@ -757,7 +790,6 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- DATA TABLE ---*/
-
     dataTableTheme: DataTableThemeData(
       headingTextStyle: TextStyle(
         fontFamily: fontFamily,
@@ -773,8 +805,8 @@ ThemeData fabricDarkTheme({
     ),
 
     /*--- PROGRESS INDICATOR ---*/
-
     progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: mainColor.shade50,
       strokeWidth: 2,
       circularTrackPadding: EdgeInsets.zero,
       linearMinHeight: 2,

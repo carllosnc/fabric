@@ -271,6 +271,34 @@ ThemeData fabricLightTheme({
       prefixIconColor: mainColor.shade500,
     ),
 
+    /*--- DROPDOWN MENU ---*/
+
+    dropdownMenuTheme: DropdownMenuThemeData(
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: mainColor.shade300),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: mainColor.shade300),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: mainColor.shade950, width: 2),
+        ),
+      ),
+      menuStyle: MenuStyle(
+        backgroundColor: WidgetStateProperty.all(mainColor.shade50),
+        elevation: WidgetStateProperty.all(0),
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      ),
+    ),
+
     /*--- DIALOG ---*/
 
     dialogTheme: DialogThemeData(
@@ -369,6 +397,45 @@ ThemeData fabricLightTheme({
       shape: const StadiumBorder(),
       splashColor: mainColor.shade700,
       foregroundColor: mainColor.shade00,
+    ),
+
+    /*--- SEGMENTED BUTTON ---*/
+
+    segmentedButtonTheme: SegmentedButtonThemeData(
+      style: SegmentedButton.styleFrom(
+        backgroundColor: mainColor.shade50,
+        foregroundColor: mainColor.shade950,
+        selectedBackgroundColor: mainColor.shade950,
+        selectedForegroundColor: mainColor.shade00,
+        disabledBackgroundColor: mainColor.shade100,
+        disabledForegroundColor: mainColor.shade400,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+    ),
+
+    /*--- FILLED BUTTON ---*/
+
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        backgroundColor: mainColor.shade950,
+        foregroundColor: mainColor.shade00,
+        disabledBackgroundColor: mainColor.shade200,
+        disabledForegroundColor: mainColor.shade400,
+        shape: const StadiumBorder(),
+      ),
+    ),
+
+    /*--- OUTLINED BUTTON ---*/
+
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        foregroundColor: mainColor.shade950,
+        disabledForegroundColor: mainColor.shade400,
+        side: BorderSide(color: mainColor.shade400),
+        shape: const StadiumBorder(),
+      ),
     ),
 
     /*--- CHECKBOX ---*/
@@ -619,7 +686,7 @@ ThemeData fabricLightTheme({
     badgeTheme: BadgeThemeData(
       alignment: Alignment.topCenter,
       offset: const Offset(0, -4),
-      backgroundColor: Colors.red,
+      backgroundColor: Color(0xFFBA1A1A),
       textColor: mainColor.shade00,
     ),
 
@@ -772,6 +839,7 @@ ThemeData fabricLightTheme({
     /*--- PROGRESS INDICATOR ---*/
 
     progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: mainColor.shade950,
       strokeWidth: 2,
       circularTrackPadding: EdgeInsets.zero,
       linearMinHeight: 2,
