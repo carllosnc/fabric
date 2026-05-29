@@ -2,6 +2,9 @@
 
 > Fabric is a custom theme based on Material 3 design system for Flutter.
 
+[![CI](https://github.com/carllosnc/fabric/actions/workflows/ci.yml/badge.svg)](https://github.com/carllosnc/fabric/actions/workflows/ci.yml)
+![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?logo=Flutter&logoColor=white)
+
 ## Widgets
 
 - ✅ AlertDialog
