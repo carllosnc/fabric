@@ -137,6 +137,7 @@ ThemeData fabricLightTheme({
 
     drawerTheme: DrawerThemeData(
       backgroundColor: mainColor.shade00,
+      scrimColor: mainColor.shade900.withValues(alpha: 0.5),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(0),
@@ -214,7 +215,7 @@ ThemeData fabricLightTheme({
       textStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,
-        color: mainColor.shade00,
+        color: mainColor.shade950,
         fontSize: 15,
       ),
       menuPadding: const EdgeInsets.all(0),
@@ -302,6 +303,7 @@ ThemeData fabricLightTheme({
     /*--- DIALOG ---*/
 
     dialogTheme: DialogThemeData(
+      barrierColor: mainColor.shade900.withValues(alpha: 0.5),
       surfaceTintColor: mainColor.shade00,
       elevation: 0,
       titleTextStyle: TextStyle(
@@ -356,12 +358,21 @@ ThemeData fabricLightTheme({
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: mainColor.shade00,
       surfaceTintColor: mainColor.shade00,
+      modalBarrierColor: mainColor.shade900.withValues(alpha: 0.5),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(0),
           topRight: Radius.circular(0),
         ),
       ),
+    ),
+
+    /*--- BOTTOM APP BAR ---*/
+
+    bottomAppBarTheme: BottomAppBarThemeData(
+      color: mainColor.shade50,
+      surfaceTintColor: mainColor.shade50,
+      elevation: 0,
     ),
 
     /*--- SLIDER ---*/
@@ -424,6 +435,40 @@ ThemeData fabricLightTheme({
         disabledBackgroundColor: mainColor.shade200,
         disabledForegroundColor: mainColor.shade400,
         shape: const StadiumBorder(),
+      ),
+    ),
+
+    /*--- ELEVATED BUTTON ---*/
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: mainColor.shade50,
+        foregroundColor: mainColor.shade950,
+        disabledBackgroundColor: mainColor.shade100,
+        disabledForegroundColor: mainColor.shade400,
+        elevation: 0,
+        shape: const StadiumBorder(),
+      ),
+    ),
+
+    /*--- TEXT BUTTON ---*/
+
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        foregroundColor: mainColor.shade950,
+        disabledForegroundColor: mainColor.shade400,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+    ),
+
+    /*--- ICON BUTTON ---*/
+
+    iconButtonTheme: IconButtonThemeData(
+      style: IconButton.styleFrom(
+        foregroundColor: mainColor.shade950,
+        disabledForegroundColor: mainColor.shade400,
       ),
     ),
 
@@ -490,7 +535,7 @@ ThemeData fabricLightTheme({
 
     textSelectionTheme: TextSelectionThemeData(
       cursorColor: mainColor.shade950,
-      selectionColor: mainColor.shade50,
+      selectionColor: mainColor.shade200,
       selectionHandleColor: mainColor.shade950,
     ),
 
@@ -502,6 +547,10 @@ ThemeData fabricLightTheme({
       dialHandColor: mainColor.shade900,
       hourMinuteColor: mainColor.shade50,
       dayPeriodColor: mainColor.shade50,
+      hourMinuteTextColor: mainColor.shade950,
+      dayPeriodTextColor: mainColor.shade950,
+      entryModeIconColor: mainColor.shade950,
+      helpTextStyle: TextStyle(color: mainColor.shade950),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -583,6 +632,7 @@ ThemeData fabricLightTheme({
         fontWeight: FontWeight.bold,
       ),
       rangeSelectionBackgroundColor: mainColor.shade50,
+      rangePickerHeaderForegroundColor: mainColor.shade700,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -695,11 +745,22 @@ ThemeData fabricLightTheme({
     navigationRailTheme: NavigationRailThemeData(
       backgroundColor: mainColor.shade00,
       elevation: 0,
+      selectedLabelTextStyle: TextStyle(
+        fontFamily: fontFamily,
+        fontWeight: FontWeight.bold,
+        fontSize: 13,
+        color: mainColor.shade950,
+      ),
+      unselectedLabelTextStyle: TextStyle(
+        fontFamily: fontFamily,
+        fontSize: 13,
+        color: mainColor.shade500,
+      ),
       selectedIconTheme: IconThemeData(
         color: mainColor.shade950,
       ),
       unselectedIconTheme: IconThemeData(
-        color: mainColor.shade950,
+        color: mainColor.shade500,
       ),
       indicatorColor: mainColor.shade50,
       labelType: NavigationRailLabelType.none,
@@ -798,11 +859,34 @@ ThemeData fabricLightTheme({
       elevation: 0,
     ),
 
-    /*--- SEARCH ANCHOR ---*/
+    /*--- SEARCH ANCHOR & SEARCH BAR ---*/
 
     searchViewTheme: SearchViewThemeData(
       backgroundColor: mainColor.shade00,
       surfaceTintColor: mainColor.shade00,
+    ),
+
+    searchBarTheme: SearchBarThemeData(
+      backgroundColor: WidgetStateProperty.all(mainColor.shade50),
+      surfaceTintColor: WidgetStateProperty.all(mainColor.shade50),
+      elevation: WidgetStateProperty.all(0),
+      textStyle: WidgetStateProperty.all(
+        TextStyle(
+          fontFamily: fontFamily,
+          color: mainColor.shade950,
+        ),
+      ),
+      hintStyle: WidgetStateProperty.all(
+        TextStyle(
+          fontFamily: fontFamily,
+          color: mainColor.shade500,
+        ),
+      ),
+      shape: WidgetStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
     ),
 
     /*--- BANNER ---*/

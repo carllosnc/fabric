@@ -344,6 +344,13 @@ ThemeData fabricDarkTheme({
       ),
     ),
 
+    /*--- BOTTOM APP BAR ---*/
+    bottomAppBarTheme: BottomAppBarThemeData(
+      color: mainColor.shade950,
+      surfaceTintColor: mainColor.shade950,
+      elevation: 0,
+    ),
+
     /*--- SLIDER ---*/
     sliderTheme: SliderThemeData(
       valueIndicatorColor: mainColor.shade50,
@@ -400,6 +407,37 @@ ThemeData fabricDarkTheme({
         disabledBackgroundColor: mainColor.shade700,
         disabledForegroundColor: mainColor.shade500,
         shape: const StadiumBorder(),
+      ),
+    ),
+
+    /*--- ELEVATED BUTTON ---*/
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: mainColor.shade800,
+        foregroundColor: mainColor.shade50,
+        disabledBackgroundColor: mainColor.shade900,
+        disabledForegroundColor: mainColor.shade500,
+        elevation: 0,
+        shape: const StadiumBorder(),
+      ),
+    ),
+
+    /*--- TEXT BUTTON ---*/
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        foregroundColor: mainColor.shade50,
+        disabledForegroundColor: mainColor.shade500,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+    ),
+
+    /*--- ICON BUTTON ---*/
+    iconButtonTheme: IconButtonThemeData(
+      style: IconButton.styleFrom(
+        foregroundColor: mainColor.shade50,
+        disabledForegroundColor: mainColor.shade500,
       ),
     ),
 
@@ -704,7 +742,6 @@ ThemeData fabricDarkTheme({
         elevation: WidgetStateProperty.resolveWith<double>((Set<WidgetState> states) {
           return 0;
         }),
-        // backgroundColor: WidgetStateProperty.all(mainColor.shade700),
         shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -770,10 +807,32 @@ ThemeData fabricDarkTheme({
       elevation: 0,
     ),
 
-    /*--- SEARCH ANCHOR ---*/
+    /*--- SEARCH ANCHOR & SEARCH BAR ---*/
     searchViewTheme: SearchViewThemeData(
       backgroundColor: mainColor.shade950,
       surfaceTintColor: mainColor.shade950,
+    ),
+    searchBarTheme: SearchBarThemeData(
+      backgroundColor: WidgetStateProperty.all(mainColor.shade800),
+      surfaceTintColor: WidgetStateProperty.all(mainColor.shade800),
+      elevation: WidgetStateProperty.all(0),
+      textStyle: WidgetStateProperty.all(
+        TextStyle(
+          fontFamily: fontFamily,
+          color: mainColor.shade50,
+        ),
+      ),
+      hintStyle: WidgetStateProperty.all(
+        TextStyle(
+          fontFamily: fontFamily,
+          color: mainColor.shade500,
+        ),
+      ),
+      shape: WidgetStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
     ),
 
     /*--- BANNER ---*/
@@ -791,6 +850,7 @@ ThemeData fabricDarkTheme({
 
     /*--- DATA TABLE ---*/
     dataTableTheme: DataTableThemeData(
+      dataRowColor: WidgetStateProperty.all(mainColor.shade900),
       headingTextStyle: TextStyle(
         fontFamily: fontFamily,
         fontWeight: FontWeight.bold,

@@ -60,6 +60,42 @@ void main() {
       final theme = fabricLightTheme(mainColor: swatch);
       expect(theme.disabledColor, swatch.shade400);
     });
+
+    test('text selection color is shade200 for good contrast', () {
+      final theme = fabricLightTheme(mainColor: swatch);
+      expect(theme.textSelectionTheme.selectionColor, swatch.shade200);
+    });
+
+    test('navigationRail unselected icon is shade500', () {
+      final theme = fabricLightTheme(mainColor: swatch);
+      expect(theme.navigationRailTheme.unselectedIconTheme?.color, swatch.shade500);
+    });
+
+    test('popupMenu textStyle color is shade950', () {
+      final theme = fabricLightTheme(mainColor: swatch);
+      expect(theme.popupMenuTheme.textStyle?.color, swatch.shade950);
+    });
+
+    test('drawer scrimColor and dialog barrierColor are defined', () {
+      final theme = fabricLightTheme(mainColor: swatch);
+      expect(theme.drawerTheme.scrimColor, isNotNull);
+      expect(theme.dialogTheme.barrierColor, isNotNull);
+      expect(theme.bottomSheetTheme.modalBarrierColor, isNotNull);
+    });
+
+    test('timePicker colors are configured', () {
+      final theme = fabricLightTheme(mainColor: swatch);
+      expect(theme.timePickerTheme.hourMinuteTextColor, swatch.shade950);
+    });
+
+    test('new component themes (elevatedButton, textButton, iconButton, searchBar, bottomAppBar) are configured', () {
+      final theme = fabricLightTheme(mainColor: swatch);
+      expect(theme.elevatedButtonTheme.style, isNotNull);
+      expect(theme.textButtonTheme.style, isNotNull);
+      expect(theme.iconButtonTheme.style, isNotNull);
+      expect(theme.searchBarTheme.backgroundColor?.resolve({}), swatch.shade50);
+      expect(theme.bottomAppBarTheme.color, swatch.shade50);
+    });
   });
 
   group('fabricDarkTheme', () {
@@ -114,6 +150,20 @@ void main() {
     test('disabled color is shade400', () {
       final theme = fabricDarkTheme(mainColor: swatch);
       expect(theme.disabledColor, swatch.shade400);
+    });
+
+    test('dataTable dataRowColor is shade900', () {
+      final theme = fabricDarkTheme(mainColor: swatch);
+      expect(theme.dataTableTheme.dataRowColor?.resolve({}), swatch.shade900);
+    });
+
+    test('new component themes (elevatedButton, textButton, iconButton, searchBar, bottomAppBar) are configured in dark mode', () {
+      final theme = fabricDarkTheme(mainColor: swatch);
+      expect(theme.elevatedButtonTheme.style, isNotNull);
+      expect(theme.textButtonTheme.style, isNotNull);
+      expect(theme.iconButtonTheme.style, isNotNull);
+      expect(theme.searchBarTheme.backgroundColor?.resolve({}), swatch.shade800);
+      expect(theme.bottomAppBarTheme.color, swatch.shade950);
     });
   });
 }
