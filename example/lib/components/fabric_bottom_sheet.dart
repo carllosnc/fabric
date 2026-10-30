@@ -10,7 +10,7 @@ class FabricBottomSheet extends StatelessWidget {
         return Container(
           padding: const EdgeInsets.all(16.0),
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.95,
+          height: MediaQuery.sizeOf(context).height * 0.95,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

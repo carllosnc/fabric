@@ -7,10 +7,11 @@ class FabricIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: Row(
+      child: Wrap(
         spacing: 20,
-        mainAxisSize: MainAxisSize.min,
-        children: [
+        runSpacing: 10,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: <Widget>[
           Badge(
             label: const Text('badge'),
             child: IconButton(
@@ -51,7 +52,7 @@ class FabricIconButton extends StatelessWidget {
               size: 24.0,
             ),
             onPressed: () {},
-          )
+          ),
         ],
       ),
     );

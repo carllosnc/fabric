@@ -8,66 +8,42 @@ class FabricChip extends StatefulWidget {
 }
 
 class _FabricChipState extends State<FabricChip> {
-  bool isFilterSelected = false;
-  bool isDarkMode = false;
-  final Set<String> _selectedCategories = <String>{};
-  final List<String> _categories = ['Music', 'Sports', 'Movies', 'Books'];
+  final Set<String> _selectedCategories = <String>{'Music'};
+  final List<String> _categories = <String>['Music', 'Sports', 'Movies', 'Books'];
   int inputs = 3;
-  int? selectedIndex;
+  int? selectedIndex = 0;
   bool favorite = false;
-  bool starred = false;
+  bool starred = true;
 
   @override
   Widget build(BuildContext context) {
+    final TextStyle? groupLabelStyle = Theme.of(context).textTheme.labelMedium;
+
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text('Filter chips'),
-          Wrap(
-            spacing: 10,
-            children: [
-              ..._categories.map((String category) {
-                return FilterChip(
-                  selected: _selectedCategories.contains(category),
-                  label: Text(category),
-                  onSelected: (bool selected) {
-                    setState(() {
-                      if (selected) {
-                        _selectedCategories.add(category);
-                      } else {
-                        _selectedCategories.remove(category);
-                      }
-                    });
-                  },
-                );
-              }),
-            ],
-          ),
+        spacing: 16,
+        children: <Widget>[
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text('Input chips'),
+            spacing: 8,
+            children: <Widget>[
+              Text('Filter chips', style: groupLabelStyle),
               Wrap(
-                alignment: WrapAlignment.start,
-                spacing: 5.0,
-                children: List<Widget>.generate(inputs, (int index) {
-                  return InputChip(
-                    label: Text('Person ${index + 1}'),
-                    selected: selectedIndex == index,
+                spacing: 8,
+                runSpacing: 8,
+                children: _categories.map((String category) {
+                  return FilterChip(
+                    selected: _selectedCategories.contains(category),
+                    label: Text(category),
                     onSelected: (bool selected) {
                       setState(() {
-                        if (selectedIndex == index) {
-                          selectedIndex = null;
+                        if (selected) {
+                          _selectedCategories.add(category);
                         } else {
-                          selectedIndex = index;
+                          _selectedCategories.remove(category);
                         }
-                      });
-                    },
-                    onDeleted: () {
-                      setState(() {
-                        inputs = inputs - 1;
                       });
                     },
                   );
@@ -77,14 +53,45 @@ class _FabricChipState extends State<FabricChip> {
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text('Action chips'),
+            spacing: 8,
+            children: <Widget>[
+              Text('Input chips', style: groupLabelStyle),
               Wrap(
-                spacing: 10,
-                children: [
+                spacing: 8,
+                runSpacing: 8,
+                children: List<Widget>.generate(inputs, (int index) {
+                  return InputChip(
+                    label: Text('Person ${index + 1}'),
+                    selected: selectedIndex == index,
+                    onSelected: (bool selected) {
+                      setState(() {
+                        selectedIndex = selectedIndex == index ? null : index;
+                      });
+                    },
+                    onDeleted: () {
+                      setState(() {
+                        if (inputs > 1) {
+                          inputs = inputs - 1;
+                        }
+                      });
+                    },
+                  );
+                }),
+              ),
+            ],
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 8,
+            children: <Widget>[
+              Text('Action chips', style: groupLabelStyle),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: <Widget>[
                   ActionChip(
                     avatar: Icon(starred ? Icons.star : Icons.star_border),
-                    label: const Text('Save to favorites'),
+                    label: const Text('Starred'),
                     onPressed: () {
                       setState(() {
                         starred = !starred;
@@ -93,22 +100,22 @@ class _FabricChipState extends State<FabricChip> {
                   ),
                   ActionChip(
                     avatar: Icon(favorite ? Icons.favorite : Icons.favorite_border),
-                    label: const Text('Save to favorites'),
+                    label: const Text('Favorite'),
                     onPressed: () {
                       setState(() {
                         favorite = !favorite;
                       });
                     },
                   ),
-                  ActionChip(
-                    avatar: Icon(favorite ? Icons.favorite : Icons.favorite_border),
-                    label: const Text('Save to favorites'),
+                  const ActionChip(
+                    avatar: Icon(Icons.lock_outline),
+                    label: Text('Disabled'),
                     onPressed: null,
                   ),
                 ],
-              )
+              ),
             ],
-          )
+          ),
         ],
       ),
     );

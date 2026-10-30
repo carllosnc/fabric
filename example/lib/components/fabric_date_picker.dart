@@ -14,7 +14,7 @@ class _FabricDatepickerState extends State<FabricDatepicker> {
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
-      helpText: 'Select a range of dates',
+      helpText: 'Select a date',
       initialDate: selectedDate,
       firstDate: DateTime(2000),
       lastDate: DateTime(2100),
@@ -49,17 +49,17 @@ class _FabricDatepickerState extends State<FabricDatepicker> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
+      child: Wrap(
         spacing: 10,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        runSpacing: 10,
+        children: <Widget>[
           FilledButton(
             onPressed: () => _selectDateRange(context),
-            child: Text('Select a range of dates'),
+            child: const Text('Select a range of dates'),
           ),
           FilledButton(
             onPressed: () => _selectDate(context),
-            child: Text('Select a date'),
+            child: const Text('Select a date'),
           ),
         ],
       ),

@@ -1,3 +1,4 @@
+import 'package:fabric/fabric.dart';
 import 'package:flutter/material.dart';
 
 class FabricSearchAnchor extends StatefulWidget {
@@ -9,7 +10,8 @@ class FabricSearchAnchor extends StatefulWidget {
 
 class _FabricSearchAnchorState extends State<FabricSearchAnchor> {
   final SearchController controller = SearchController();
-  final List<String> items = [
+
+  final List<String> items = <String>[
     'Apple',
     'Banana',
     'Cherry',
@@ -18,24 +20,45 @@ class _FabricSearchAnchorState extends State<FabricSearchAnchor> {
   ];
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final FabricThemeExtension tokens = context.fabricTokens;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: SearchAnchor(
         searchController: controller,
-        builder: (context, controller) {
-          return FilledButton.icon(
-            icon: const Icon(Icons.search),
-            label: const Text('Search'),
-            onPressed: () {
+        builder: (BuildContext context, SearchController controller) {
+          return SearchBar(
+            controller: controller,
+            hintText: 'Search fruits (e.g. Apple, Cherry)...',
+            leading: Icon(Icons.search, color: tokens.mutedForeground),
+            side: WidgetStatePropertyAll<BorderSide>(
+              BorderSide(color: tokens.borderColor),
+            ),
+            padding: const WidgetStatePropertyAll<EdgeInsets>(
+              EdgeInsets.symmetric(horizontal: 16),
+            ),
+            onTap: () {
+              controller.openView();
+            },
+            onChanged: (_) {
               controller.openView();
             },
           );
         },
-        suggestionsBuilder: (context, controller) {
-          final keyword = controller.text.toLowerCase();
-          return items.where((item) => item.toLowerCase().contains(keyword)).map(
-                (item) => ListTile(
+        suggestionsBuilder: (BuildContext context, SearchController controller) {
+          final String keyword = controller.text.toLowerCase();
+          return items
+              .where((String item) => item.toLowerCase().contains(keyword))
+              .map(
+                (String item) => ListTile(
+                  leading: const Icon(Icons.history),
                   title: Text(item),
                   onTap: () {
                     controller.closeView(item);

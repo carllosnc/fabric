@@ -1,53 +1,108 @@
+import 'package:fabric/fabric.dart';
 import 'package:flutter/material.dart';
 
-class FabricStepper extends StatefulWidget {
-  const FabricStepper({super.key});
+class FabricStepperShowcase extends StatefulWidget {
+  const FabricStepperShowcase({super.key});
 
   @override
-  State<FabricStepper> createState() => _FabricStepperState();
+  State<FabricStepperShowcase> createState() => _FabricStepperShowcaseState();
 }
 
-class _FabricStepperState extends State<FabricStepper> {
+class _FabricStepperShowcaseState extends State<FabricStepperShowcase> {
   int _currentStep = 0;
+  StepperType _stepperType = StepperType.horizontal;
+
+  static const int _totalSteps = 3;
+
+  void _handleContinue() {
+    setState(() {
+      if (_currentStep < _totalSteps - 1) {
+        _currentStep++;
+      } else {
+        _currentStep = 0;
+      }
+    });
+  }
+
+  void _handleCancel() {
+    if (_currentStep > 0) {
+      setState(() {
+        _currentStep--;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 200,
-      child: Stepper(
-        elevation: 0,
-        type: StepperType.horizontal,
-        physics: const NeverScrollableScrollPhysics(),
-        currentStep: _currentStep,
-        onStepContinue: () {
-          setState(() {
-            if (_currentStep < 2) {
-              _currentStep++;
-            }
-          });
-        },
-        onStepCancel: () {
-          setState(() {
-            if (_currentStep > 0) {
-              _currentStep--;
-            }
-          });
-        },
-        steps: [
-          Step(
-            state: _currentStep == 0 ? StepState.editing : StepState.complete,
-            title: const Text('Step 1'),
-            content: const Text('This is the first step.'),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 12,
+        children: <Widget>[
+          SizedBox(
+            width: double.infinity,
+            child: SegmentedButton<StepperType>(
+              segments: const <ButtonSegment<StepperType>>[
+                ButtonSegment<StepperType>(
+                  value: StepperType.horizontal,
+                  icon: Icon(Icons.swap_horiz_outlined),
+                  label: Text('Horizontal'),
+                ),
+                ButtonSegment<StepperType>(
+                  value: StepperType.vertical,
+                  icon: Icon(Icons.swap_vert_outlined),
+                  label: Text('Vertical'),
+                ),
+              ],
+              selected: <StepperType>{_stepperType},
+              onSelectionChanged: (Set<StepperType> selection) {
+                setState(() {
+                  _stepperType = selection.first;
+                });
+              },
+            ),
           ),
-          Step(
-            state: _currentStep == 1 ? StepState.editing : StepState.complete,
-            title: const Text('Step 2'),
-            content: const Text('This is the second step.'),
-          ),
-          Step(
-            state: _currentStep == 2 ? StepState.editing : StepState.complete,
-            title: const Text('Step 3'),
-            content: const Text('This is the third step.'),
+          FabricStepper(
+            type: _stepperType,
+            currentStep: _currentStep,
+            finishLabel: 'Finish & Reset',
+            onStepTapped: (int index) {
+              setState(() {
+                _currentStep = index;
+              });
+            },
+            onStepContinue: _handleContinue,
+            onStepCancel: _handleCancel,
+            steps: <FabricStep>[
+              FabricStep(
+                title: const Text('Account'),
+                subtitle: _stepperType == StepperType.vertical
+                    ? const Text('Credentials')
+                    : null,
+                content: const Text(
+                  'Configure your workspace name, primary email address and security preferences.',
+                ),
+              ),
+              FabricStep(
+                title: const Text('Theme'),
+                subtitle: _stepperType == StepperType.vertical
+                    ? const Text('Appearance')
+                    : null,
+                content: const Text(
+                  'Select your preferred FabricSwatch palette and default Light or Dark appearance.',
+                ),
+              ),
+              FabricStep(
+                title: const Text('Review'),
+                subtitle: _stepperType == StepperType.vertical
+                    ? const Text('Ready to launch')
+                    : null,
+                content: const Text(
+                  'Verify all configuration details before deploying your project environment.',
+                ),
+              ),
+            ],
           ),
         ],
       ),

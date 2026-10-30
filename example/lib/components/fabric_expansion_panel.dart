@@ -6,15 +6,16 @@ class FabricExpansionPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: const <Widget>[
         ExpansionTile(
-          leading: const Icon(Icons.featured_play_list_outlined),
-          title: const Text('Product Features'),
-          subtitle: const Text('Key features and capabilities'),
-          children: const [
+          leading: Icon(Icons.featured_play_list_outlined),
+          title: Text('Product Features'),
+          subtitle: Text('Key features and capabilities'),
+          children: <Widget>[
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              spacing: 6,
+              children: <Widget>[
                 Text('• Advanced AI Integration'),
                 Text('• Real-time Analytics'),
                 Text('• Cross-platform Support'),
@@ -24,13 +25,14 @@ class FabricExpansionPanel extends StatelessWidget {
           ],
         ),
         ExpansionTile(
-          leading: const Icon(Icons.build_outlined),
-          title: const Text('Technical Specifications'),
-          subtitle: const Text('System requirements and compatibility'),
-          children: const [
+          leading: Icon(Icons.build_outlined),
+          title: Text('Technical Specifications'),
+          subtitle: Text('System requirements and compatibility'),
+          children: <Widget>[
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              spacing: 6,
+              children: <Widget>[
                 Text('• OS: iOS 13+ / Android 8+'),
                 Text('• Memory: 2GB RAM minimum'),
                 Text('• Storage: 100MB free space'),
@@ -40,13 +42,14 @@ class FabricExpansionPanel extends StatelessWidget {
           ],
         ),
         ExpansionTile(
-          leading: const Icon(Icons.help_outline_outlined),
-          title: const Text('Support Information'),
-          subtitle: const Text('Help and contact details'),
-          children: const [
+          leading: Icon(Icons.help_outline_outlined),
+          title: Text('Support Information'),
+          subtitle: Text('Help and contact details'),
+          children: <Widget>[
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              spacing: 6,
+              children: <Widget>[
                 Text('• Email: support@example.com'),
                 Text('• Phone: 1-800-123-4567'),
                 Text('• Hours: 24/7 Support'),

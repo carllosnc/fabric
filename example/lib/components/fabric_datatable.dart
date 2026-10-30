@@ -8,31 +8,25 @@ class FabricDatatable extends StatefulWidget {
 }
 
 class _FabricDatatableState extends State<FabricDatatable> {
-  final List<bool> _selectedRows = List<bool>.generate(6, (index) => false);
+  final List<bool> _selectedRows = List<bool>.generate(6, (int index) => index == 0);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: DataTable(
-        columns: const [
-          DataColumn(
-            label: Text('Select'),
-          ),
-          DataColumn(
-            label: Text('Name'),
-          ),
-          DataColumn(
-            label: Text('Age'),
-          ),
-          DataColumn(
-            label: Text('Role'),
-          ),
+        columns: const <DataColumn>[
+          DataColumn(label: Text('Select')),
+          DataColumn(label: Text('Name')),
+          DataColumn(label: Text('Age')),
+          DataColumn(label: Text('Role')),
         ],
         rows: List<DataRow>.generate(
           6,
-          (index) => DataRow(
-            cells: [
+          (int index) => DataRow(
+            selected: _selectedRows[index],
+            cells: <DataCell>[
               DataCell(
                 Checkbox(
                   value: _selectedRows[index],
@@ -43,9 +37,35 @@ class _FabricDatatableState extends State<FabricDatatable> {
                   },
                 ),
               ),
-              DataCell(Text(['Alice', 'Bob', 'Charlie', 'Diana', 'Eve', 'Frank'][index])),
-              DataCell(Text(['25', '30', '35', '28', '40', '50'][index])),
-              DataCell(Text(['Developer', 'Designer', 'Manager', 'Tester', 'Architect', 'Consultant'][index])),
+              DataCell(
+                Text(
+                  const <String>[
+                    'Alice',
+                    'Bob',
+                    'Charlie',
+                    'Diana',
+                    'Eve',
+                    'Frank',
+                  ][index],
+                ),
+              ),
+              DataCell(
+                Text(
+                  const <String>['25', '30', '35', '28', '40', '50'][index],
+                ),
+              ),
+              DataCell(
+                Text(
+                  const <String>[
+                    'Developer',
+                    'Designer',
+                    'Manager',
+                    'Tester',
+                    'Architect',
+                    'Consultant',
+                  ][index],
+                ),
+              ),
             ],
           ),
         ),

@@ -1,26 +1,38 @@
 import 'package:flutter/material.dart';
 
-class FabricDialog extends StatelessWidget {
+class FabricDialog extends StatefulWidget {
   const FabricDialog({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final TextEditingController inputController = TextEditingController();
+  State<FabricDialog> createState() => _FabricDialogState();
+}
 
+class _FabricDialogState extends State<FabricDialog> {
+  final TextEditingController _inputController = TextEditingController();
+
+  @override
+  void dispose() {
+    _inputController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        spacing: 5,
-        children: [
+      child: Wrap(
+        spacing: 10,
+        runSpacing: 10,
+        children: <Widget>[
           FilledButton(
             onPressed: () {
-              showDialog(
+              showDialog<void>(
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
                     title: const Text('Dialog Title'),
                     content: const Text('This is a simple dialog content.'),
-                    actions: [
+                    actions: <Widget>[
                       OutlinedButton(
                         onPressed: () {
                           Navigator.of(context).pop();
@@ -34,21 +46,20 @@ class FabricDialog extends StatelessWidget {
             },
             child: const Text('Open Dialog'),
           ),
-          const SizedBox(height: 16),
           FilledButton(
             onPressed: () {
-              showDialog(
+              showDialog<void>(
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
                     title: const Text('Input Dialog'),
                     content: TextField(
-                      controller: inputController,
+                      controller: _inputController,
                       decoration: const InputDecoration(
                         hintText: 'Enter your text here',
                       ),
                     ),
-                    actions: [
+                    actions: <Widget>[
                       OutlinedButton(
                         onPressed: () {
                           Navigator.of(context).pop();

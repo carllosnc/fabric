@@ -1,35 +1,30 @@
+import 'package:fabric/fabric.dart';
 import 'package:flutter/material.dart';
 
-class FabricBanner extends StatelessWidget {
-  const FabricBanner({super.key});
+class FabricBannerShowcase extends StatelessWidget {
+  const FabricBannerShowcase({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialBanner(
-      leading: Icon(Icons.info_outlined),
-      content: Text(
-        'A fabric banner serves as a temporary message for the user, requiring some form of user acknowledgment.',
-      ),
-      actions: [
-        TextButton(
-          onPressed: () {},
-          child: Text(
-            'Open',
-            style: TextStyle(
-              fontSize: 16,
-            ),
-          ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: FabricBanner(
+        icon: Icons.system_update_alt_outlined,
+        title: const Text('Update available (v2.4.0)'),
+        content: const Text(
+          'A new version of the Fabric Design System is ready to install.',
         ),
-        TextButton(
-          onPressed: () {},
-          child: Text(
-            'Dismiss',
-            style: TextStyle(
-              fontSize: 16,
-            ),
+        actions: <Widget>[
+          OutlinedButton(
+            onPressed: () {},
+            child: const Text('Later'),
           ),
-        )
-      ],
+          FilledButton(
+            onPressed: () {},
+            child: const Text('Update now'),
+          ),
+        ],
+      ),
     );
   }
 }

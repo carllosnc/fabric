@@ -12,28 +12,32 @@ class _FabricSegmentButtonState extends State<FabricSegmentButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SegmentedButton<String>(
-        segments: const <ButtonSegment<String>>[
-          ButtonSegment<String>(
-            value: 'Option A',
-            label: Text('Option A'),
-          ),
-          ButtonSegment<String>(
-            value: 'Option B',
-            label: Text('Option B'),
-          ),
-          ButtonSegment<String>(
-            value: 'Option C',
-            label: Text('Option C'),
-          ),
-        ],
-        selected: selection,
-        onSelectionChanged: (Set<String> newSelection) {
-          setState(() {
-            selection = newSelection;
-          });
-        },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: SizedBox(
+        width: double.infinity,
+        child: SegmentedButton<String>(
+          segments: const <ButtonSegment<String>>[
+            ButtonSegment<String>(
+              value: 'Option A',
+              label: Text('Option A'),
+            ),
+            ButtonSegment<String>(
+              value: 'Option B',
+              label: Text('Option B'),
+            ),
+            ButtonSegment<String>(
+              value: 'Option C',
+              label: Text('Option C'),
+            ),
+          ],
+          selected: selection,
+          onSelectionChanged: (Set<String> newSelection) {
+            setState(() {
+              selection = newSelection;
+            });
+          },
+        ),
       ),
     );
   }

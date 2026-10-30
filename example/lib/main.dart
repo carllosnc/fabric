@@ -1,10 +1,6 @@
-import './app.dart';
 import 'package:flutter/material.dart';
-import 'package:fabric/fabric.dart';
+import './app.dart';
 
 void main() {
-  fabricConfig.color = fabricGrey;
-  fabricConfig.fontFamily = "BricolageGrotesque";
-
   runApp(const App());
 }

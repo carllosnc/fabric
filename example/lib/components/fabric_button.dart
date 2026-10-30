@@ -8,42 +8,62 @@ class FabricButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 20,
-        children: [
+        children: <Widget>[
           Wrap(
             spacing: 10,
-            children: [
-              ElevatedButton(onPressed: () {}, child: Text('Elevated')),
-              ElevatedButton.icon(onPressed: () {}, icon: Icon(Icons.favorite_border_outlined), label: Text('Elevated with Icon')),
-              ElevatedButton(onPressed: null, child: Text('Elevated Disabled')),
+            runSpacing: 10,
+            children: <Widget>[
+              ElevatedButton(onPressed: () {}, child: const Text('Elevated')),
+              ElevatedButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.favorite_border_outlined),
+                label: const Text('Elevated with Icon'),
+              ),
+              const ElevatedButton(onPressed: null, child: Text('Elevated Disabled')),
             ],
           ),
           Wrap(
             spacing: 10,
-            children: [
-              FilledButton(onPressed: () {}, child: Text('Filled')),
-              FilledButton.icon(onPressed: () {}, icon: Icon(Icons.favorite_border_outlined), label: Text('Filled with Icon')),
-              FilledButton(onPressed: null, child: Text('Filled Disabled')),
-              FilledButton.tonal(onPressed: () {}, child: Text('Filled Tonal')),
+            runSpacing: 10,
+            children: <Widget>[
+              FilledButton(onPressed: () {}, child: const Text('Filled')),
+              FilledButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.favorite_border_outlined),
+                label: const Text('Filled with Icon'),
+              ),
+              const FilledButton(onPressed: null, child: Text('Filled Disabled')),
+              FilledButton.tonal(onPressed: () {}, child: const Text('Filled Tonal')),
             ],
           ),
           Wrap(
             spacing: 10,
-            children: [
-              OutlinedButton(onPressed: () {}, child: Text('Outlined')),
-              OutlinedButton.icon(onPressed: () {}, icon: Icon(Icons.favorite_border_outlined), label: Text('Outlined with Icon')),
-              OutlinedButton(onPressed: null, child: Text('Outlined Disabled')),
+            runSpacing: 10,
+            children: <Widget>[
+              OutlinedButton(onPressed: () {}, child: const Text('Outlined')),
+              OutlinedButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.favorite_border_outlined),
+                label: const Text('Outlined with Icon'),
+              ),
+              const OutlinedButton(onPressed: null, child: Text('Outlined Disabled')),
             ],
           ),
           Wrap(
             spacing: 10,
-            children: [
-              TextButton(onPressed: () {}, child: Text('Text')),
-              TextButton.icon(onPressed: () {}, icon: Icon(Icons.favorite_border_outlined), label: Text('Text with Icon')),
-              TextButton(onPressed: null, child: Text('Text Disabled')),
+            runSpacing: 10,
+            children: <Widget>[
+              TextButton(onPressed: () {}, child: const Text('Text')),
+              TextButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.favorite_border_outlined),
+                label: const Text('Text with Icon'),
+              ),
+              const TextButton(onPressed: null, child: Text('Text Disabled')),
             ],
           ),
         ],

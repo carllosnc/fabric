@@ -9,9 +9,11 @@ class FabricFloatActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
+      child: Wrap(
         spacing: 10,
-        children: [
+        runSpacing: 10,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: <Widget>[
           FloatingActionButton.large(
             heroTag: 'fbt1',
             onPressed: () {},

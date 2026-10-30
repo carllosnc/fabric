@@ -8,13 +8,31 @@ class FabricIndicators extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
-        spacing: 20,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const CircularProgressIndicator(),
-          const SizedBox(
+        spacing: 24,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const <Widget>[
+          Row(
+            spacing: 24,
+            children: <Widget>[
+              SizedBox(
+                width: 28,
+                height: 28,
+                child: CircularProgressIndicator(),
+              ),
+              SizedBox(
+                width: 28,
+                height: 28,
+                child: CircularProgressIndicator(value: 0.65),
+              ),
+            ],
+          ),
+          SizedBox(
             width: double.infinity,
             child: LinearProgressIndicator(),
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: LinearProgressIndicator(value: 0.65),
           ),
         ],
       ),
