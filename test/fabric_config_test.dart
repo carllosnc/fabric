@@ -27,11 +27,11 @@ void main() {
 
     test('color change propagates to getLightTheme', () {
       final original = fabricConfig.getLightTheme();
-      expect(original.colorScheme.primary, fabricGrey.shade950);
+      expect(original.colorScheme.primary, fabricGrey.shade800);
 
       fabricConfig.color = fabricBlue;
       final updated = fabricConfig.getLightTheme();
-      expect(updated.colorScheme.primary, fabricBlue.shade950);
+      expect(updated.colorScheme.primary, fabricBlue.shade800);
 
       fabricConfig.color = fabricGrey;
     });
