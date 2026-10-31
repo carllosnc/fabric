@@ -262,7 +262,19 @@ const FabricSwatch customBrand = FabricSwatch(
 
 ---
 
-## 📸 Showcase & Example App
+## 📸 Showcase & Screenshots
+
+| Tokens & Swatches (Light) | Tokens & Swatches (Dark) | Buttons & Segmented |
+| :---: | :---: | :---: |
+| <img src="prints/fabric_01.png" width="260" alt="Fabric Tokens Light" /> | <img src="prints/fabric_02.png" width="260" alt="Fabric Tokens Dark" /> | <img src="prints/fabric_03.png" width="260" alt="Buttons and Segmented" /> |
+
+| Inputs, Search & Dropdown | Status Badges & Chips | Cards & Carousel |
+| :---: | :---: | :---: |
+| <img src="prints/fabric_04.png" width="260" alt="Inputs and Search" /> | <img src="prints/fabric_05.png" width="260" alt="Badges and Chips" /> | <img src="prints/fabric_06.png" width="260" alt="Cards and Carousel" /> |
+
+| Navigation & Menus | Stepper & Avatars | Empty States & Skeletons |
+| :---: | :---: | :---: |
+| <img src="prints/fabric_07.png" width="260" alt="Navigation" /> | <img src="prints/fabric_08.png" width="260" alt="Stepper and Avatars" /> | <img src="prints/fabric_09.png" width="260" alt="Empty States" /> |
 
 Run the interactive showcase app inside `example/`:
 
