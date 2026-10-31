@@ -21,17 +21,20 @@ class _FabricRadioButtonState extends State<FabricRadioButton> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           RadioListTile<int>(
+            contentPadding: EdgeInsets.symmetric(horizontal: 20),
             title: Text('Option 1'),
             subtitle: Text('This is a subtitle'),
             value: 1,
             enabled: false,
           ),
           RadioListTile<int>(
+            contentPadding: EdgeInsets.symmetric(horizontal: 20),
             title: Text('Option 2'),
             subtitle: Text('This is a subtitle'),
             value: 2,
           ),
           RadioListTile<int>(
+            contentPadding: EdgeInsets.symmetric(horizontal: 20),
             title: Text('Option 3'),
             subtitle: Text('This is a subtitle'),
             value: 3,

@@ -10,6 +10,7 @@ class FabricListTile extends StatelessWidget {
     return Column(
       children: [
         ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           leading: Icon(Icons.shopping_cart_outlined),
           trailing: Icon(Icons.keyboard_arrow_right),
           title: Text('Shopping Cart'),
@@ -17,6 +18,7 @@ class FabricListTile extends StatelessWidget {
           onTap: () {},
         ),
         ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           leading: Icon(Icons.favorite_border_outlined),
           trailing: Icon(Icons.keyboard_arrow_right),
           title: Text('Wishlist'),
@@ -24,6 +26,7 @@ class FabricListTile extends StatelessWidget {
           onTap: () {},
         ),
         ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           leading: Icon(Icons.history),
           trailing: Icon(Icons.keyboard_arrow_right),
           title: Text('Order History'),

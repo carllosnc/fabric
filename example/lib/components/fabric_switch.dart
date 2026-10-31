@@ -19,12 +19,14 @@ class _FabricSwitchState extends State<FabricSwitch> {
     return Column(
       children: [
         SwitchListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           title: const Text('Enable Notifications'),
           subtitle: const Text('Receive alerts and reminders'),
           value: _switch1Value,
           onChanged: null, // First switch remains disabled
         ),
         SwitchListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           title: const Text('Dark Mode'),
           subtitle: const Text('Switch to dark theme'),
           value: _switch2Value,
@@ -35,6 +37,7 @@ class _FabricSwitchState extends State<FabricSwitch> {
           },
         ),
         SwitchListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           title: const Text('Auto Update'),
           subtitle: const Text('Keep app updated automatically'),
           value: _switch3Value,

@@ -8,6 +8,8 @@ class FabricExpansionPanel extends StatelessWidget {
     return Column(
       children: const <Widget>[
         ExpansionTile(
+          tilePadding: EdgeInsets.symmetric(horizontal: 20),
+          childrenPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
           leading: Icon(Icons.featured_play_list_outlined),
           title: Text('Product Features'),
           subtitle: Text('Key features and capabilities'),
@@ -25,6 +27,8 @@ class FabricExpansionPanel extends StatelessWidget {
           ],
         ),
         ExpansionTile(
+          tilePadding: EdgeInsets.symmetric(horizontal: 20),
+          childrenPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
           leading: Icon(Icons.build_outlined),
           title: Text('Technical Specifications'),
           subtitle: Text('System requirements and compatibility'),
@@ -42,6 +46,8 @@ class FabricExpansionPanel extends StatelessWidget {
           ],
         ),
         ExpansionTile(
+          tilePadding: EdgeInsets.symmetric(horizontal: 20),
+          childrenPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
           leading: Icon(Icons.help_outline_outlined),
           title: Text('Support Information'),
           subtitle: Text('Help and contact details'),

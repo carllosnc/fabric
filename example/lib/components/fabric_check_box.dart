@@ -18,12 +18,14 @@ class _FabricCheckboxState extends State<FabricCheckbox> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CheckboxListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           title: const Text('Enable Notifications'),
           subtitle: const Text('Receive alerts and reminders'),
           value: checkbox1,
           onChanged: null,
         ),
         CheckboxListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           title: const Text('Dark Mode'),
           subtitle: const Text('Switch to dark theme'),
           value: checkbox2,
@@ -34,6 +36,7 @@ class _FabricCheckboxState extends State<FabricCheckbox> {
           },
         ),
         CheckboxListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           title: const Text('Auto Update'),
           subtitle: const Text('Keep app updated automatically'),
           value: checkbox3,
