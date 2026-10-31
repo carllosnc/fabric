@@ -1,7 +1,7 @@
 name: fabric
-description: "A new Flutter package project."
+description: A modern, opinionated Design System and Theme for Flutter based on Material 3 with token-driven styling and dedicated UI components.
 version: 0.0.7
-homepage:
+homepage: https://github.com/carllosnc/fabric
 
 environment:
   sdk: ^3.13.0
