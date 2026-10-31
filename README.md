@@ -8,7 +8,7 @@
 
 ---
 
-## 💡 Architecture & Philosophy
+## Architecture & Philosophy
 
 Fabric follows two core design rules:
 
@@ -17,7 +17,7 @@ Fabric follows two core design rules:
 
 ---
 
-## 📦 Installation
+## Installation
 
 Add Fabric to your `pubspec.yaml`:
 
@@ -30,7 +30,7 @@ dependencies:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Declarative `FabricTheme` (Recommended)
 
@@ -93,7 +93,7 @@ Container(color: swatch.shade100);
 
 ---
 
-## 🧩 Dedicated Fabric Components
+## Dedicated Fabric Components
 
 Fabric exports high-level components for UI patterns that Flutter's `ThemeData` cannot customize:
 
@@ -211,7 +211,7 @@ FabricSkeleton.card(height: 120)
 
 ---
 
-## 🎨 46+ Native M3 Widgets Themed by Fabric
+## 46+ Native M3 Widgets Themed by Fabric
 
 All standard Flutter widgets below are styled centrally through `FabricTheme` with zero wrappers needed:
 
@@ -226,7 +226,7 @@ All standard Flutter widgets below are styled centrally through `FabricTheme` wi
 
 ---
 
-## 🌈 Fabric Color Swatches
+## Fabric Color Swatches
 
 Fabric includes 8 hand-tuned, balanced color swatches with 11 shade stops (`50` to `950`):
 
@@ -262,7 +262,7 @@ const FabricSwatch customBrand = FabricSwatch(
 
 ---
 
-## 📸 Showcase & Screenshots
+## Showcase & Screenshots
 
 | Tokens & Swatches (Light) | Tokens & Swatches (Dark) | Buttons & Segmented |
 | :---: | :---: | :---: |
@@ -285,6 +285,6 @@ flutter run
 
 ---
 
-## 📄 License
+## License
 
 MIT © [Carlos Costa](https://github.com/carllosnc)
