@@ -89,6 +89,7 @@ ThemeData _buildFabricThemeData({
     disabledColor: mainColor.shade400,
     dividerColor: isDark ? mainColor.shade800 : mainColor.shade100,
     fontFamily: effectiveFontFamily,
+    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
     iconTheme: iconTheme,
     primaryIconTheme: iconTheme,
     splashColor: isDark ? mainColor.shade800 : mainColor.shade50,
@@ -166,6 +167,7 @@ ThemeData _buildFabricThemeData({
     segmentedButtonTheme: buildFabricSegmentedButtonTheme(
       mainColor,
       isDark: isDark,
+      fontFamily: effectiveFontFamily,
     ),
     filledButtonTheme: buildFabricFilledButtonTheme(mainColor, isDark: isDark),
     elevatedButtonTheme: buildFabricElevatedButtonTheme(
@@ -213,7 +215,11 @@ ThemeData _buildFabricThemeData({
       isDark: isDark,
       fontFamily: effectiveFontFamily,
     ),
-    badgeTheme: buildFabricBadgeTheme(mainColor, isDark: isDark),
+    badgeTheme: buildFabricBadgeTheme(
+      mainColor,
+      isDark: isDark,
+      fontFamily: effectiveFontFamily,
+    ),
     navigationRailTheme: buildFabricNavigationRailTheme(
       mainColor,
       isDark: isDark,
