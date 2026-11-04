@@ -1,5 +1,5 @@
 name: fabric
-description: A modern, opinionated Design System and Theme for Flutter based on Material 3 with token-driven styling and dedicated UI components.
+description: A modern, minimal and pure Material 3 Theme Layer for Flutter. Zero custom widgets — 100% native Flutter widgets themed out-of-the-box.
 version: 0.0.7
 homepage: https://github.com/carllosnc/fabric
 
