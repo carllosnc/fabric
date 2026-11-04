@@ -83,25 +83,26 @@ ListTileThemeData buildFabricListTileTheme(
   final Color fg = isDark ? mainColor.shade50 : mainColor.shade800;
   final Color subtitleColor = isDark ? mainColor.shade400 : mainColor.shade500;
   return ListTileThemeData(
-    horizontalTitleGap: 20,
+    horizontalTitleGap: 16,
     contentPadding: const EdgeInsets.symmetric(
-      horizontal: 20,
+      horizontal: 16,
       vertical: 0,
     ),
     titleTextStyle: TextStyle(
       fontFamily: fontFamily,
-      fontWeight: FontWeight.bold,
-      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      fontSize: 14.5,
       color: fg,
     ),
     subtitleTextStyle: TextStyle(
       fontFamily: fontFamily,
-      fontSize: 14,
+      fontSize: 12.5,
+      height: 1.35,
       color: subtitleColor,
     ),
     leadingAndTrailingTextStyle: TextStyle(
       fontFamily: fontFamily,
-      fontSize: 12,
+      fontSize: 11.5,
       color: subtitleColor,
     ),
     textColor: fg,
@@ -136,26 +137,27 @@ ChipThemeData buildFabricChipTheme(
     deleteIconColor: fg,
     disabledColor: disabledBg,
     padding: const EdgeInsets.symmetric(
-      horizontal: 10,
-      vertical: 5,
+      horizontal: 7,
+      vertical: 2,
     ),
     iconTheme: IconThemeData(
       color: fg,
-      size: 16,
+      size: 14,
     ),
     side: BorderSide(
       color: isDark ? mainColor.shade500 : mainColor.shade400,
       width: 1,
     ),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(6),
     ),
     elevation: 0,
     secondarySelectedColor: isDark ? mainColor.shade800 : mainColor.shade300,
     selectedColor: selectedBg,
     labelStyle: TextStyle(
       fontFamily: fontFamily,
-      fontSize: 13,
+      fontSize: 12,
+      fontWeight: FontWeight.w500,
       color: fg,
     ),
   );
@@ -199,7 +201,8 @@ DialogThemeData buildFabricDialogTheme(
       fontFamily: fontFamily,
       fontWeight: FontWeight.normal,
       color: isDark ? mainColor.shade400 : mainColor.shade500,
-      fontSize: 16,
+      fontSize: 13.5,
+      height: 1.45,
     ),
     backgroundColor: isDark ? mainColor.shade950 : mainColor.shade00,
     insetPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -208,7 +211,7 @@ DialogThemeData buildFabricDialogTheme(
         color: isDark ? mainColor.shade800 : mainColor.shade200,
         width: 1,
       ),
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(16),
     ),
   );
 }
@@ -217,7 +220,7 @@ BottomSheetThemeData buildFabricBottomSheetTheme(
   FabricSwatch mainColor, {
   required bool isDark,
 }) {
-  final Color bg = isDark ? mainColor.shade950 : mainColor.shade00;
+  final Color bg = isDark ? mainColor.shade900 : mainColor.shade00;
   return BottomSheetThemeData(
     backgroundColor: bg,
     surfaceTintColor: bg,
@@ -318,10 +321,21 @@ SnackBarThemeData buildFabricSnackBarTheme(
 BadgeThemeData buildFabricBadgeTheme(
   FabricSwatch mainColor, {
   required bool isDark,
+  String? fontFamily,
 }) {
   return BadgeThemeData(
-    alignment: Alignment.topCenter,
-    offset: const Offset(0, -4),
+    alignment: AlignmentDirectional.topEnd,
+    offset: const Offset(0, 0),
+    smallSize: 6,
+    largeSize: 16,
+    padding: const EdgeInsets.symmetric(horizontal: 5),
+    textStyle: TextStyle(
+      fontFamily: fontFamily,
+      fontSize: 10,
+      fontWeight: FontWeight.w600,
+      letterSpacing: 0.1,
+      height: 1.1,
+    ),
     backgroundColor: isDark ? const Color(0xFFFFB4AB) : const Color(0xFFBA1A1A),
     textColor: isDark ? mainColor.shade950 : mainColor.shade00,
   );
@@ -335,16 +349,17 @@ CardThemeData buildFabricCardTheme(
   final Color borderColor = isDark ? mainColor.shade700 : mainColor.shade200;
   return CardThemeData(
     surfaceTintColor: bg,
-    clipBehavior: Clip.none,
+    clipBehavior: Clip.antiAlias,
     color: bg,
     elevation: 0,
+    shadowColor: Colors.transparent,
     margin: EdgeInsets.zero,
     shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
       side: BorderSide(
         color: borderColor,
         width: 1,
       ),
-      borderRadius: BorderRadius.circular(10),
     ),
   );
 }
@@ -355,19 +370,21 @@ MaterialBannerThemeData buildFabricBannerTheme(
   String? fontFamily,
 }) {
   final Color bg = isDark ? mainColor.shade800 : mainColor.shade50;
+  final Color divider = isDark ? mainColor.shade700 : mainColor.shade200;
   return MaterialBannerThemeData(
-    padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
-    leadingPadding: const EdgeInsetsDirectional.only(end: 14),
-    surfaceTintColor: bg,
-    dividerColor: Colors.transparent,
+    backgroundColor: bg,
+    surfaceTintColor: Colors.transparent,
+    elevation: 0,
+    dividerColor: divider,
+    padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 2.0),
+    leadingPadding: const EdgeInsetsDirectional.only(end: 12.0),
     contentTextStyle: TextStyle(
       fontFamily: fontFamily,
-      fontSize: 14,
-      height: 1.45,
+      fontSize: 13.5,
+      fontWeight: FontWeight.w400,
+      height: 1.4,
       color: isDark ? mainColor.shade50 : mainColor.shade800,
     ),
-    backgroundColor: bg,
-    elevation: 0,
   );
 }
 
@@ -377,21 +394,46 @@ DataTableThemeData buildFabricDataTableTheme(
   String? fontFamily,
 }) {
   final Color fg = isDark ? mainColor.shade50 : mainColor.shade800;
+  final Color mutedFg = isDark ? mainColor.shade400 : mainColor.shade600;
+  final Color headingBg = isDark ? mainColor.shade800 : mainColor.shade50;
+  final Color defaultBg = isDark ? mainColor.shade900 : mainColor.shade00;
+  final Color selectedBg = isDark ? mainColor.shade800 : mainColor.shade100;
+  final Color hoveredBg = isDark
+      ? mainColor.shade800.withValues(alpha: 0.5)
+      : mainColor.shade50;
+
   return DataTableThemeData(
-    dataRowColor: WidgetStateProperty.all(
-      isDark ? mainColor.shade900 : mainColor.shade00,
-    ),
+    dataRowColor:
+        WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+      if (states.contains(WidgetState.selected)) {
+        return selectedBg;
+      }
+      if (states.contains(WidgetState.hovered)) {
+        return hoveredBg;
+      }
+      return defaultBg;
+    }),
+    headingRowColor: WidgetStateProperty.all(headingBg),
+    headingRowHeight: 44,
+    dataRowMinHeight: 48,
+    dataRowMaxHeight: 52,
+    horizontalMargin: 20,
+    columnSpacing: 28,
+    dividerThickness: 1,
+    checkboxHorizontalMargin: 16,
     headingTextStyle: TextStyle(
       fontFamily: fontFamily,
-      fontWeight: FontWeight.bold,
-      color: fg,
+      fontSize: 12.5,
+      fontWeight: FontWeight.w600,
+      color: mutedFg,
+      letterSpacing: 0.2,
     ),
     dataTextStyle: TextStyle(
       fontFamily: fontFamily,
+      fontSize: 13,
+      fontWeight: FontWeight.w400,
       color: fg,
     ),
-    dividerThickness: 1,
-    columnSpacing: 20,
   );
 }
 
