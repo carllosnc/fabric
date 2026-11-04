@@ -11,12 +11,6 @@ class FabricAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.isSearching = false,
     this.searchController,
     this.onSearchToggle,
-    this.tabs = const <Tab>[
-      Tab(text: 'Tokens'),
-      Tab(text: 'Inputs & Actions'),
-      Tab(text: 'Surfaces & Nav'),
-      Tab(text: 'Feedback & Overlays'),
-    ],
   });
 
   final FabricSwatch selectedSwatch;
@@ -26,7 +20,6 @@ class FabricAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool isSearching;
   final TextEditingController? searchController;
   final VoidCallback? onSearchToggle;
-  final List<Tab> tabs;
 
   static const Map<String, FabricSwatch> swatches = <String, FabricSwatch>{
     'Grey': fabricGrey,
@@ -40,7 +33,7 @@ class FabricAppBar extends StatelessWidget implements PreferredSizeWidget {
   };
 
   @override
-  Size get preferredSize => Size.fromHeight(isSearching ? 64 : 110);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   IconData _themeModeIcon(ThemeMode mode) {
     return switch (mode) {
@@ -108,13 +101,6 @@ class FabricAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 ),
               ],
-            ),
-      bottom: isSearching
-          ? null
-          : TabBar(
-              isScrollable: true,
-              tabAlignment: TabAlignment.start,
-              tabs: tabs,
             ),
       actions: <Widget>[
         if (onSearchToggle != null)
