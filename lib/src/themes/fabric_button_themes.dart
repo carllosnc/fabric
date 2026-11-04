@@ -21,30 +21,50 @@ FloatingActionButtonThemeData buildFabricFabTheme(
 SegmentedButtonThemeData buildFabricSegmentedButtonTheme(
   FabricSwatch mainColor, {
   required bool isDark,
+  String? fontFamily,
 }) {
+  final Color borderColor = isDark ? mainColor.shade700 : mainColor.shade300;
+  final Color disabledBorderColor =
+      isDark ? mainColor.shade800 : mainColor.shade200;
+  final Color selectedBg = isDark ? mainColor.shade700 : mainColor.shade200;
+  final Color selectedFg = isDark ? mainColor.shade50 : mainColor.shade900;
+  final Color unselectedFg = isDark ? mainColor.shade400 : mainColor.shade600;
+  final Color disabledFg = isDark ? mainColor.shade600 : mainColor.shade400;
+  final Color disabledBg = isDark
+      ? mainColor.shade800.withValues(alpha: 0.45)
+      : mainColor.shade100;
+
   return SegmentedButtonThemeData(
     style: SegmentedButton.styleFrom(
-      backgroundColor: isDark ? mainColor.shade800 : mainColor.shade50,
-      foregroundColor: isDark ? mainColor.shade50 : mainColor.shade800,
-      selectedBackgroundColor: isDark ? mainColor.shade50 : mainColor.shade800,
-      selectedForegroundColor: isDark ? mainColor.shade950 : mainColor.shade00,
-      disabledBackgroundColor: isDark
-          ? mainColor.shade800.withValues(alpha: 0.45)
-          : mainColor.shade100,
-      disabledForegroundColor: isDark ? mainColor.shade500 : mainColor.shade400,
+      backgroundColor: Colors.transparent,
+      foregroundColor: unselectedFg,
+      selectedBackgroundColor: selectedBg,
+      selectedForegroundColor: selectedFg,
+      disabledBackgroundColor: disabledBg,
+      disabledForegroundColor: disabledFg,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(8),
       ),
+      side: BorderSide(
+        color: borderColor,
+        width: 1,
+      ),
+      textStyle: TextStyle(
+        fontFamily: fontFamily,
+        fontSize: 12.5,
+        fontWeight: FontWeight.w500,
+      ),
+      visualDensity: const VisualDensity(horizontal: -1, vertical: -2),
     ).copyWith(
       side: WidgetStateProperty.resolveWith<BorderSide?>((Set<WidgetState> states) {
         if (states.contains(WidgetState.disabled)) {
           return BorderSide(
-            color: isDark ? mainColor.shade800 : mainColor.shade200,
+            color: disabledBorderColor,
             width: 1,
           );
         }
         return BorderSide(
-          color: isDark ? mainColor.shade700 : mainColor.shade200,
+          color: borderColor,
           width: 1,
         );
       }),
@@ -61,7 +81,9 @@ FilledButtonThemeData buildFabricFilledButtonTheme(
       disabledBackgroundColor: isDark ? mainColor.shade800 : mainColor.shade200,
       disabledForegroundColor: isDark ? mainColor.shade500 : mainColor.shade400,
       elevation: 0,
-      shape: const StadiumBorder(),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
     ),
   );
 }
@@ -82,7 +104,9 @@ ElevatedButtonThemeData buildFabricElevatedButtonTheme(
           ? mainColor.shade800.withValues(alpha: 0.45)
           : mainColor.shade100,
       disabledForegroundColor: isDark ? mainColor.shade500 : mainColor.shade400,
-      shape: const StadiumBorder(),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
     ).copyWith(
       side: WidgetStateProperty.resolveWith<BorderSide?>((Set<WidgetState> states) {
         if (!isDark) {
@@ -111,7 +135,9 @@ TextButtonThemeData buildFabricTextButtonTheme(
     style: TextButton.styleFrom(
       foregroundColor: isDark ? mainColor.shade50 : mainColor.shade800,
       disabledForegroundColor: isDark ? mainColor.shade500 : mainColor.shade400,
-      shape: const StadiumBorder(),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
     ),
   );
 }
@@ -123,7 +149,9 @@ IconButtonThemeData buildFabricIconButtonTheme(
   return IconButtonThemeData(
     style: IconButton.styleFrom(
       disabledForegroundColor: isDark ? mainColor.shade500 : mainColor.shade400,
-      shape: const StadiumBorder(),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
     ),
   );
 }
@@ -136,7 +164,9 @@ OutlinedButtonThemeData buildFabricOutlinedButtonTheme(
     style: OutlinedButton.styleFrom(
       foregroundColor: isDark ? mainColor.shade50 : mainColor.shade800,
       disabledForegroundColor: isDark ? mainColor.shade500 : mainColor.shade400,
-      shape: const StadiumBorder(),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
     ).copyWith(
       side: WidgetStateProperty.resolveWith<BorderSide?>((Set<WidgetState> states) {
         if (states.contains(WidgetState.disabled)) {
@@ -159,25 +189,31 @@ ToggleButtonsThemeData buildFabricToggleButtonsTheme(
   required bool isDark,
   String? fontFamily,
 }) {
-  final Color activeBg = isDark ? mainColor.shade50 : mainColor.shade800;
-  final Color activeFg = isDark ? mainColor.shade950 : mainColor.shade00;
-  final Color defaultFg = isDark ? mainColor.shade50 : mainColor.shade800;
-  final Color disabledFg = isDark ? mainColor.shade500 : mainColor.shade400;
+  final Color activeBg = isDark ? mainColor.shade700 : mainColor.shade200;
+  final Color activeFg = isDark ? mainColor.shade50 : mainColor.shade900;
+  final Color defaultFg = isDark ? mainColor.shade400 : mainColor.shade600;
+  final Color disabledFg = isDark ? mainColor.shade600 : mainColor.shade400;
+  final Color borderColor = isDark ? mainColor.shade700 : mainColor.shade300;
+  final Color selectedBorderColor =
+      isDark ? mainColor.shade600 : mainColor.shade400;
+  final Color disabledBorderColor =
+      isDark ? mainColor.shade800 : mainColor.shade200;
 
   return ToggleButtonsThemeData(
     color: defaultFg,
     selectedColor: activeFg,
     disabledColor: disabledFg,
     fillColor: activeBg,
-    borderColor: isDark ? mainColor.shade500 : mainColor.shade400,
-    selectedBorderColor: activeBg,
-    disabledBorderColor: isDark ? mainColor.shade700 : mainColor.shade200,
-    borderRadius: BorderRadius.circular(10),
+    borderColor: borderColor,
+    selectedBorderColor: selectedBorderColor,
+    disabledBorderColor: disabledBorderColor,
+    borderRadius: BorderRadius.circular(8),
     borderWidth: 1,
+    constraints: const BoxConstraints(minWidth: 36, minHeight: 34),
     textStyle: TextStyle(
       fontFamily: fontFamily,
-      fontWeight: FontWeight.bold,
-      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      fontSize: 12.5,
     ),
   );
 }
