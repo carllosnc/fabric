@@ -1,5 +1,4 @@
 import 'package:example/components/fabric_app_bar.dart';
-import 'package:example/components/fabric_avatar_showcase.dart';
 import 'package:example/components/fabric_banner.dart';
 import 'package:example/components/fabric_bottom_navigation_bar.dart';
 import 'package:example/components/fabric_bottom_sheet.dart';
@@ -13,7 +12,6 @@ import 'package:example/components/fabric_date_picker.dart';
 import 'package:example/components/fabric_dialog.dart';
 import 'package:example/components/fabric_drawer.dart';
 import 'package:example/components/fabric_dropdown_menu.dart';
-import 'package:example/components/fabric_empty_state_showcase.dart';
 import 'package:example/components/fabric_expansion_panel.dart';
 import 'package:example/components/fabric_float_action_button.dart';
 import 'package:example/components/fabric_icon_button.dart';
@@ -24,12 +22,10 @@ import 'package:example/components/fabric_navigation_bar.dart';
 import 'package:example/components/fabric_radio_button.dart';
 import 'package:example/components/fabric_search_anchor.dart';
 import 'package:example/components/fabric_segment_button.dart';
-import 'package:example/components/fabric_skeleton_showcase.dart';
 import 'package:example/components/fabric_slider.dart';
 import 'package:example/components/fabric_snackbar.dart';
-import 'package:example/components/fabric_status_badge.dart';
-import 'package:example/components/fabric_stepper.dart';
 import 'package:example/components/fabric_switch.dart';
+import 'package:example/components/fabric_tab_bar.dart';
 import 'package:example/components/fabric_text.dart';
 import 'package:example/components/fabric_text_field.dart';
 import 'package:example/components/fabric_time_picker.dart';
@@ -49,6 +45,38 @@ class _ComponentShowcaseItem {
   final String subtitle;
   final String category;
   final Widget child;
+}
+
+sealed class _FeedItem {
+  const _FeedItem();
+}
+
+class _CategoryHeaderItem extends _FeedItem {
+  const _CategoryHeaderItem({
+    required this.title,
+    required this.subtitle,
+  });
+
+  final String title;
+  final String subtitle;
+}
+
+class _TokensFeedItem extends _FeedItem {
+  const _TokensFeedItem();
+}
+
+class _ComponentFeedItem extends _FeedItem {
+  const _ComponentFeedItem(this.item);
+
+  final _ComponentShowcaseItem item;
+}
+
+class _SectionDividerItem extends _FeedItem {
+  const _SectionDividerItem();
+}
+
+class _ItemDividerItem extends _FeedItem {
+  const _ItemDividerItem();
 }
 
 class Home extends StatefulWidget {
@@ -131,12 +159,6 @@ class _HomeState extends State<Home> {
       child: FabricChip(),
     ),
     _ComponentShowcaseItem(
-      title: 'Status Badges & Tags',
-      subtitle: 'Inline semantic status badges with subtle, solid, and outline styles',
-      category: 'Inputs & Actions',
-      child: FabricStatusBadgeShowcase(),
-    ),
-    _ComponentShowcaseItem(
       title: 'Sliders & Range Sliders',
       subtitle: 'Continuous, discrete, disabled and range value sliders',
       category: 'Inputs & Actions',
@@ -201,22 +223,16 @@ class _HomeState extends State<Home> {
       child: FabricMenuBar(),
     ),
     _ComponentShowcaseItem(
+      title: 'Tabs & TabBar',
+      subtitle: 'Primary navigation tabs with active indicator and tab views',
+      category: 'Surfaces & Nav',
+      child: FabricTabBarShowcase(),
+    ),
+    _ComponentShowcaseItem(
       title: 'Bottom Navigation Bar',
       subtitle: 'Classic BottomNavigationBar component preview',
       category: 'Surfaces & Nav',
       child: FabricBottomNavigationBar(),
-    ),
-    _ComponentShowcaseItem(
-      title: 'Stepper',
-      subtitle: 'Horizontal and vertical multi-step progress flow',
-      category: 'Surfaces & Nav',
-      child: FabricStepperShowcase(),
-    ),
-    _ComponentShowcaseItem(
-      title: 'Avatars & Avatar Groups',
-      subtitle: 'Initials, presence status indicators, squircle shapes and stacked groups',
-      category: 'Surfaces & Nav',
-      child: FabricAvatarShowcase(),
     ),
   ];
 
@@ -264,18 +280,48 @@ class _HomeState extends State<Home> {
       category: 'Feedback & Overlays',
       child: FabricIndicators(),
     ),
-    _ComponentShowcaseItem(
-      title: 'Empty States',
-      subtitle: 'Standardized zero data, 404, and no search results feedback screens',
-      category: 'Feedback & Overlays',
-      child: FabricEmptyStateShowcase(),
+  ];
+
+  static List<_FeedItem> _createSectionFeedItems(
+    List<_ComponentShowcaseItem> items,
+  ) {
+    final List<_FeedItem> result = <_FeedItem>[];
+    for (int i = 0; i < items.length; i++) {
+      result.add(_ComponentFeedItem(items[i]));
+      if (i < items.length - 1) {
+        result.add(const _ItemDividerItem());
+      }
+    }
+    return result;
+  }
+
+  static final List<_FeedItem> _feedItems = <_FeedItem>[
+    const _CategoryHeaderItem(
+      title: 'Design Tokens',
+      subtitle: 'Active color swatch scale and typography',
     ),
-    _ComponentShowcaseItem(
-      title: 'Skeleton Loaders',
-      subtitle: 'Shimmer placeholders for cards, text lines, and avatars',
-      category: 'Feedback & Overlays',
-      child: FabricSkeletonShowcase(),
+    const _TokensFeedItem(),
+    const _SectionDividerItem(),
+    const _CategoryHeaderItem(
+      title: 'Inputs & Actions',
+      subtitle:
+          'Buttons, checkboxes, radios, switches, inputs, and sliders',
     ),
+    ..._createSectionFeedItems(_inputsAndActions),
+    const _SectionDividerItem(),
+    const _CategoryHeaderItem(
+      title: 'Surfaces & Navigation',
+      subtitle:
+          'Cards, tables, list tiles, menus, and navigation components',
+    ),
+    ..._createSectionFeedItems(_surfacesAndNavigation),
+    const _SectionDividerItem(),
+    const _CategoryHeaderItem(
+      title: 'Feedback & Overlays',
+      subtitle:
+          'Pickers, dialogs, bottom sheets, snackbars, and banners',
+    ),
+    ..._createSectionFeedItems(_feedbackAndOverlays),
   ];
 
   static List<_ComponentShowcaseItem> get _allItems => <_ComponentShowcaseItem>[
@@ -312,36 +358,50 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        appBar: FabricAppBar(
-          selectedSwatch: widget.selectedSwatch,
-          themeMode: widget.themeMode,
-          onSwatchChanged: widget.onSwatchChanged,
-          onThemeModeChanged: widget.onThemeModeChanged,
-          isSearching: _isSearching,
-          searchController: _searchController,
-          onSearchToggle: _toggleSearch,
-        ),
-        drawer: const CustomDrawer(),
-        bottomNavigationBar: const FabricNavigationBar(),
-        body: _isSearching && _searchQuery.isNotEmpty
-            ? _buildSearchResults()
-            : TabBarView(
-                children: <Widget>[
-                  _TokensTab(
-                    selectedSwatch: widget.selectedSwatch,
-                    themeMode: widget.themeMode,
-                    onSwatchChanged: widget.onSwatchChanged,
-                    onThemeModeChanged: widget.onThemeModeChanged,
-                  ),
-                  _ShowcaseCategoryList(items: _inputsAndActions),
-                  _ShowcaseCategoryList(items: _surfacesAndNavigation),
-                  _ShowcaseCategoryList(items: _feedbackAndOverlays),
-                ],
-              ),
+    return Scaffold(
+      appBar: FabricAppBar(
+        selectedSwatch: widget.selectedSwatch,
+        themeMode: widget.themeMode,
+        onSwatchChanged: widget.onSwatchChanged,
+        onThemeModeChanged: widget.onThemeModeChanged,
+        isSearching: _isSearching,
+        searchController: _searchController,
+        onSearchToggle: _toggleSearch,
       ),
+      drawer: const CustomDrawer(),
+      bottomNavigationBar: const FabricNavigationBar(),
+      body: _isSearching && _searchQuery.isNotEmpty
+          ? _buildSearchResults()
+          : _buildAllContent(),
+    );
+  }
+
+  Widget _buildAllContent() {
+    return ListView.builder(
+      padding: const EdgeInsets.only(top: 16, bottom: 100),
+      itemCount: _feedItems.length,
+      itemBuilder: (BuildContext context, int index) {
+        final _FeedItem item = _feedItems[index];
+        return switch (item) {
+          _CategoryHeaderItem(:final String title, :final String subtitle) =>
+            _CategoryHeader(
+              title: title,
+              subtitle: subtitle,
+            ),
+          _TokensFeedItem() => const _TokensSection(),
+          _ComponentFeedItem(:final _ComponentShowcaseItem item) =>
+            _ShowcaseSection(
+              title: item.title,
+              subtitle: item.subtitle,
+              child: item.child,
+            ),
+          _SectionDividerItem() => const _SectionDivider(),
+          _ItemDividerItem() => const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+              child: Divider(),
+            ),
+        };
+      },
     );
   }
 
@@ -488,18 +548,8 @@ class _ShowcaseSection extends StatelessWidget {
   }
 }
 
-class _TokensTab extends StatelessWidget {
-  const _TokensTab({
-    required this.selectedSwatch,
-    required this.themeMode,
-    this.onSwatchChanged,
-    this.onThemeModeChanged,
-  });
-
-  final FabricSwatch selectedSwatch;
-  final ThemeMode themeMode;
-  final ValueChanged<FabricSwatch>? onSwatchChanged;
-  final ValueChanged<ThemeMode>? onThemeModeChanged;
+class _TokensSection extends StatelessWidget {
+  const _TokensSection();
 
   static String _colorToHex(Color color) {
     final int rgb = color.toARGB32() & 0xFFFFFF;
@@ -525,76 +575,9 @@ class _TokensTab extends StatelessWidget {
       (label: '950', color: swatch.shade950, lightText: true),
     ];
 
-    return ListView(
-      padding: const EdgeInsets.only(top: 20, bottom: 100),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        _ShowcaseSection(
-          title: 'Theme & Palette Controls',
-          subtitle: 'Switch between Light, Dark or System mode and 8 FabricSwatch palettes',
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Card(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: 16,
-                  children: <Widget>[
-                    if (onThemeModeChanged != null)
-                      SizedBox(
-                        width: double.infinity,
-                        child: SegmentedButton<ThemeMode>(
-                          segments: const <ButtonSegment<ThemeMode>>[
-                            ButtonSegment<ThemeMode>(
-                              value: ThemeMode.system,
-                              icon: Icon(Icons.brightness_auto_outlined),
-                              label: Text('System'),
-                            ),
-                            ButtonSegment<ThemeMode>(
-                              value: ThemeMode.light,
-                              icon: Icon(Icons.light_mode_outlined),
-                              label: Text('Light'),
-                            ),
-                            ButtonSegment<ThemeMode>(
-                              value: ThemeMode.dark,
-                              icon: Icon(Icons.dark_mode_outlined),
-                              label: Text('Dark'),
-                            ),
-                          ],
-                          selected: <ThemeMode>{themeMode},
-                          onSelectionChanged: (Set<ThemeMode> selection) {
-                            onThemeModeChanged?.call(selection.first);
-                          },
-                        ),
-                      ),
-                    if (onSwatchChanged != null)
-                      Wrap(
-                        spacing: 8,
-                        runSpacing: 8,
-                        children: FabricAppBar.swatches.entries.map((
-                          MapEntry<String, FabricSwatch> entry,
-                        ) {
-                          return ChoiceChip(
-                            avatar: CircleAvatar(
-                              backgroundColor: entry.value.shade500,
-                              radius: 8,
-                            ),
-                            label: Text(entry.key),
-                            selected: selectedSwatch == entry.value,
-                            onSelected: (_) => onSwatchChanged?.call(entry.value),
-                          );
-                        }).toList(),
-                      ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-          child: Divider(),
-        ),
         _ShowcaseSection(
           title: 'Color Swatch Scale (00 – 950)',
           subtitle: 'Active FabricSwatch shades and hexadecimal values',
@@ -643,82 +626,85 @@ class _TokensTab extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
           child: Divider(),
         ),
-        _ShowcaseSection(
-          title: 'Semantic Tokens (context.fabricTokens)',
-          subtitle: 'Adaptive tokens for muted text, borders, elevated surfaces & status feedback',
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Builder(
-              builder: (BuildContext context) {
-                final FabricThemeExtension tokens = context.fabricTokens;
-                final List<({String name, Color color})> semanticItems =
-                    <({String name, Color color})>[
-                  (name: 'mutedForeground', color: tokens.mutedForeground),
-                  (name: 'borderColor', color: tokens.borderColor),
-                  (name: 'surfaceElevated', color: tokens.surfaceElevated),
-                  (name: 'successColor', color: tokens.successColor),
-                  (name: 'warningColor', color: tokens.warningColor),
-                  (name: 'infoColor', color: tokens.infoColor),
-                ];
-
-                return Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
-                  children: semanticItems.map((
-                    ({Color color, String name}) token,
-                  ) {
-                    return Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 8,
-                      ),
-                      decoration: BoxDecoration(
-                        color: tokens.surfaceElevated,
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: tokens.borderColor),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        spacing: 8,
-                        children: <Widget>[
-                          Container(
-                            width: 14,
-                            height: 14,
-                            decoration: BoxDecoration(
-                              color: token.color,
-                              shape: BoxShape.circle,
-                              border: Border.all(color: tokens.borderColor),
-                            ),
-                          ),
-                          Text(
-                            token.name,
-                            style: Theme.of(context).textTheme.labelMedium,
-                          ),
-                          Text(
-                            _colorToHex(token.color),
-                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                  color: tokens.mutedForeground,
-                                ),
-                          ),
-                        ],
-                      ),
-                    );
-                  }).toList(),
-                );
-              },
-            ),
-          ),
-        ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-          child: Divider(),
-        ),
         const _ShowcaseSection(
           title: 'Typography Scale (Inter)',
           subtitle: 'Display, Headline, Title, Label and Body styles',
           child: FabricText(),
         ),
       ],
+    );
+  }
+}
+
+class _CategoryHeader extends StatelessWidget {
+  const _CategoryHeader({
+    required this.title,
+    required this.subtitle,
+  });
+
+  final String title;
+  final String subtitle;
+
+  @override
+  Widget build(BuildContext context) {
+    final FabricSwatch swatch = context.fabricSwatch;
+    final bool isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 16, 20, 16),
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: isDark ? swatch.shade800.withValues(alpha: 0.5) : swatch.shade50,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: isDark ? swatch.shade700 : swatch.shade200,
+          ),
+        ),
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 4,
+                children: <Widget>[
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: -0.3,
+                        ),
+                  ),
+                  Text(
+                    subtitle,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: isDark ? swatch.shade400 : swatch.shade500,
+                        ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SectionDivider extends StatelessWidget {
+  const _SectionDivider();
+
+  @override
+  Widget build(BuildContext context) {
+    final FabricSwatch swatch = context.fabricSwatch;
+    final bool isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 28),
+      child: Divider(
+        color: isDark ? swatch.shade700 : swatch.shade200,
+        thickness: 1.5,
+      ),
     );
   }
 }
