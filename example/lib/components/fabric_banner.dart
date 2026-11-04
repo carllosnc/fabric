@@ -1,4 +1,3 @@
-import 'package:fabric/fabric.dart';
 import 'package:flutter/material.dart';
 
 class FabricBannerShowcase extends StatelessWidget {
@@ -8,14 +7,13 @@ class FabricBannerShowcase extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: FabricBanner(
-        icon: Icons.system_update_alt_outlined,
-        title: const Text('Update available (v2.4.0)'),
+      child: MaterialBanner(
+        leading: const Icon(Icons.system_update_alt_outlined),
         content: const Text(
           'A new version of the Fabric Design System is ready to install.',
         ),
         actions: <Widget>[
-          OutlinedButton(
+          TextButton(
             onPressed: () {},
             child: const Text('Later'),
           ),
