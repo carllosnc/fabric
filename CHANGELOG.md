@@ -2,7 +2,7 @@
 
 * Introduce immutable `FabricTheme` (`FabricTheme.light`, `FabricTheme.dark`, `copyWith`) and public `FabricConfig`.
 * Add `FabricThemeExtension` (`ThemeExtension`) exposing `context.fabricTokens` and `context.fabricSwatch` with `FabricSwatch.lerp` support.
-* Export dedicated components for UI patterns without Flutter theme support: `FabricStepper`, `FabricBanner`, `FabricBadge`, `FabricAvatar` / `FabricAvatarGroup`, `FabricEmptyState`, and `FabricSkeleton`.
+* Refocus package as a pure, lightweight Theme Layer for Material 3 without proprietary custom widgets.
 * Modularize and unify light and dark theme builders under `lib/src/` eliminating code duplication.
 * Populate all Material 3 `ColorScheme` surface container roles (`surfaceDim`, `surfaceBright`, `surfaceContainerLowest`..`surfaceContainerHighest`).
 * Support custom `TextTheme` (enabling `google_fonts` compatibility).
