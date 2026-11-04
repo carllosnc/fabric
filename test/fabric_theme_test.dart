@@ -54,6 +54,7 @@ void main() {
       expect(theme.textTheme.bodyLarge?.fontFamily, 'Roboto');
       expect(theme.textTheme.titleMedium?.fontFamily, 'Roboto');
       expect(theme.textTheme.labelSmall?.fontFamily, 'Roboto');
+      expect(theme.badgeTheme.textStyle?.fontFamily, 'Roboto');
     });
 
     test('custom textTheme merges with Fabric typography scale', () {
@@ -66,8 +67,33 @@ void main() {
       );
       expect(theme.textTheme.bodyLarge?.fontFamily, 'CustomFont');
       expect(theme.textTheme.bodyLarge?.letterSpacing, 1.5);
-      expect(theme.textTheme.bodyLarge?.fontSize, 16);
+      expect(theme.textTheme.bodyLarge?.fontSize, 14);
       expect(theme.textTheme.bodyLarge?.color, swatch.shade800);
+    });
+
+    test('fabric typography scale has balanced compact sizes', () {
+      final theme = fabricLightTheme(mainColor: swatch);
+      final textTheme = theme.textTheme;
+
+      expect(textTheme.displayLarge?.fontSize, 32);
+      expect(textTheme.displayMedium?.fontSize, 28);
+      expect(textTheme.displaySmall?.fontSize, 24);
+
+      expect(textTheme.headlineLarge?.fontSize, 22);
+      expect(textTheme.headlineMedium?.fontSize, 20);
+      expect(textTheme.headlineSmall?.fontSize, 18);
+
+      expect(textTheme.titleLarge?.fontSize, 16);
+      expect(textTheme.titleMedium?.fontSize, 14);
+      expect(textTheme.titleSmall?.fontSize, 13);
+
+      expect(textTheme.bodyLarge?.fontSize, 14);
+      expect(textTheme.bodyMedium?.fontSize, 13);
+      expect(textTheme.bodySmall?.fontSize, 11.5);
+
+      expect(textTheme.labelLarge?.fontSize, 13);
+      expect(textTheme.labelMedium?.fontSize, 11.5);
+      expect(textTheme.labelSmall?.fontSize, 10.5);
     });
 
     test('custom swatch changes colors and registers FabricThemeExtension', () {
@@ -95,9 +121,19 @@ void main() {
       expect(theme.navigationRailTheme.unselectedIconTheme?.color, swatch.shade500);
     });
 
-    test('popupMenu textStyle color is shade800', () {
+    test('popupMenu textStyle color is shade800 and uses regular font', () {
       final theme = fabricLightTheme(mainColor: swatch);
       expect(theme.popupMenuTheme.textStyle?.color, swatch.shade800);
+      expect(theme.popupMenuTheme.textStyle?.fontWeight, FontWeight.normal);
+      expect(
+        theme.popupMenuTheme.labelTextStyle?.resolve(<WidgetState>{})?.fontWeight,
+        FontWeight.normal,
+      );
+      expect(theme.dropdownMenuTheme.textStyle?.fontWeight, FontWeight.normal);
+      expect(
+        theme.menuButtonTheme.style?.textStyle?.resolve(<WidgetState>{})?.fontWeight,
+        FontWeight.normal,
+      );
     });
 
     test('drawer scrimColor and dialog barrierColor are defined', () {
@@ -105,6 +141,7 @@ void main() {
       expect(theme.drawerTheme.scrimColor, isNotNull);
       expect(theme.dialogTheme.barrierColor, isNotNull);
       expect(theme.bottomSheetTheme.modalBarrierColor, isNotNull);
+      expect(theme.bottomSheetTheme.backgroundColor, theme.scaffoldBackgroundColor);
     });
 
     test('timePicker colors are configured', () {
@@ -117,8 +154,12 @@ void main() {
       expect(theme.elevatedButtonTheme.style, isNotNull);
       expect(theme.textButtonTheme.style, isNotNull);
       expect(theme.iconButtonTheme.style, isNotNull);
-      expect(theme.toggleButtonsTheme.fillColor, swatch.shade800);
+      expect(theme.toggleButtonsTheme.fillColor, swatch.shade200);
+      expect(theme.toggleButtonsTheme.borderColor, swatch.shade300);
+      expect(theme.toggleButtonsTheme.borderWidth, 1);
+      expect(theme.segmentedButtonTheme.style, isNotNull);
       expect(theme.searchBarTheme.backgroundColor?.resolve(<WidgetState>{}), swatch.shade50);
+      expect(theme.searchBarTheme.side, isNull);
       expect(theme.bottomAppBarTheme.color, swatch.shade50);
       expect(theme.navigationDrawerTheme.backgroundColor, swatch.shade00);
       expect(theme.carouselViewTheme.backgroundColor, swatch.shade50);
@@ -128,6 +169,21 @@ void main() {
       expect(theme.iconTheme.color, isNull);
       expect(theme.inputDecorationTheme.enabledBorder, isA<OutlineInputBorder>());
       expect(theme.floatingActionButtonTheme.elevation, 0);
+      expect(theme.bannerTheme.backgroundColor, swatch.shade50);
+      expect(theme.bannerTheme.dividerColor, swatch.shade200);
+      expect(theme.bannerTheme.leadingPadding, const EdgeInsetsDirectional.only(end: 12.0));
+      expect(theme.bannerTheme.padding, const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 2.0));
+      expect(theme.badgeTheme.alignment, AlignmentDirectional.topEnd);
+      expect(theme.badgeTheme.offset, const Offset(0, 0));
+      expect(theme.badgeTheme.smallSize, 6);
+      expect(theme.badgeTheme.largeSize, 16);
+      expect(theme.badgeTheme.padding, const EdgeInsets.symmetric(horizontal: 5));
+      expect(theme.badgeTheme.backgroundColor, const Color(0xFFBA1A1A));
+      expect(theme.badgeTheme.textColor, swatch.shade00);
+      final RoundedRectangleBorder cardShape =
+          theme.cardTheme.shape as RoundedRectangleBorder;
+      expect(cardShape.side.color, swatch.shade200);
+      expect(cardShape.side.width, 1);
     });
   });
 
@@ -179,6 +235,7 @@ void main() {
       expect(theme.textTheme.bodyLarge?.fontFamily, 'Roboto');
       expect(theme.textTheme.titleMedium?.fontFamily, 'Roboto');
       expect(theme.textTheme.labelSmall?.fontFamily, 'Roboto');
+      expect(theme.badgeTheme.textStyle?.fontFamily, 'Roboto');
     });
 
     test('custom swatch changes colors and registers FabricThemeExtension', () {
@@ -196,9 +253,13 @@ void main() {
       expect(theme.disabledColor, swatch.shade400);
     });
 
-    test('dataTable dataRowColor is shade900', () {
+    test('dataTable dataRowColor is shade900 and resolves states', () {
       final theme = fabricDarkTheme(mainColor: swatch);
       expect(theme.dataTableTheme.dataRowColor?.resolve(<WidgetState>{}), swatch.shade900);
+      expect(theme.dataTableTheme.dataRowColor?.resolve(<WidgetState>{WidgetState.selected}), swatch.shade800);
+      expect(theme.dataTableTheme.headingRowColor?.resolve(<WidgetState>{}), swatch.shade800);
+      expect(theme.dataTableTheme.columnSpacing, 28);
+      expect(theme.dataTableTheme.headingRowHeight, 44);
     });
 
     test('popupMenu textStyle color is shade50 in dark mode', () {
@@ -223,8 +284,13 @@ void main() {
       expect(theme.elevatedButtonTheme.style, isNotNull);
       expect(theme.textButtonTheme.style, isNotNull);
       expect(theme.iconButtonTheme.style, isNotNull);
-      expect(theme.toggleButtonsTheme.fillColor, swatch.shade50);
+      expect(theme.toggleButtonsTheme.fillColor, swatch.shade700);
+      expect(theme.toggleButtonsTheme.borderColor, swatch.shade700);
+      expect(theme.toggleButtonsTheme.borderWidth, 1);
+      expect(theme.segmentedButtonTheme.style, isNotNull);
       expect(theme.searchBarTheme.backgroundColor?.resolve(<WidgetState>{}), swatch.shade800);
+      expect(theme.searchBarTheme.side, isNull);
+      expect(theme.bottomSheetTheme.backgroundColor, theme.scaffoldBackgroundColor);
       expect(theme.bottomAppBarTheme.color, swatch.shade950);
       expect(theme.navigationDrawerTheme.backgroundColor, swatch.shade950);
       expect(theme.carouselViewTheme.backgroundColor, swatch.shade800);
@@ -234,6 +300,21 @@ void main() {
       expect(theme.iconTheme.color, isNull);
       expect(theme.inputDecorationTheme.enabledBorder, isA<OutlineInputBorder>());
       expect(theme.floatingActionButtonTheme.elevation, 0);
+      expect(theme.bannerTheme.backgroundColor, swatch.shade800);
+      expect(theme.bannerTheme.dividerColor, swatch.shade700);
+      expect(theme.bannerTheme.leadingPadding, const EdgeInsetsDirectional.only(end: 12.0));
+      expect(theme.bannerTheme.padding, const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 2.0));
+      expect(theme.badgeTheme.alignment, AlignmentDirectional.topEnd);
+      expect(theme.badgeTheme.offset, const Offset(0, 0));
+      expect(theme.badgeTheme.smallSize, 6);
+      expect(theme.badgeTheme.largeSize, 16);
+      expect(theme.badgeTheme.padding, const EdgeInsets.symmetric(horizontal: 5));
+      expect(theme.badgeTheme.backgroundColor, const Color(0xFFFFB4AB));
+      expect(theme.badgeTheme.textColor, swatch.shade950);
+      final RoundedRectangleBorder cardShape =
+          theme.cardTheme.shape as RoundedRectangleBorder;
+      expect(cardShape.side.color, swatch.shade700);
+      expect(cardShape.side.width, 1);
     });
   });
 
@@ -297,6 +378,119 @@ void main() {
       expect(resolvedTokens.mutedForeground, fabricPurple.shade500);
       expect(resolvedTokens.borderColor, fabricPurple.shade200);
       expect(resolvedTokens.surfaceElevated, fabricPurple.shade50);
+    });
+
+    test('SegmentedButton and ToggleButtons have restored borders and softened selected colors', () {
+      final lightTheme = fabricLightTheme(mainColor: swatch);
+      final darkTheme = fabricDarkTheme(mainColor: swatch);
+
+      // Light mode SegmentedButton
+      final lightSegStyle = lightTheme.segmentedButtonTheme.style!;
+      expect(lightSegStyle.side?.resolve(<WidgetState>{})?.color, swatch.shade300);
+      expect(lightSegStyle.side?.resolve(<WidgetState>{})?.width, 1);
+      expect(lightSegStyle.side?.resolve(<WidgetState>{WidgetState.disabled})?.color, swatch.shade200);
+      expect(lightSegStyle.backgroundColor?.resolve(<WidgetState>{}), Colors.transparent);
+      expect(lightSegStyle.backgroundColor?.resolve(<WidgetState>{WidgetState.selected}), swatch.shade200);
+      expect(lightSegStyle.foregroundColor?.resolve(<WidgetState>{}), swatch.shade600);
+      expect(lightSegStyle.foregroundColor?.resolve(<WidgetState>{WidgetState.selected}), swatch.shade900);
+
+      // Light mode ToggleButtons
+      final lightToggle = lightTheme.toggleButtonsTheme;
+      expect(lightToggle.borderWidth, 1);
+      expect(lightToggle.borderColor, swatch.shade300);
+      expect(lightToggle.selectedBorderColor, swatch.shade400);
+      expect(lightToggle.disabledBorderColor, swatch.shade200);
+      expect(lightToggle.fillColor, swatch.shade200);
+      expect(lightToggle.color, swatch.shade600);
+      expect(lightToggle.selectedColor, swatch.shade900);
+
+      // Dark mode SegmentedButton
+      final darkSegStyle = darkTheme.segmentedButtonTheme.style!;
+      expect(darkSegStyle.side?.resolve(<WidgetState>{})?.color, swatch.shade700);
+      expect(darkSegStyle.side?.resolve(<WidgetState>{})?.width, 1);
+      expect(darkSegStyle.side?.resolve(<WidgetState>{WidgetState.disabled})?.color, swatch.shade800);
+      expect(darkSegStyle.backgroundColor?.resolve(<WidgetState>{}), Colors.transparent);
+      expect(darkSegStyle.backgroundColor?.resolve(<WidgetState>{WidgetState.selected}), swatch.shade700);
+      expect(darkSegStyle.foregroundColor?.resolve(<WidgetState>{}), swatch.shade400);
+      expect(darkSegStyle.foregroundColor?.resolve(<WidgetState>{WidgetState.selected}), swatch.shade50);
+
+      // Dark mode ToggleButtons
+      final darkToggle = darkTheme.toggleButtonsTheme;
+      expect(darkToggle.borderWidth, 1);
+      expect(darkToggle.borderColor, swatch.shade700);
+      expect(darkToggle.selectedBorderColor, swatch.shade600);
+      expect(darkToggle.disabledBorderColor, swatch.shade800);
+      expect(darkToggle.fillColor, swatch.shade700);
+      expect(darkToggle.color, swatch.shade400);
+      expect(darkToggle.selectedColor, swatch.shade50);
+    });
+
+    testWidgets('SearchAnchor expanded view input does not have a border', (WidgetTester tester) async {
+      final theme = fabricLightTheme(mainColor: swatch);
+      final searchController = SearchController();
+
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: theme,
+          home: Scaffold(
+            body: SearchAnchor(
+              searchController: searchController,
+              builder: (BuildContext context, SearchController controller) {
+                return SearchBar(
+                  controller: controller,
+                  onTap: () => controller.openView(),
+                );
+              },
+              suggestionsBuilder: (BuildContext context, SearchController controller) {
+                return <Widget>[const ListTile(title: Text('Result 1'))];
+              },
+            ),
+          ),
+        ),
+      );
+
+      await tester.tap(find.byType(SearchBar));
+      await tester.pumpAndSettle();
+
+      final searchBars = tester.widgetList<SearchBar>(find.byType(SearchBar));
+      expect(searchBars.length, greaterThan(1));
+      final expandedSearchBar = searchBars.last;
+
+      final BuildContext viewContext = tester.element(find.byType(SearchBar).last);
+      final searchBarTheme = SearchBarTheme.of(viewContext);
+      final effectiveSide = expandedSearchBar.side?.resolve(<WidgetState>{}) ?? searchBarTheme.side?.resolve(<WidgetState>{});
+      expect(effectiveSide == null || effectiveSide == BorderSide.none, isTrue);
+    });
+
+    testWidgets('Badge on IconButton aligns to topEnd with refined theme', (WidgetTester tester) async {
+      final theme = fabricLightTheme(mainColor: swatch);
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: theme,
+          home: Scaffold(
+            body: Center(
+              child: Badge(
+                label: const Text('99+'),
+                child: IconButton(
+                  icon: const Icon(Icons.star_border_outlined, size: 24.0),
+                  onPressed: () {},
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+
+      final iconRect = tester.getRect(find.byIcon(Icons.star_border_outlined));
+      final badgeContainer = find.descendant(
+        of: find.byType(Badge),
+        matching: find.byType(Container),
+      ).first;
+      final badgeRect = tester.getRect(badgeContainer);
+
+      expect(badgeRect.left, greaterThanOrEqualTo(iconRect.left));
+      expect(badgeRect.right, greaterThan(iconRect.right));
+      expect(badgeRect.top, lessThan(iconRect.top));
     });
   });
 }
