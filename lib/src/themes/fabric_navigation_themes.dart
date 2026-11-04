@@ -21,8 +21,9 @@ AppBarThemeData buildFabricAppBarTheme(
     titleTextStyle: TextStyle(
       fontFamily: fontFamily,
       color: fg,
-      fontSize: 20,
-      fontWeight: FontWeight.normal,
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      letterSpacing: -0.1,
     ),
     backgroundColor: bg,
     surfaceTintColor: bg,
@@ -112,14 +113,14 @@ PopupMenuThemeData buildFabricPopupMenuTheme(
     labelTextStyle: WidgetStateProperty.all(
       TextStyle(
         fontFamily: fontFamily,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.normal,
         color: fg,
         fontSize: 14,
       ),
     ),
     textStyle: TextStyle(
       fontFamily: fontFamily,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.normal,
       color: fg,
       fontSize: 15,
     ),
@@ -190,31 +191,31 @@ TabBarThemeData buildFabricTabBarTheme(
   final Color unselectedFg = isDark ? mainColor.shade400 : mainColor.shade500;
 
   return TabBarThemeData(
-    dividerHeight: 3,
-    dividerColor: isDark ? mainColor.shade800 : mainColor.shade100,
+    dividerHeight: 1,
+    dividerColor: isDark ? mainColor.shade800 : mainColor.shade200,
     indicatorColor: fg,
     labelColor: fg,
     unselectedLabelColor: unselectedFg,
     labelStyle: TextStyle(
       fontFamily: fontFamily,
-      fontWeight: FontWeight.bold,
-      fontSize: 14,
+      fontWeight: FontWeight.w600,
+      fontSize: 13,
     ),
     unselectedLabelStyle: TextStyle(
       fontFamily: fontFamily,
       fontWeight: FontWeight.normal,
-      fontSize: 14,
+      fontSize: 13,
     ),
     indicatorSize: TabBarIndicatorSize.label,
     splashBorderRadius: const BorderRadius.only(
-      topLeft: Radius.circular(20),
-      topRight: Radius.circular(20),
+      topLeft: Radius.circular(8),
+      topRight: Radius.circular(8),
     ),
     indicator: BoxDecoration(
       border: Border(
         bottom: BorderSide(
           color: fg,
-          width: 3,
+          width: 2.5,
         ),
       ),
     ),
@@ -307,7 +308,7 @@ MenuButtonThemeData buildFabricMenuButtonTheme(
       disabledForegroundColor: isDark ? mainColor.shade500 : mainColor.shade400,
       textStyle: TextStyle(
         fontFamily: fontFamily,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.normal,
         fontSize: 14,
       ),
     ),
