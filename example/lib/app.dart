@@ -1,7 +1,15 @@
 import 'package:fabric/fabric.dart';
 import 'package:flutter/material.dart';
+import './pages/checkout.dart';
+import './pages/contacts.dart';
+import './pages/dashboard.dart';
 import './pages/home.dart';
+import './pages/login.dart';
 import './pages/navigation_rail.dart';
+import './pages/notifications.dart';
+import './pages/profile.dart';
+import './pages/settings.dart';
+import './pages/tasks.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -45,6 +53,14 @@ class _AppState extends State<App> {
       ),
       routes: <String, WidgetBuilder>{
         '/navigation_rail': (BuildContext context) => const NavigationRailPage(),
+        '/login': (BuildContext context) => const LoginPage(),
+        '/dashboard': (BuildContext context) => const DashboardPage(),
+        '/settings': (BuildContext context) => const SettingsPage(),
+        '/tasks': (BuildContext context) => const TasksPage(),
+        '/checkout': (BuildContext context) => const CheckoutPage(),
+        '/profile': (BuildContext context) => const ProfilePage(),
+        '/contacts': (BuildContext context) => const ContactsPage(),
+        '/notifications': (BuildContext context) => const NotificationsPage(),
       },
     );
   }
