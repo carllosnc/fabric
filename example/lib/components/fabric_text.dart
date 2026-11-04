@@ -17,36 +17,36 @@ class FabricText extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 6,
             children: <Widget>[
-              Text('Display Large (40px)', style: textTheme.displayLarge),
-              Text('Display Medium (38px)', style: textTheme.displayMedium),
-              Text('Display Small (36px)', style: textTheme.displaySmall),
+              Text('Display Large (32px)', style: textTheme.displayLarge),
+              Text('Display Medium (28px)', style: textTheme.displayMedium),
+              Text('Display Small (24px)', style: textTheme.displaySmall),
             ],
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 6,
             children: <Widget>[
-              Text('Headline Large (32px)', style: textTheme.headlineLarge),
-              Text('Headline Medium (28px)', style: textTheme.headlineMedium),
-              Text('Headline Small (24px)', style: textTheme.headlineSmall),
+              Text('Headline Large (22px)', style: textTheme.headlineLarge),
+              Text('Headline Medium (20px)', style: textTheme.headlineMedium),
+              Text('Headline Small (18px)', style: textTheme.headlineSmall),
             ],
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 6,
             children: <Widget>[
-              Text('Title Large (22px)', style: textTheme.titleLarge),
-              Text('Title Medium (16px)', style: textTheme.titleMedium),
-              Text('Title Small (14px)', style: textTheme.titleSmall),
+              Text('Title Large (16px)', style: textTheme.titleLarge),
+              Text('Title Medium (14px)', style: textTheme.titleMedium),
+              Text('Title Small (13px)', style: textTheme.titleSmall),
             ],
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 6,
             children: <Widget>[
-              Text('Label Large (14px)', style: textTheme.labelLarge),
-              Text('Label Medium (12px)', style: textTheme.labelMedium),
-              Text('Label Small (11px)', style: textTheme.labelSmall),
+              Text('Label Large (13px)', style: textTheme.labelLarge),
+              Text('Label Medium (11.5px)', style: textTheme.labelMedium),
+              Text('Label Small (10.5px)', style: textTheme.labelSmall),
             ],
           ),
           Column(
@@ -54,15 +54,15 @@ class FabricText extends StatelessWidget {
             spacing: 6,
             children: <Widget>[
               Text(
-                'Body Large (16px) — The quick brown fox jumps over the lazy dog.',
+                'Body Large (14px) — The quick brown fox jumps over the lazy dog.',
                 style: textTheme.bodyLarge,
               ),
               Text(
-                'Body Medium (14px) — The quick brown fox jumps over the lazy dog.',
+                'Body Medium (13px) — The quick brown fox jumps over the lazy dog.',
                 style: textTheme.bodyMedium,
               ),
               Text(
-                'Body Small (12px) — The quick brown fox jumps over the lazy dog.',
+                'Body Small (11.5px) — The quick brown fox jumps over the lazy dog.',
                 style: textTheme.bodySmall,
               ),
             ],
