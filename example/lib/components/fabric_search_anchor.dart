@@ -31,44 +31,57 @@ class _FabricSearchAnchorState extends State<FabricSearchAnchor> {
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: SearchAnchor(
-        searchController: controller,
-        builder: (BuildContext context, SearchController controller) {
-          return SearchBar(
-            controller: controller,
-            hintText: 'Search fruits (e.g. Apple, Cherry)...',
-            leading: Icon(Icons.search, color: tokens.mutedForeground),
-            side: WidgetStatePropertyAll<BorderSide>(
-              BorderSide(color: tokens.borderColor),
-            ),
-            padding: const WidgetStatePropertyAll<EdgeInsets>(
-              EdgeInsets.symmetric(horizontal: 16),
-            ),
-            onTap: () {
-              controller.openView();
-            },
-            onChanged: (_) {
-              controller.openView();
-            },
-          );
-        },
-        suggestionsBuilder: (BuildContext context, SearchController controller) {
-          final String keyword = controller.text.toLowerCase();
-          return items
-              .where((String item) => item.toLowerCase().contains(keyword))
-              .map(
-                (String item) => ListTile(
-                  leading: const Icon(Icons.history),
-                  title: Text(item),
-                  onTap: () {
-                    controller.closeView(item);
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Selected: $item')),
-                    );
-                  },
+      child: SearchBarTheme(
+        data: SearchBarTheme.of(context).copyWith(
+          side: const WidgetStatePropertyAll<BorderSide>(BorderSide.none),
+          shape: const WidgetStatePropertyAll<OutlinedBorder>(
+            RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+          ),
+        ),
+        child: SearchAnchor(
+          searchController: controller,
+          builder: (BuildContext context, SearchController controller) {
+            return SearchBar(
+              controller: controller,
+              hintText: 'Search fruits (e.g. Apple, Cherry)...',
+              leading: Icon(Icons.search, size: 20, color: tokens.mutedForeground),
+              side: WidgetStatePropertyAll<BorderSide>(
+                BorderSide(color: tokens.borderColor),
+              ),
+              shape: WidgetStatePropertyAll<OutlinedBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
                 ),
-              );
-        },
+              ),
+              padding: const WidgetStatePropertyAll<EdgeInsetsGeometry>(
+                EdgeInsets.symmetric(horizontal: 14),
+              ),
+              onTap: () {
+                controller.openView();
+              },
+              onChanged: (_) {
+                controller.openView();
+              },
+            );
+          },
+          suggestionsBuilder: (BuildContext context, SearchController controller) {
+            final String keyword = controller.text.toLowerCase();
+            return items
+                .where((String item) => item.toLowerCase().contains(keyword))
+                .map(
+                  (String item) => ListTile(
+                    leading: const Icon(Icons.history),
+                    title: Text(item),
+                    onTap: () {
+                      controller.closeView(item);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('Selected: $item')),
+                      );
+                    },
+                  ),
+                );
+          },
+        ),
       ),
     );
   }
