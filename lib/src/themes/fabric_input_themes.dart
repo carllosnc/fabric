@@ -62,19 +62,36 @@ InputDecorationThemeData buildFabricInputDecorationTheme(
   });
 
   return InputDecorationThemeData(
+    isDense: true,
     filled: false,
-    contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+    contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
     labelStyle: WidgetStateTextStyle.resolveWith((Set<WidgetState> states) {
       if (states.contains(WidgetState.disabled)) {
-        return TextStyle(color: disabledFg, fontFamily: fontFamily);
+        return TextStyle(
+          color: disabledFg,
+          fontFamily: fontFamily,
+          fontSize: 13.5,
+        );
       }
       if (states.contains(WidgetState.error)) {
-        return TextStyle(color: errorColor, fontFamily: fontFamily);
+        return TextStyle(
+          color: errorColor,
+          fontFamily: fontFamily,
+          fontSize: 13.5,
+        );
       }
       if (states.contains(WidgetState.focused)) {
-        return TextStyle(color: focusedBorderColor, fontFamily: fontFamily);
+        return TextStyle(
+          color: focusedBorderColor,
+          fontFamily: fontFamily,
+          fontSize: 13.5,
+        );
       }
-      return TextStyle(color: mutedColor, fontFamily: fontFamily);
+      return TextStyle(
+        color: mutedColor,
+        fontFamily: fontFamily,
+        fontSize: 13.5,
+      );
     }),
     floatingLabelStyle: WidgetStateTextStyle.resolveWith((Set<WidgetState> states) {
       if (states.contains(WidgetState.disabled)) {
@@ -82,6 +99,7 @@ InputDecorationThemeData buildFabricInputDecorationTheme(
           color: disabledFg,
           fontFamily: fontFamily,
           fontWeight: FontWeight.w600,
+          fontSize: 12,
         );
       }
       if (states.contains(WidgetState.error)) {
@@ -89,6 +107,7 @@ InputDecorationThemeData buildFabricInputDecorationTheme(
           color: errorColor,
           fontFamily: fontFamily,
           fontWeight: FontWeight.w600,
+          fontSize: 12,
         );
       }
       if (states.contains(WidgetState.focused)) {
@@ -96,51 +115,56 @@ InputDecorationThemeData buildFabricInputDecorationTheme(
           color: focusedBorderColor,
           fontFamily: fontFamily,
           fontWeight: FontWeight.w600,
+          fontSize: 12,
         );
       }
       return TextStyle(
         color: isDark ? mainColor.shade300 : mainColor.shade700,
         fontFamily: fontFamily,
         fontWeight: FontWeight.w600,
+        fontSize: 12,
       );
     }),
     hintStyle: TextStyle(
       color: mutedColor,
       fontFamily: fontFamily,
+      fontSize: 13.5,
     ),
     errorStyle: TextStyle(
       color: errorColor,
       fontFamily: fontFamily,
+      fontSize: 11.5,
     ),
     helperStyle: TextStyle(
       color: mutedColor,
       fontFamily: fontFamily,
+      fontSize: 11.5,
     ),
     suffixIconColor: iconStateColor,
     prefixIconColor: iconStateColor,
     border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(8),
       borderSide: BorderSide(color: borderColor),
     ),
     enabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(8),
       borderSide: BorderSide(color: borderColor),
     ),
     focusedBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
-      borderSide: BorderSide(color: focusedBorderColor, width: 2),
+      borderRadius: BorderRadius.circular(8),
+      borderSide: BorderSide(color: focusedBorderColor, width: 1.5),
     ),
     disabledBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(8),
       borderSide: BorderSide(color: disabledBorderColor),
     ),
     errorBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(8),
       borderSide: BorderSide(color: errorColor, width: 1),
     ),
     focusedErrorBorder: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
-      borderSide: BorderSide(color: errorColor, width: 2),
+      borderRadius: BorderRadius.circular(8),
+      borderSide: BorderSide(color: errorColor, width: 1.5),
     ),
   );
 }
@@ -158,24 +182,43 @@ DropdownMenuThemeData buildFabricDropdownMenuTheme(
   return DropdownMenuThemeData(
     textStyle: TextStyle(
       fontFamily: fontFamily,
+      fontSize: 13.5,
+      fontWeight: FontWeight.normal,
       color: isDark ? mainColor.shade50 : mainColor.shade800,
     ),
     inputDecorationTheme: InputDecorationThemeData(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      isDense: true,
+      contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+      labelStyle: TextStyle(
+        fontFamily: fontFamily,
+        fontSize: 13.5,
+        color: isDark ? mainColor.shade400 : mainColor.shade500,
+      ),
+      floatingLabelStyle: TextStyle(
+        fontFamily: fontFamily,
+        fontWeight: FontWeight.w600,
+        fontSize: 12,
+        color: isDark ? mainColor.shade300 : mainColor.shade700,
+      ),
+      hintStyle: TextStyle(
+        fontFamily: fontFamily,
+        fontSize: 13.5,
+        color: isDark ? mainColor.shade400 : mainColor.shade500,
+      ),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(8),
         borderSide: BorderSide(color: borderColor),
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(8),
         borderSide: BorderSide(color: borderColor),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide(color: focusedBorderColor, width: 2),
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide(color: focusedBorderColor, width: 1.5),
       ),
       disabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(8),
         borderSide: BorderSide(color: disabledBorderColor),
       ),
     ),
@@ -191,7 +234,7 @@ DropdownMenuThemeData buildFabricDropdownMenuTheme(
       ),
       shape: WidgetStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(8),
         ),
       ),
     ),
@@ -466,12 +509,12 @@ SearchViewThemeData buildFabricSearchViewTheme(
     dividerColor: isDark ? mainColor.shade800 : mainColor.shade100,
     headerTextStyle: TextStyle(
       fontFamily: fontFamily,
-      fontSize: 16,
+      fontSize: 14,
       color: fg,
     ),
     headerHintStyle: TextStyle(
       fontFamily: fontFamily,
-      fontSize: 16,
+      fontSize: 14,
       color: muted,
     ),
   );
@@ -487,21 +530,32 @@ SearchBarThemeData buildFabricSearchBarTheme(
     backgroundColor: WidgetStateProperty.all(bg),
     surfaceTintColor: WidgetStateProperty.all(bg),
     elevation: WidgetStateProperty.all(0),
+    constraints: const BoxConstraints(
+      minWidth: 240.0,
+      maxWidth: 800.0,
+      minHeight: 40.0,
+      maxHeight: 42.0,
+    ),
+    padding: WidgetStateProperty.all(
+      const EdgeInsets.symmetric(horizontal: 12.0),
+    ),
     textStyle: WidgetStateProperty.all(
       TextStyle(
         fontFamily: fontFamily,
+        fontSize: 13.5,
         color: isDark ? mainColor.shade50 : mainColor.shade800,
       ),
     ),
     hintStyle: WidgetStateProperty.all(
       TextStyle(
         fontFamily: fontFamily,
+        fontSize: 13.5,
         color: isDark ? mainColor.shade400 : mainColor.shade500,
       ),
     ),
     shape: WidgetStateProperty.all(
       RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(8),
       ),
     ),
   );
