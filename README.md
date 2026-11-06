@@ -1,17 +1,16 @@
 # Fabric
 
-> A modern, minimal, and pure Material 3 Theme Layer for Flutter. Zero custom widgets — 100% native Flutter widgets themed out-of-the-box.
+A modern, minimal, and pure Material 3 Theme Layer for Flutter. Zero custom widgets — 100% native Flutter widgets themed out of the box.
 
 [![CI](https://github.com/carllosnc/fabric/actions/workflows/ci.yml/badge.svg)](https://github.com/carllosnc/fabric/actions/workflows/ci.yml)
+[![Pub Version](https://img.shields.io/pub/v/fabric.svg)](https://pub.dev/packages/fabric)
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?logo=Flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-%230175C2.svg?logo=Dart&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
----
+## Architecture & Philosophy: Pure Theme Layer
 
-## 🎯 Architecture & Philosophy: Pure Theme Layer
-
-**Fabric is strictly a Theme Layer — NOT a custom component library.**
+**Fabric is strictly a Theme Layer — not a custom component library.**
 
 Most UI kits introduce custom widget wrappers (such as `CustomButton`, `MyCard`, `AppTextField`). This introduces vendor lock-in, forces your team to learn proprietary widget APIs, and makes future migrations painful.
 
@@ -42,22 +41,47 @@ Whenever Flutter exposes a `*ThemeData` (e.g. `CardThemeData`, `InputDecorationT
 | **Ecosystem Compatibility** | Struggles with 3rd-party packages | **Seamless** — any package honoring `ThemeData` is styled |
 | **Flutter SDK Upgrades** | Breaking changes on internal wrapper code | **Future-proof** — leverages official Flutter Material 3 specs |
 
----
+## Showcase
 
-## ✨ Features
+All screens below are built entirely with **standard native Flutter widgets** (`Card`, `SearchBar`, `SegmentedButton`, `FilledButton`, `Checkbox`, `FloatingActionButton`, etc.) styled automatically through `FabricTheme`.
 
-- 🎨 **Pure Theme Layer**: Zero custom UI wrappers. Use canonical Flutter widgets with a unified, contemporary Material 3 aesthetic.
-- ⚡ **46+ Standard Flutter Widgets Styled**: Complete out-of-the-box styling for buttons, inputs, dialogs, drawers, navigation rails, pickers, tables, and more.
-- 🌓 **First-Class Dark & Light Modes**: High-contrast, accessibility-tested color palettes and surface container roles (`surfaceDim`, `surfaceBright`, `surfaceContainerLowest`..`surfaceContainerHighest`).
-- 🎛️ **8 Hand-Crafted Color Swatches**: Neutral grays (`fabricGrey`), oceanic blues, teals, emerald greens, and more, each featuring 11 shade stops (`50` to `950`).
-- 🧩 **Design Tokens via `ThemeExtension`**: Direct access to semantic colors (`success`, `warning`, `info`), border tokens, elevated surfaces, and muted foregrounds via `context.fabricTokens`.
-- ✍️ **Tailored Typography**: Tuned for `Inter` with progressive negative letter-spacing and optical line heights; fully compatible with `google_fonts`.
+### Light Mode
 
----
+| Dashboard (`fabricGrey`) | Tasks & Sprints (`fabricGrey`) | Contacts Directory (`fabricGrey`) |
+| :---: | :---: | :---: |
+| <img src="prints/showcase_dashboard_light.png" width="260" alt="Dashboard Light" /> | <img src="prints/showcase_tasks_light.png" width="260" alt="Tasks Light" /> | <img src="prints/showcase_contacts_light.png" width="260" alt="Contacts Light" /> |
 
-## 📦 Installation
+### Dark Mode
 
-Add Fabric to your `pubspec.yaml`:
+| Dashboard (`fabricGrey`) | Tasks & Sprints (`fabricGreen`) | Contacts Directory (`fabricOrange`) |
+| :---: | :---: | :---: |
+| <img src="prints/showcase_dashboard_dark.png" width="260" alt="Dashboard Dark" /> | <img src="prints/showcase_tasks_dark.png" width="260" alt="Tasks Dark" /> | <img src="prints/showcase_contacts_dark.png" width="260" alt="Contacts Dark" /> |
+
+## Features
+
+- **Pure Theme Layer**: Zero custom UI wrappers. Use canonical Flutter widgets with a unified, contemporary Material 3 aesthetic.
+- **46+ Standard Flutter Widgets Styled**: Complete out-of-the-box styling for buttons, inputs, dialogs, drawers, navigation rails, pickers, tables, and more.
+- **First-Class Dark & Light Modes**: High-contrast, accessibility-tested color palettes and surface container roles (`surfaceDim`, `surfaceBright`, `surfaceContainerLowest`..`surfaceContainerHighest`).
+- **8 Hand-Crafted Color Swatches**: Neutral grays (`fabricGrey`), oceanic blues, teals, emerald greens, and more, each featuring 11 shade stops (`50` to `950`).
+- **Design Tokens via `ThemeExtension`**: Direct access to semantic colors (`success`, `warning`, `info`), border tokens, elevated surfaces, and muted foregrounds via `context.fabricTokens`.
+- **Tailored Typography**: Tuned for `Inter` with progressive negative letter-spacing and optical line heights; fully compatible with `google_fonts`.
+
+## Installation
+
+Add `fabric` to your Flutter project:
+
+```bash
+flutter pub add fabric
+```
+
+Or add it manually to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  fabric: ^0.0.7
+```
+
+For the git repository version:
 
 ```yaml
 dependencies:
@@ -66,20 +90,11 @@ dependencies:
       url: https://github.com/carllosnc/fabric.git
 ```
 
-*(Or from pub.dev once published):*
-
-```yaml
-dependencies:
-  fabric: ^0.0.7
-```
-
----
-
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Apply to `MaterialApp`
 
-Configure `FabricTheme` once in your `MaterialApp`. That's it — all Flutter widgets in your app now inherit Fabric's design system:
+Configure `FabricTheme` once in your `MaterialApp`. All standard Flutter widgets will automatically inherit Fabric's design system:
 
 ```dart
 import 'package:fabric/fabric.dart';
@@ -111,7 +126,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-Or use the direct static helpers:
+Or use the static helpers directly:
 
 ```dart
 MaterialApp(
@@ -134,11 +149,9 @@ final fabricTheme = FabricTheme(
 );
 ```
 
----
+## How to Build Screens
 
-## 🔨 How to Build Screens (Pure Flutter)
-
-Because Fabric styles native Flutter widgets through `ThemeData`, you don't import any custom button or card widgets. You simply write standard Flutter:
+Because Fabric styles native Flutter widgets through `ThemeData`, you do not import custom button or card wrappers. You simply write standard Flutter:
 
 ```dart
 import 'package:flutter/material.dart';
@@ -148,7 +161,7 @@ class UserCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Standard Flutter Card & Widgets — styled automatically by Fabric!
+    // Standard Flutter Card & Widgets — styled automatically by Fabric
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(20),
@@ -185,9 +198,7 @@ class UserCard extends StatelessWidget {
 }
 ```
 
----
-
-## 🎨 Design Tokens & Active Swatch
+## Design Tokens & Active Swatch
 
 When building custom layouts or container decorations, access Fabric's design tokens directly through `BuildContext`:
 
@@ -208,7 +219,7 @@ Container(
 );
 ```
 
-### Available Tokens on `context.fabricTokens`:
+### Available Tokens on `context.fabricTokens`
 
 | Token | Description | Light Value | Dark Value |
 | :--- | :--- | :--- | :--- |
@@ -219,11 +230,9 @@ Container(
 | `warningColor` | Cautionary semantic state (warning, pending, alert) | `#D97706` | `#FBBF24` |
 | `infoColor` | Informational semantic state (info, in-progress) | `#2563EB` | `#60A5FA` |
 
----
+## Native Flutter Widgets Themed by Fabric
 
-## 🏛️ 46+ Native Flutter Widgets Themed by Fabric
-
-Fabric configures all standard Material 3 widget themes out of the box:
+Fabric configures standard Material 3 widget themes out of the box:
 
 | Category | Styled Native Flutter Widgets |
 | :--- | :--- |
@@ -234,13 +243,11 @@ Fabric configures all standard Material 3 widget themes out of the box:
 | **Feedback & Overlays** | `AlertDialog`, `Dialog`, `SnackBar`, `LinearProgressIndicator`, `CircularProgressIndicator`, `Tooltip`, `DatePicker`, `TimePicker`, `MaterialBanner`, `Badge` |
 | **Typography** | Full Material 3 `TextTheme` tuned with optical letter-spacing and proportional line heights |
 
----
-
-## 🌈 Color Swatches
+## Color Swatches
 
 Fabric includes 8 hand-tuned, balanced palettes with 11 shade stops (`50` to `950`):
 
-- `fabricGrey` *(Default refined charcoal)*
+- `fabricGrey` (default refined charcoal)
 - `fabricBlue`
 - `fabricRed`
 - `fabricGreen`
@@ -251,7 +258,7 @@ Fabric includes 8 hand-tuned, balanced palettes with 11 shade stops (`50` to `95
 
 ### Creating a Custom Swatch
 
-Need your own brand colors? Define a custom `FabricSwatch`:
+Need custom brand colors? Define a custom `FabricSwatch`:
 
 ```dart
 const FabricSwatch customBrand = FabricSwatch(
@@ -275,48 +282,26 @@ const FabricSwatch customBrand = FabricSwatch(
 final theme = FabricTheme(color: customBrand);
 ```
 
----
+## Example App
 
-## 📸 Showcase & Example App
-
-All screens below are built entirely with **standard Flutter native widgets** (`Card`, `SearchBar`, `SegmentedButton`, `FilledButton`, `Checkbox`, `FloatingActionButton`, etc.) styled automatically through `FabricTheme`:
-
-### Light Mode
-
-| Dashboard (`fabricGrey`) | Tasks & Sprints (`fabricGrey`) | Contacts Directory (`fabricGrey`) |
-| :---: | :---: | :---: |
-| <img src="prints/showcase_dashboard_light.png" width="260" alt="Dashboard Light" /> | <img src="prints/showcase_tasks_light.png" width="260" alt="Tasks Light" /> | <img src="prints/showcase_contacts_light.png" width="260" alt="Contacts Light" /> |
-
-### Dark Mode
-
-| Dashboard (`fabricGrey`) | Tasks & Sprints (`fabricGreen`) | Contacts Directory (`fabricOrange`) |
-| :---: | :---: | :---: |
-| <img src="prints/showcase_dashboard_dark.png" width="260" alt="Dashboard Dark" /> | <img src="prints/showcase_tasks_dark.png" width="260" alt="Tasks Dark" /> | <img src="prints/showcase_contacts_dark.png" width="260" alt="Contacts Dark" /> |
-
-### Running the Example App
-
-Explore interactive showcase pages (Dashboard, Tasks, Checkout, Contacts, Notifications, Settings, Navigation Rail) and test swatch & theme switching in real time:
+Explore interactive showcase pages (Dashboard, Tasks, Checkout, Contacts, Notifications, Settings, Navigation Rail) and test swatch and theme switching in real time:
 
 ```bash
 cd example
 flutter run
 ```
 
----
-
-## ❓ FAQ
+## Frequently Asked Questions
 
 #### Do I need to import or learn any custom widgets?
-**No.** Fabric does not provide custom widget wrappers. You write 100% native Flutter widgets (`Card`, `TextField`, `ElevatedButton`, `Switch`, etc.), and Fabric's theme layer applies the styles automatically.
+No. Fabric does not provide custom widget wrappers. You write standard Flutter widgets (`Card`, `TextField`, `ElevatedButton`, `Switch`, etc.), and Fabric's theme layer applies the styles automatically.
 
 #### Can I override specific styles for a single widget?
-**Yes.** Because everything is standard Flutter, you can override properties directly on any widget (`Card(color: Colors.amber, ...)`) or use `.copyWith(...)` on `ThemeData` to adjust themes as needed.
+Yes. Because everything is standard Flutter, you can override properties directly on any widget (`Card(color: Colors.amber, ...)`) or use `.copyWith(...)` on `ThemeData` to adjust themes as needed.
 
 #### Does Fabric support `google_fonts`?
-**Yes.** Pass your custom `TextTheme` via `FabricTheme(textTheme: GoogleFonts.interTextTheme())`.
+Yes. Pass your custom `TextTheme` via `FabricTheme(textTheme: GoogleFonts.interTextTheme())`.
 
----
+## License
 
-## 📄 License
-
-MIT © [Carlos Costa](https://github.com/carllosnc)
+MIT License © [Carlos Costa](https://github.com/carllosnc)
