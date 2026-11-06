@@ -3,7 +3,6 @@
 A modern, minimal, and pure Material 3 Theme Layer for Flutter. Zero custom widgets — 100% native Flutter widgets themed out of the box.
 
 [![CI](https://github.com/carllosnc/fabric/actions/workflows/ci.yml/badge.svg)](https://github.com/carllosnc/fabric/actions/workflows/ci.yml)
-[![Pub Version](https://img.shields.io/pub/v/fabric.svg)](https://pub.dev/packages/fabric)
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?logo=Flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-%230175C2.svg?logo=Dart&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -68,26 +67,20 @@ All screens below are built entirely with **standard native Flutter widgets** (`
 
 ## Installation
 
-Add `fabric` to your Flutter project:
+Install `fabric` directly from GitHub using the Flutter CLI:
 
 ```bash
-flutter pub add fabric
+flutter pub add "fabric@{git: https://github.com/carllosnc/fabric.git}"
 ```
 
-Or add it manually to your `pubspec.yaml`:
-
-```yaml
-dependencies:
-  fabric: ^0.0.7
-```
-
-For the git repository version:
+Or add it directly to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
   fabric:
     git:
       url: https://github.com/carllosnc/fabric.git
+      ref: master # (optional) specify a branch, tag, or commit hash
 ```
 
 ## Quick Start
