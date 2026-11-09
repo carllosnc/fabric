@@ -70,27 +70,27 @@ InputDecorationThemeData buildFabricInputDecorationTheme(
         return TextStyle(
           color: disabledFg,
           fontFamily: fontFamily,
-          fontSize: 13.5,
+          fontSize: 14,
         );
       }
       if (states.contains(WidgetState.error)) {
         return TextStyle(
           color: errorColor,
           fontFamily: fontFamily,
-          fontSize: 13.5,
+          fontSize: 14,
         );
       }
       if (states.contains(WidgetState.focused)) {
         return TextStyle(
           color: focusedBorderColor,
           fontFamily: fontFamily,
-          fontSize: 13.5,
+          fontSize: 14,
         );
       }
       return TextStyle(
         color: mutedColor,
         fontFamily: fontFamily,
-        fontSize: 13.5,
+        fontSize: 14,
       );
     }),
     floatingLabelStyle: WidgetStateTextStyle.resolveWith((Set<WidgetState> states) {
@@ -128,17 +128,17 @@ InputDecorationThemeData buildFabricInputDecorationTheme(
     hintStyle: TextStyle(
       color: mutedColor,
       fontFamily: fontFamily,
-      fontSize: 13.5,
+      fontSize: 14,
     ),
     errorStyle: TextStyle(
       color: errorColor,
       fontFamily: fontFamily,
-      fontSize: 11.5,
+      fontSize: 12,
     ),
     helperStyle: TextStyle(
       color: mutedColor,
       fontFamily: fontFamily,
-      fontSize: 11.5,
+      fontSize: 12,
     ),
     suffixIconColor: iconStateColor,
     prefixIconColor: iconStateColor,
@@ -182,7 +182,7 @@ DropdownMenuThemeData buildFabricDropdownMenuTheme(
   return DropdownMenuThemeData(
     textStyle: TextStyle(
       fontFamily: fontFamily,
-      fontSize: 13.5,
+      fontSize: 14,
       fontWeight: FontWeight.normal,
       color: isDark ? mainColor.shade50 : mainColor.shade800,
     ),
@@ -191,7 +191,7 @@ DropdownMenuThemeData buildFabricDropdownMenuTheme(
       contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
       labelStyle: TextStyle(
         fontFamily: fontFamily,
-        fontSize: 13.5,
+        fontSize: 14,
         color: isDark ? mainColor.shade400 : mainColor.shade500,
       ),
       floatingLabelStyle: TextStyle(
@@ -202,7 +202,7 @@ DropdownMenuThemeData buildFabricDropdownMenuTheme(
       ),
       hintStyle: TextStyle(
         fontFamily: fontFamily,
-        fontSize: 13.5,
+        fontSize: 14,
         color: isDark ? mainColor.shade400 : mainColor.shade500,
       ),
       border: OutlineInputBorder(
@@ -542,14 +542,14 @@ SearchBarThemeData buildFabricSearchBarTheme(
     textStyle: WidgetStateProperty.all(
       TextStyle(
         fontFamily: fontFamily,
-        fontSize: 13.5,
+        fontSize: 14,
         color: isDark ? mainColor.shade50 : mainColor.shade800,
       ),
     ),
     hintStyle: WidgetStateProperty.all(
       TextStyle(
         fontFamily: fontFamily,
-        fontSize: 13.5,
+        fontSize: 14,
         color: isDark ? mainColor.shade400 : mainColor.shade500,
       ),
     ),

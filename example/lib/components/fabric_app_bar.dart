@@ -37,9 +37,9 @@ class FabricAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   IconData _themeModeIcon(ThemeMode mode) {
     return switch (mode) {
-      ThemeMode.light => Icons.light_mode_outlined,
-      ThemeMode.dark => Icons.dark_mode_outlined,
-      ThemeMode.system => Icons.brightness_auto_outlined,
+      ThemeMode.light => Icons.light_mode_rounded,
+      ThemeMode.dark => Icons.dark_mode_rounded,
+      ThemeMode.system => Icons.contrast_rounded,
     };
   }
 
@@ -107,7 +107,7 @@ class FabricAppBar extends StatelessWidget implements PreferredSizeWidget {
           IconButton(
             tooltip: isSearching ? 'Close search' : 'Search components',
             onPressed: onSearchToggle,
-            icon: Icon(isSearching ? Icons.close : Icons.search),
+            icon: Icon(isSearching ? Icons.close_rounded : Icons.search_rounded),
           ),
         if (onThemeModeChanged != null)
           IconButton(
@@ -119,23 +119,43 @@ class FabricAppBar extends StatelessWidget implements PreferredSizeWidget {
           PopupMenuButton<FabricSwatch>(
             tooltip: 'Select color palette',
             onSelected: onSwatchChanged,
-            icon: Stack(
-              alignment: Alignment.bottomRight,
-              children: <Widget>[
-                const Icon(Icons.palette_outlined),
-                Container(
-                  width: 10,
-                  height: 10,
-                  decoration: BoxDecoration(
-                    color: selectedSwatch.shade500,
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: Theme.of(context).scaffoldBackgroundColor,
-                      width: 1.5,
+            icon: SizedBox(
+              width: 28,
+              height: 28,
+              child: Stack(
+                clipBehavior: Clip.none,
+                alignment: Alignment.center,
+                children: <Widget>[
+                  const Icon(
+                    Icons.palette_rounded,
+                    size: 24,
+                  ),
+                  Positioned(
+                    right: -2,
+                    bottom: -2,
+                    child: Container(
+                      width: 11,
+                      height: 11,
+                      decoration: BoxDecoration(
+                        color: selectedSwatch.shade500,
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Theme.of(context).appBarTheme.backgroundColor ??
+                              Theme.of(context).scaffoldBackgroundColor,
+                          width: 2,
+                        ),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.2),
+                            blurRadius: 2,
+                            offset: const Offset(0, 1),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             itemBuilder: (BuildContext context) {
               return swatches.entries.map((MapEntry<String, FabricSwatch> entry) {

@@ -67,7 +67,7 @@ void main() {
       );
       expect(theme.textTheme.bodyLarge?.fontFamily, 'CustomFont');
       expect(theme.textTheme.bodyLarge?.letterSpacing, 1.5);
-      expect(theme.textTheme.bodyLarge?.fontSize, 14);
+      expect(theme.textTheme.bodyLarge?.fontSize, 16);
       expect(theme.textTheme.bodyLarge?.color, swatch.shade800);
     });
 
@@ -75,25 +75,25 @@ void main() {
       final theme = fabricLightTheme(mainColor: swatch);
       final textTheme = theme.textTheme;
 
-      expect(textTheme.displayLarge?.fontSize, 32);
-      expect(textTheme.displayMedium?.fontSize, 28);
-      expect(textTheme.displaySmall?.fontSize, 24);
+      expect(textTheme.displayLarge?.fontSize, 40);
+      expect(textTheme.displayMedium?.fontSize, 34);
+      expect(textTheme.displaySmall?.fontSize, 28);
 
-      expect(textTheme.headlineLarge?.fontSize, 22);
-      expect(textTheme.headlineMedium?.fontSize, 20);
-      expect(textTheme.headlineSmall?.fontSize, 18);
+      expect(textTheme.headlineLarge?.fontSize, 24);
+      expect(textTheme.headlineMedium?.fontSize, 22);
+      expect(textTheme.headlineSmall?.fontSize, 20);
 
-      expect(textTheme.titleLarge?.fontSize, 16);
-      expect(textTheme.titleMedium?.fontSize, 14);
-      expect(textTheme.titleSmall?.fontSize, 13);
+      expect(textTheme.titleLarge?.fontSize, 18);
+      expect(textTheme.titleMedium?.fontSize, 16);
+      expect(textTheme.titleSmall?.fontSize, 14);
 
-      expect(textTheme.bodyLarge?.fontSize, 14);
-      expect(textTheme.bodyMedium?.fontSize, 13);
-      expect(textTheme.bodySmall?.fontSize, 11.5);
+      expect(textTheme.bodyLarge?.fontSize, 16);
+      expect(textTheme.bodyMedium?.fontSize, 14);
+      expect(textTheme.bodySmall?.fontSize, 12);
 
-      expect(textTheme.labelLarge?.fontSize, 13);
-      expect(textTheme.labelMedium?.fontSize, 11.5);
-      expect(textTheme.labelSmall?.fontSize, 10.5);
+      expect(textTheme.labelLarge?.fontSize, 14);
+      expect(textTheme.labelMedium?.fontSize, 12);
+      expect(textTheme.labelSmall?.fontSize, 11);
     });
 
     test('custom swatch changes colors and registers FabricThemeExtension', () {

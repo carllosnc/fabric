@@ -21,7 +21,7 @@ AppBarThemeData buildFabricAppBarTheme(
     titleTextStyle: TextStyle(
       fontFamily: fontFamily,
       color: fg,
-      fontSize: 16,
+      fontSize: 18,
       fontWeight: FontWeight.w600,
       letterSpacing: -0.1,
     ),
@@ -199,12 +199,12 @@ TabBarThemeData buildFabricTabBarTheme(
     labelStyle: TextStyle(
       fontFamily: fontFamily,
       fontWeight: FontWeight.w600,
-      fontSize: 13,
+      fontSize: 14,
     ),
     unselectedLabelStyle: TextStyle(
       fontFamily: fontFamily,
       fontWeight: FontWeight.normal,
-      fontSize: 13,
+      fontSize: 14,
     ),
     indicatorSize: TabBarIndicatorSize.label,
     splashBorderRadius: const BorderRadius.only(

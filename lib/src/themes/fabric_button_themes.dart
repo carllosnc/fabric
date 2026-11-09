@@ -51,7 +51,7 @@ SegmentedButtonThemeData buildFabricSegmentedButtonTheme(
       ),
       textStyle: TextStyle(
         fontFamily: fontFamily,
-        fontSize: 12.5,
+        fontSize: 13,
         fontWeight: FontWeight.w500,
       ),
       visualDensity: const VisualDensity(horizontal: -1, vertical: -2),
@@ -213,7 +213,7 @@ ToggleButtonsThemeData buildFabricToggleButtonsTheme(
     textStyle: TextStyle(
       fontFamily: fontFamily,
       fontWeight: FontWeight.w500,
-      fontSize: 12.5,
+      fontSize: 13,
     ),
   );
 }
