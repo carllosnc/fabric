@@ -42,19 +42,9 @@ Whenever Flutter exposes a `*ThemeData` (e.g. `CardThemeData`, `InputDecorationT
 
 ## Showcase
 
-All screens below are built entirely with **standard native Flutter widgets** (`Card`, `SearchBar`, `SegmentedButton`, `FilledButton`, `Checkbox`, `FloatingActionButton`, etc.) styled automatically through `FabricTheme`.
+All screens are built entirely with **standard native Flutter widgets** (`Card`, `SearchBar`, `SegmentedButton`, `FilledButton`, `Checkbox`, `FloatingActionButton`, etc.) styled automatically through `FabricTheme`.
 
-### Light Mode
-
-| Dashboard (`fabricGrey`) | Tasks & Sprints (`fabricGrey`) | Contacts Directory (`fabricGrey`) |
-| :---: | :---: | :---: |
-| <img src="prints/showcase_dashboard_light.png" width="260" alt="Dashboard Light" /> | <img src="prints/showcase_tasks_light.png" width="260" alt="Tasks Light" /> | <img src="prints/showcase_contacts_light.png" width="260" alt="Contacts Light" /> |
-
-### Dark Mode
-
-| Dashboard (`fabricGrey`) | Tasks & Sprints (`fabricGreen`) | Contacts Directory (`fabricOrange`) |
-| :---: | :---: | :---: |
-| <img src="prints/showcase_dashboard_dark.png" width="260" alt="Dashboard Dark" /> | <img src="prints/showcase_tasks_dark.png" width="260" alt="Tasks Dark" /> | <img src="prints/showcase_contacts_dark.png" width="260" alt="Contacts Dark" /> |
+![Fabric Showcase](prints/fabric.png)
 
 ## Features
 
